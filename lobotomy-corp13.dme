@@ -4171,6 +4171,8 @@
 #include "ModularLobotomy\ego_weapons\ranged\ego_bullets\teth.dm"
 #include "ModularLobotomy\ego_weapons\ranged\ego_bullets\waw.dm"
 #include "ModularLobotomy\ego_weapons\ranged\ego_bullets\zayin.dm"
+#include "ModularTegustation\expedition\items.dm"
+#include "ModularTegustation\expedition\machinery.dm"
 #include "ModularLobotomy\enkephalin_rush\enkr_corpses.dm"
 #include "ModularLobotomy\enkephalin_rush\enkr_machines.dm"
 #include "ModularLobotomy\enkephalin_rush\enkr_mobs.dm"
