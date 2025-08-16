@@ -4,31 +4,37 @@
 	icon_state = "powerpylon"
 	icon = 'icons/obj/hand_of_god_structures.dmi'
 	color = "#FF5522"
+	light_color = "#FF5522"
+	light_range = 3
+	light_power = 1
 	max_integrity = 500
 	moblist = list(
 		/mob/living/simple_animal/hostile/xcorp = 4,
-		/mob/living/simple_animal/hostile/xcorp/scout = 1,
+		/mob/living/simple_animal/hostile/xcorp/scout = 2,
 	)
 	var/announce = FALSE
 	var/id
 	var/assault_type = SEND_ONLY_DEFEATED
-	var/max_mobs = 10
+	var/max_mobs = 18
 	var/generate_new_mob_time = NONE
 	var/raider = FALSE
 
 /obj/structure/den/rce/announcer
-	max_mobs = 12
+	light_range = 5
+	max_mobs = 40
 	moblist = list(
+		/mob/living/simple_animal/hostile/xcorp = 2,
+		/mob/living/simple_animal/hostile/xcorp/scout = 3,
+		/mob/living/simple_animal/hostile/xcorp/sapper = 3,
+		/mob/living/simple_animal/hostile/xcorp/tank = 2,
 		/mob/living/simple_animal/hostile/xcorp/dps = 2,
-		/mob/living/simple_animal/hostile/xcorp/sapper = 1,
-		/mob/living/simple_animal/hostile/xcorp/tank = 1,
-		/mob/living/simple_animal/hostile/xcorp/scout = 2,
 	)
-	generate_new_mob_time = 90 SECONDS
+	generate_new_mob_time = 50 SECONDS
 	raider = TRUE
 	announce = TRUE
 
 /obj/structure/den/rce/mid
+	light_range = 4
 	max_mobs = 10
 	moblist = list(
 		/mob/living/simple_animal/hostile/xcorp = 2,
@@ -36,8 +42,10 @@
 		/mob/living/simple_animal/hostile/xcorp/tank = 1,
 		/mob/living/simple_animal/hostile/xcorp/scout = 1,
 	)
+	generate_new_mob_time = 22 SECONDS
 
 /obj/structure/den/rce/high
+	light_range = 7
 	max_mobs = 12
 	moblist = list(
 		/mob/living/simple_animal/hostile/xcorp/scout = 2,
@@ -48,13 +56,14 @@
 	generate_new_mob_time = 15 SECONDS
 
 /obj/structure/den/rce/raider
-	max_mobs = 40
+	light_range = 5
+	max_mobs = 30
 	moblist = list(
 		/mob/living/simple_animal/hostile/xcorp = 2,
-		/mob/living/simple_animal/hostile/xcorp/scout = 1,
+		/mob/living/simple_animal/hostile/xcorp/scout = 3,
 		/mob/living/simple_animal/hostile/xcorp/sapper = 1,
-		/mob/living/simple_animal/hostile/xcorp/tank = 1,
-		/mob/living/simple_animal/hostile/xcorp/dps = 1,
+		/mob/living/simple_animal/hostile/xcorp/tank = 2,
+		/mob/living/simple_animal/hostile/xcorp/dps = 2,
 	)
 	assault_type = SEND_TILL_MAX
 	generate_new_mob_time = 30 SECONDS
@@ -75,6 +84,9 @@
 	icon = 'icons/obj/hand_of_god_structures.dmi'
 	color = "#FF0000"
 	max_integrity = 1000
+	light_color = "#aa1100"
+	light_range = 5
+	light_power = 2
 	moblist = list(
 		/mob/living/simple_animal/hostile/xcorp = 4,
 		/mob/living/simple_animal/hostile/xcorp/tank = 4,
@@ -136,14 +148,23 @@
 
 /obj/structure/player_blocker
 	name = "forcefield"
-	desc = "Impassable to you."
+	desc = "Impassable to some."
 	icon = 'icons/effects/cult_effects.dmi'
 	icon_state = "cultshield"
-	alpha = 100
+	light_color = "#aa0000"
+	light_range = 3
+	light_power = 1
+	alpha = 70
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
 	pass_flags_self = 0
+
+/obj/structure/player_blocker/invisible
+	light_color = null
+	light_range = 0
+	light_power = 0
+	alpha = 0
 
 /obj/structure/player_blocker/CanAllowThrough(atom/movable/A, turf/T)
 	. = ..()
