@@ -8,6 +8,7 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 	anchored = TRUE
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
+	var/production_time = 600
 	var/obj/item = /obj/item/factoryitem/green	//What item you spawn
 	var/active = 0	//What level you have
 
@@ -20,7 +21,8 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 	if(!do_after(user, 7 SECONDS, src))
 		return
 	active = 1
-	addtimer(CALLBACK(src, PROC_REF(spit_item)), 600/active)
+	to_chat(user, "<span class='notice'>You activate the resource point.</span>")
+	addtimer(CALLBACK(src, PROC_REF(spit_item)), production_time/active)
 
 /obj/structure/resourcepoint/proc/spit_item()
 	if(!active)
@@ -29,7 +31,11 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 		active+=1
 
 	var/halt_active = FALSE
-	for(var/mob/living/simple_animal/hostile in range(4, get_turf(src)))
+	for(var/mob/living/simple_animal/hostile/M in range(3, get_turf(src)))
+		if(M.stat == DEAD)
+			continue
+		if(!("neutral" in M.faction))
+			continue
 		halt_active = TRUE
 		break
 
@@ -38,7 +44,7 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 		show_global_blurb(5 SECONDS, "A resource point has stopped production", text_align = "center", screen_location = "LEFT+0,TOP-2")
 		return
 
-	addtimer(CALLBACK(src, PROC_REF(spit_item)), 600/active)
+	addtimer(CALLBACK(src, PROC_REF(spit_item)), production_time/active)
 	new item(src.loc)
 
 /obj/structure/resourcepoint/red
