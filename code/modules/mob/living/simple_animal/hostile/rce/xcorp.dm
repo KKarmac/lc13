@@ -16,6 +16,7 @@
 	damage_coeff = list(RED_DAMAGE = 1, WHITE_DAMAGE = 0.3, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
 	see_in_dark = 8
 	stat_attack = HARD_CRIT
+	del_on_death = TRUE
 
 /mob/living/simple_animal/hostile/xcorp/Life()
 	. = ..()
@@ -190,7 +191,6 @@
 	simple_mob_flags = SILENCE_RANGED_MESSAGE
 	buffed = FALSE
 	move_to_delay = 3
-	del_on_death = TRUE
 	var/charging = FALSE
 
 /mob/living/simple_animal/hostile/xcorp/scout/Move()
