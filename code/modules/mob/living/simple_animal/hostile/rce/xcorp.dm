@@ -278,25 +278,17 @@
 	attack_verb_continuous = "lacerates"
 	attack_verb_simple = "lacerate"
 	speed = -0.3
-	rapid_melee = 5
+	rapid_melee = 2
 	melee_damage_type = PALE_DAMAGE
 	melee_damage_lower = 1
 	melee_damage_upper = 3
-	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
+	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1, PALE_DAMAGE = 1.3)
 	death_message = "wails as its form turns into a pulpy mush."
 	death_sound = 'sound/voice/hiss6.ogg'
 	var/scream_damage = 20
-	search_objects = 1
+	search_objects = 2
 	wanted_objects = list(/obj/structure/barricade/sandbags, /obj/machinery/manned_turret/rcorp, /obj/machinery/conveyor)
 	see_in_dark = 8
-
-/mob/living/simple_animal/hostile/xcorp/sapper/AttackingTarget(atom/attacked_target)
-	. = ..()
-	if(ishuman(attacked_target))
-		var/mob/living/carbon/human/L = attacked_target
-		if(L.sanity_lost && L.stat != DEAD)
-			L.apply_damage(scream_damage, PALE_DAMAGE, null, L.run_armor_check(null, PALE_DAMAGE))
-	return ..()
 
 /mob/living/simple_animal/hostile/xcorp/sapper/toggle_ai(togglestatus)
 	if(togglestatus != AI_ON && togglestatus != AI_IDLE)
