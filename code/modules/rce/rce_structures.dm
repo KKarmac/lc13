@@ -123,19 +123,36 @@
 	maptext_width = 64
 	maptext_x = -16
 	maptext_y = 8
-	density = 1
+	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/rce_portal/Initialize()
 	. = ..()
 	SSgamedirector.RegisterPortal(src)
 
-/obj/structure/rce_portal/attackby(obj/item/I, mob/living/user)
-	to_chat(user, "<span class='danger'>Do not shatter the thread of prophecy by destroying the portal.</span>")
-	return
-
-/obj/structure/rce_portal/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	return
-
 /obj/structure/rce_portal/attack_hand(mob/living/user)
 	if(tgui_alert(user, "Do you want to register to fight the Heart of Greed?", "Go die?", list("Yes", "No"), timeout = 30 SECONDS) == "Yes")
 		SSgamedirector.RegisterCombatant(user)
+
+/obj/structure/player_blocker
+	name = "forcefield"
+	desc = "Impassable to you."
+	icon = 'icons/effects/cult_effects.dmi'
+	icon_state = "cultshield"
+	alpha = 100
+	anchored = TRUE
+	density = TRUE
+	resistance_flags = INDESTRUCTIBLE
+	pass_flags_self = 0
+
+/obj/structure/player_blocker/CanAllowThrough(atom/movable/A, turf/T)
+	. = ..()
+
+	if(!isliving(A))
+		return FALSE
+	if(istype(A, /mob/living/simple_animal))
+		return TRUE
+	return FALSE
+
+/obj/structure/player_blocker/CanAStarPass(ID, to_dir, requester)
+	return TRUE
