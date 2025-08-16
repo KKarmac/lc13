@@ -108,7 +108,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/conveyor_filter{
-	amount = 3
+	amount = 5
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
@@ -1533,7 +1533,7 @@
 "Au" = (
 /obj/effect/turf_decal/delivery,
 /obj/item/stack/conveyor_filter{
-	amount = 3
+	amount = 5
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
@@ -1669,7 +1669,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/conveyor_filter{
-	amount = 3
+	amount = 5
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
