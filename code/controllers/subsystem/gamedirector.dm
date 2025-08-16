@@ -172,8 +172,3 @@ SUBSYSTEM_DEF(gamedirector)
 
 /datum/controller/subsystem/gamedirector/proc/CombatantSlain(mob/living/combatant)
 	SIGNAL_HANDLER
-
-/datum/controller/subsystem/gamedirector/proc/MinionSlain(mob/living/M)
-	SIGNAL_HANDLER
-
-	qdel(M)

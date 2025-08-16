@@ -107,8 +107,6 @@
 	current_existing_mobs += 1
 	spawned_mob.faction = faction.Copy()
 	RegisterSignal(spawned_mob, COMSIG_LIVING_DEATH, PROC_REF(MinionSlain))
-	if(delete_on_death)
-		RegisterSignal(spawned_mob, COMSIG_LIVING_DEATH, TYPE_PROC_REF(/datum/controller/subsystem/gamedirector, MinionSlain))
 	SSgamedirector.RegisterMob(spawned_mob)
 	return spawned_mob
 

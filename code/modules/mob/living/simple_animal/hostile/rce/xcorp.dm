@@ -190,6 +190,7 @@
 	simple_mob_flags = SILENCE_RANGED_MESSAGE
 	buffed = FALSE
 	move_to_delay = 3
+	del_on_death = TRUE
 	var/charging = FALSE
 
 /mob/living/simple_animal/hostile/xcorp/scout/Move()
