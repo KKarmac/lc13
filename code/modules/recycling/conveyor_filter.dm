@@ -26,10 +26,10 @@
 	desc = "A filter that checks for specific objects and redirects them in another direction.\nMatches get sent [dir2text(filter_output_dir)], everything else goes [dir2text(unfiltered_output_dir)].\nA screwdriver changes the output direction of filtered items, while a wrench changes the output direction of everything else."
 	if(!selected_filter)
 		desc += "\nIt currently has no set filter! The first object to move onto it will be filtered."
-	else:
+	else
 		desc += "\nIt is set to filter out [selected_filter.name]. The filter can be cleared with wirecutters."
 
-/obj/machinery/conveyor/filter/proc/get_it_twisted(var/angle)
+/obj/machinery/conveyor/filter/proc/get_it_twisted(angle)
 	switch(angle)
 		if(NORTH)
 			return EAST
