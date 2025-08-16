@@ -49,8 +49,6 @@
 								TEMPERANCE_ATTRIBUTE = 80,
 								JUSTICE_ATTRIBUTE = 80
 								)
-	access = list(ACCESS_ARMORY, ACCESS_RND, ACCESS_COMMAND, ACCESS_MEDICAL)
-	minimal_access = list(ACCESS_ARMORY, ACCESS_RND, ACCESS_COMMAND, ACCESS_MEDICAL)
 	alt_titles = list("Base Commander")
 	rank_title = "LCDR"
 	job_important = "Keep the base producing materials. You are in charge of the Raven, Rook and Production teams."
