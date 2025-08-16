@@ -154,7 +154,7 @@
 	light_color = "#aa0000"
 	light_range = 3
 	light_power = 1
-	alpha = 70
+	alpha = 200
 	anchored = TRUE
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
