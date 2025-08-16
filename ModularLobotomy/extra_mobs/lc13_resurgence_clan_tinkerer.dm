@@ -65,12 +65,94 @@
 	var/turf/selection_start_point = null
 	// Factory construction variables
 	var/factory_blueprint_cost = 10
+	// Retract/Deploy state
+	var/retracted_state = FALSE
+	var/retract_animation_time = 1.4 SECONDS
+
+// Retract/Deploy ability definition
+/obj/effect/proc_holder/ability/tinkerer/deploy_retract
+	name = "Retract/Deploy Shell"
+	desc = "Switch between deployed state and retracted watcher state."
+	action_icon_state = "karma_nobg"
+	cooldown_time = 3 SECONDS
+
+/obj/effect/proc_holder/ability/tinkerer/deploy_retract/Perform(target, mob/user)
+	..()  // Call parent to handle cooldown
+	if(!linked_tinkerer && istype(user, /mob/living/simple_animal/hostile/clan/tinkerer))
+		linked_tinkerer = user
+	if(!linked_tinkerer)
+		return
+
+	if(linked_tinkerer.retracted_state)
+		linked_tinkerer.Deploy()
+	else
+		linked_tinkerer.Retract()
+
+// Simplified retract proc
+/mob/living/simple_animal/hostile/clan/tinkerer/proc/Retract()
+	if(retracted_state)
+		return
+
+	retracted_state = TRUE
+	visible_message(span_warning("[src] retracts into the ceiling!"))
+
+	// Animation phase
+	icon_state = "tinker_u"
+	density = FALSE
+
+	// Wait for animation
+	addtimer(CALLBACK(src, PROC_REF(CompleteRetraction)), retract_animation_time)
+
+/mob/living/simple_animal/hostile/clan/tinkerer/proc/CompleteRetraction()
+	if(!retracted_state)  // Safety check
+		return
+
+	// Make invulnerable and incorporeal
+	ChangeResistances(list(BRUTE = 0, RED_DAMAGE = 0, WHITE_DAMAGE = 0, BLACK_DAMAGE = 0, PALE_DAMAGE = 0))
+	icon_state = "none"
+	is_flying_animal = TRUE
+	incorporeal_move = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+// Simplified deploy proc
+/mob/living/simple_animal/hostile/clan/tinkerer/proc/Deploy()
+	if(!retracted_state)
+		return
+
+	retracted_state = FALSE
+	visible_message(span_warning("[src] drops down from the ceiling!"))
+
+	// Restore vulnerabilities immediately
+	ChangeResistances(list(BRUTE = 1, RED_DAMAGE = 0.2, WHITE_DAMAGE = 0.2, BLACK_DAMAGE = 0.4, PALE_DAMAGE = 0.2))
+
+	// Animation phase
+	icon_state = "tinker_d"
+	is_flying_animal = FALSE
+	density = TRUE
+	incorporeal_move = FALSE
+	mouse_opacity = initial(mouse_opacity)
+
+	// Wait for animation
+	addtimer(CALLBACK(src, PROC_REF(CompleteDeployment)), retract_animation_time)
+
+/mob/living/simple_animal/hostile/clan/tinkerer/proc/CompleteDeployment()
+	if(retracted_state)  // Safety check
+		return
+
+	icon_state = "tinker"
+
+// Override movement when retracted
+/mob/living/simple_animal/hostile/clan/tinkerer/Move()
+	if(retracted_state)
+		return incorporeal_move
+	return ..()
 
 /mob/living/simple_animal/hostile/clan/tinkerer/Initialize()
 	. = ..()
 	// Create initial factory
 	addtimer(CALLBACK(src, PROC_REF(CreateInitialFactory)), 2 SECONDS)
 	// Add abilities
+	AddAbility(new /obj/effect/proc_holder/ability/tinkerer/deploy_retract(null, src))
 	AddAbility(new /obj/effect/proc_holder/ability/tinkerer/produce_scout(null, src))
 	AddAbility(new /obj/effect/proc_holder/ability/tinkerer/produce_engineer(null, src))
 	AddAbility(new /obj/effect/proc_holder/ability/tinkerer/produce_assassin(null, src))
@@ -106,7 +188,7 @@
 
 	// Clean up dead units
 	CleanupDeadUnits()
-	
+
 	// Update max charge based on factories
 	UpdateMaxCharge()
 
@@ -184,18 +266,18 @@
 /mob/living/simple_animal/hostile/clan/tinkerer/proc/BoxSelectUnits(turf/start_point, turf/end_point)
 	if(!start_point || !end_point)
 		return
-	
+
 	// Get bounds of selection box
 	var/min_x = min(start_point.x, end_point.x)
 	var/max_x = max(start_point.x, end_point.x)
 	var/min_y = min(start_point.y, end_point.y)
 	var/max_y = max(start_point.y, end_point.y)
-	
+
 	// Clear current selection
 	for(var/mob/living/simple_animal/hostile/clan/unit in selected_units)
 		unit.RemoveSelectedVisual()
 	selected_units.Cut()
-	
+
 	// Find all units in box
 	var/list/units_in_box = list()
 	for(var/mob/living/simple_animal/hostile/clan/unit in controlled_units)
@@ -206,7 +288,7 @@
 			continue
 		if(unit_turf.x >= min_x && unit_turf.x <= max_x && unit_turf.y >= min_y && unit_turf.y <= max_y)
 			units_in_box += unit
-	
+
 	// Select up to max_selected_units
 	var/selected_count = 0
 	for(var/mob/living/simple_animal/hostile/clan/unit in units_in_box)
@@ -215,7 +297,7 @@
 		selected_units += unit
 		unit.AddSelectedVisual()
 		selected_count++
-	
+
 	if(selected_count)
 		visible_message(span_notice("[src] selects [selected_count] unit\s!"))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
@@ -238,7 +320,7 @@
 /mob/living/simple_animal/hostile/clan/tinkerer/proc/IssueAttackOrder(atom/target)
 	if(viewing_mode || !length(selected_units) || !target)
 		return
-	
+
 	var/cost = hard_lock_mode ? order_attack_cost * 2 : order_attack_cost
 	if(charge < cost)
 		to_chat(src, span_warning("Not enough charge! Need [cost] charge."))
@@ -292,21 +374,21 @@
 /mob/living/simple_animal/hostile/clan/tinkerer/proc/BuildBarricadeLine(turf/start_point, turf/end_point)
 	if(!start_point || !end_point)
 		return
-	
+
 	// Check line of sight
 	if(!CheckLineOfSight(start_point, end_point))
 		to_chat(src, span_warning("No line of sight between points!"))
 		return
-	
+
 	// Get all turfs in line
 	var/list/line_turfs = getline(start_point, end_point)
 	var/list/valid_turfs = list()
-	
+
 	// Check each turf for validity
 	for(var/turf/T in line_turfs)
 		if(T.density)
 			continue
-		
+
 		// Check for adjacent barricades
 		var/adjacent_barricade = FALSE
 		for(var/turf/adjacent in get_adjacent_open_turfs(T))
@@ -316,33 +398,33 @@
 			if(locate(/obj/structure/barricade/clan/blueprint) in adjacent)
 				adjacent_barricade = TRUE
 				break
-		
+
 		if(adjacent_barricade)
 			continue
-			
+
 		// Check if already has barricade
 		if(locate(/obj/structure/barricade/clan) in T)
 			continue
 		if(locate(/obj/structure/barricade/clan/blueprint) in T)
 			continue
-			
+
 		valid_turfs += T
-	
+
 	// Check charge
 	var/total_cost = length(valid_turfs) * barricade_cost
 	if(charge < total_cost)
 		to_chat(src, span_warning("Not enough charge! Need [total_cost] charge for [length(valid_turfs)] barricades."))
 		return
-	
+
 	if(!length(valid_turfs))
 		to_chat(src, span_warning("No valid positions for barricades!"))
 		return
-	
+
 	// Build blueprints
 	charge -= total_cost
 	for(var/turf/T in valid_turfs)
 		new /obj/structure/barricade/clan/blueprint(T)
-	
+
 	visible_message(span_notice("[src] deploys barricade blueprints!"))
 	playsound(src, 'sound/effects/phasein.ogg', 50, TRUE)
 
@@ -357,7 +439,7 @@
 	if(charge < factory_blueprint_cost)
 		to_chat(src, span_warning("Not enough charge! Need [factory_blueprint_cost] charge."))
 		return FALSE
-	
+
 	// Check for adjacent construction points
 	var/list/valid_construction_points = list()
 	for(var/turf/T in get_adjacent_open_turfs(src))
@@ -367,11 +449,11 @@
 				if(locate(/obj/structure/clan_factory/blueprint) in T)
 					continue
 				valid_construction_points[T] = O
-	
+
 	if(!length(valid_construction_points))
 		to_chat(src, span_warning("No valid construction points found adjacent to you!"))
 		return FALSE
-	
+
 	// If multiple valid points, use the first one
 	var/turf/chosen_turf
 	var/obj/construction_obj
@@ -379,7 +461,7 @@
 		chosen_turf = T
 		construction_obj = valid_construction_points[T]
 		break
-	
+
 	// Deduct charge and create blueprint
 	charge -= factory_blueprint_cost
 	new /obj/structure/clan_factory/blueprint(chosen_turf)
@@ -391,21 +473,21 @@
 	// Find nearest factory with capacity
 	var/obj/structure/clan_factory/best_factory = null
 	var/min_distance = INFINITY
-	
+
 	to_chat(src, span_notice("Attempting to produce [unit_type]..."))
 	to_chat(src, span_notice("Owned factories: [length(owned_factories)]"))
-	
+
 	for(var/obj/structure/clan_factory/F in owned_factories)
 		if(F.CanProduce(unit_type))
 			var/dist = get_dist(src, F)
 			if(dist < min_distance)
 				min_distance = dist
 				best_factory = F
-	
+
 	if(!best_factory)
 		to_chat(src, span_warning("No available factory with sufficient capacity!"))
 		return FALSE
-	
+
 	to_chat(src, span_notice("Factory found, starting production..."))
 	best_factory.ProduceUnit(unit_type)
 	return TRUE
@@ -473,7 +555,7 @@
 	if(!owner || owner.stat == DEAD)
 		Destroy()
 		return
-	
+
 	// Clean up dead units
 	for(var/mob/living/simple_animal/hostile/clan/unit in produced_units)
 		if(unit.stat == DEAD || QDELETED(unit))
@@ -516,7 +598,7 @@
 	producing = TRUE
 	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 	visible_message(span_notice("[src] begins production..."))
-	
+
 	// Add visual effect during production
 	add_overlay(mutable_appearance('icons/effects/effects.dmi', "shield-old", layer + 0.1))
 	color = "#00FF00"
@@ -526,7 +608,7 @@
 
 /obj/structure/clan_factory/proc/FinishProduction(unit_type)
 	producing = FALSE
-	
+
 	// Remove visual effects
 	cut_overlays()
 	color = initial(color)
@@ -620,7 +702,7 @@
 
 /mob/living/simple_animal/hostile/clan/proc/ReceiveAttackOrder(atom/target, is_hard_lock = FALSE)
 	order_target = target
-	
+
 	// Handle hard lock
 	if(is_hard_lock)
 		hard_lock = TRUE
@@ -631,7 +713,7 @@
 	else
 		hard_lock = FALSE
 		hard_lock_target = null
-	
+
 	// Handle same-faction targets
 	if(isliving(target))
 		var/mob/living/L = target
@@ -640,7 +722,7 @@
 			attack_same = TRUE
 		else
 			faction_attack_target = null
-	
+
 	// If targeting an object, enable object searching and add to wanted_objects
 	if(isobj(target))
 		search_objects = 3 // Enable object searching
@@ -648,7 +730,7 @@
 			wanted_objects = list()
 		wanted_objects += target.type
 		addtimer(CALLBACK(src, PROC_REF(RemoveWantedObject), target.type), 30 SECONDS)
-	
+
 	GiveTarget(target)
 
 /mob/living/simple_animal/hostile/clan/proc/ReceiveOverclockOrder()
@@ -745,7 +827,7 @@
 							break
 					if(!blocked)
 						possible_dirs += direction
-			
+
 			if(possible_dirs.len)
 				var/new_dir = pick(possible_dirs)
 				return Move(get_step(src, new_dir), new_dir)
@@ -934,11 +1016,11 @@
 	..()  // Call parent but don't check return value
 	if(!linked_tinkerer)
 		return TRUE
-	
+
 	var/turf/T = get_turf(target)
 	if(!T)
 		return TRUE
-	
+
 	// Check if clicking on a unit directly
 	if(isliving(target))
 		var/mob/living/simple_animal/hostile/clan/unit = target
@@ -946,7 +1028,7 @@
 			linked_tinkerer.SelectUnit(unit)
 			// Keep ability active
 			return FALSE
-	
+
 	// Box selection logic
 	if(!linked_tinkerer.selection_start_point)
 		// First click - set start point
@@ -1137,11 +1219,11 @@
 	..()  // Call parent but don't check return value
 	if(!linked_tinkerer)
 		return TRUE
-	
+
 	var/turf/T = get_turf(target)
 	if(!T)
 		return TRUE
-	
+
 	if(!linked_tinkerer.barricade_start_point)
 		// First click - set start point
 		linked_tinkerer.barricade_start_point = T
@@ -1268,7 +1350,7 @@
 	if(istype(attacked_target, /obj/structure/resource_point) && can_build_factory && commander)
 		StartFactoryConstruction(attacked_target)
 		return
-	
+
 	// Check if targeting a construction point object
 	if(can_build_factory && commander && isobj(attacked_target))
 		var/obj/O = attacked_target
@@ -1278,12 +1360,12 @@
 			if(T.IsConstructionPoint(O))
 				StartFactoryConstructionOnObject(O)
 				return
-	
+
 	// Check if targeting a barricade blueprint
 	if(istype(attacked_target, /obj/structure/barricade/clan/blueprint) && !building)
 		BuildBarricade(attacked_target)
 		return
-	
+
 	// Check if targeting a factory blueprint
 	if(istype(attacked_target, /obj/structure/clan_factory/blueprint) && !building && commander)
 		BuildFactoryFromBlueprint(attacked_target)
@@ -1354,11 +1436,11 @@
 /mob/living/simple_animal/hostile/clan/engineer/proc/BuildBarricade(obj/structure/barricade/clan/blueprint/B)
 	if(!B || building || B.loc == null)
 		return
-	
+
 	building = TRUE
 	visible_message(span_notice("[src] begins constructing a barricade..."))
 	playsound(src, 'sound/items/welder.ogg', 50, TRUE)
-	
+
 	if(do_after(src, barricade_build_time, target = B))
 		if(!QDELETED(B) && B.loc)
 			new /obj/structure/barricade/clan(B.loc)
@@ -1367,24 +1449,24 @@
 			playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 	else
 		visible_message(span_warning("[src] fails to complete the barricade construction."))
-	
+
 	building = FALSE
 
 // Factory construction from blueprint
 /mob/living/simple_animal/hostile/clan/engineer/proc/BuildFactoryFromBlueprint(obj/structure/clan_factory/blueprint/B)
 	if(!B || building || B.loc == null || !commander)
 		return
-	
+
 	// Check if this engineer can build factories
 	if(!can_build_factory)
 		visible_message(span_warning("[src] has already built a factory and cannot build another!"))
 		return
-	
+
 	building = TRUE
 	can_build_factory = FALSE
 	visible_message(span_notice("[src] begins constructing a factory from the blueprint..."))
 	playsound(src, 'sound/items/welder2.ogg', 50, TRUE)
-	
+
 	if(do_after(src, B.build_time, target = B))
 		if(!QDELETED(B) && B.loc)
 			var/obj/structure/clan_factory/F = new(B.loc)
@@ -1398,7 +1480,7 @@
 	else
 		visible_message(span_warning("[src] fails to complete the factory construction."))
 		can_build_factory = TRUE
-	
+
 	building = FALSE
 
 // Override to handle attack orders on construction points
@@ -1417,7 +1499,7 @@
 				addtimer(CALLBACK(src, PROC_REF(RemoveWantedObject), O.type), 30 SECONDS)
 				// Enable object searching
 				search_objects = 3
-	
+
 	// Call parent to handle the rest
 	return ..()
 

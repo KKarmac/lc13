@@ -102,6 +102,15 @@
 			GLOB.marked_players += P.firer
 			say(attacked_line)
 
+/mob/living/simple_animal/hostile/clan/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
+	// Check for shield link status effect
+	var/datum/status_effect/shield_link/shield = has_status_effect(/datum/status_effect/shield_link)
+	if(shield && shield.redirect_damage(P))
+		return BULLET_ACT_BLOCK
+
+	// Normal bullet behavior
+	return ..()
+
 /mob/living/simple_animal/hostile/clan/attackby(obj/item/O, mob/user, params)
 	. = ..()
 	if (can_protect)
