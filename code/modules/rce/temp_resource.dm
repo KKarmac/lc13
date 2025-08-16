@@ -8,6 +8,7 @@
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
 	var/obj/item = /obj/item/factoryitem/green	//What item you spawn
+	var/production_time = 60
 	var/amount_left = 30	//How many you spawn
 
 /obj/structure/limitedresourcepoint/attackby(obj/item/I, mob/living/user, params)
@@ -16,7 +17,8 @@
 		return
 	if(!do_after(user, 7 SECONDS, src))
 		return
-	addtimer(CALLBACK(src, PROC_REF(spit_item)), 60)
+	to_chat(user, "<span class='notice'>You activate the resource point.</span>")
+	addtimer(CALLBACK(src, PROC_REF(spit_item)), production_time)
 
 /obj/structure/limitedresourcepoint/proc/spit_item()
 	new item(src.loc)
@@ -25,7 +27,7 @@
 		qdel(src)
 		new /obj/item/factoryitem/upgrade(src.loc)
 	else
-		addtimer(CALLBACK(src, PROC_REF(spit_item)), 60)
+		addtimer(CALLBACK(src, PROC_REF(spit_item)), production_time)
 
 /obj/structure/limitedresourcepoint/red
 	name = "limited red resource point"
