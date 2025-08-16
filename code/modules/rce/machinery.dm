@@ -381,7 +381,7 @@
 /obj/machinery/factory_machine/cross
 	name = "conveyor cross section"
 	desc = "A structure used to ensure material entering from the north arrives in the south,\
-		 east arrives in the west, and vice versa."
+		east arrives in the west, and vice versa."
 	icon_state = "crosssection"
 	dropped_item = /obj/item/structureconstruction/cross
 	var/list/directional_storage = list()
