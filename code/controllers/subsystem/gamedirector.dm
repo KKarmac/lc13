@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(gamedirector)
 	var/list/obj/effect/landmark/rce_arena_teleport = list()
 	var/list/obj/effect/landmark/rce_postfight_teleport = list()
 	var/list/obj/effect/landmark/heartfight_pylon = list()
+	var/list/mob/living/simple_animal/hostile/controlled_mobs = list()
 	var/list/targets_by_id = list()
 	var/datum/component/monwave_spawner/wave_announcer
 	var/list/datum/component/monwave_spawner/spawners = list()
@@ -81,6 +82,8 @@ SUBSYSTEM_DEF(gamedirector)
 		spawner.assault_pace = 2
 		spawner.SwitchTarget(pick(rce_fob))
 		spawner.StartAssault(pick(rce_fob))
+	for(var/mob/living/simple_animal/hostile/M in controlled_mobs)
+		walk_to(M, pick(rce_fob), 5, 50, M.move_to_delay)
 
 /datum/controller/subsystem/gamedirector/proc/RegisterTarget(obj/effect/landmark/rce_target/target, type, id = NONE)
 	rce_targets.Add(target)
@@ -118,6 +121,9 @@ SUBSYSTEM_DEF(gamedirector)
 
 /datum/controller/subsystem/gamedirector/proc/RegisterHeart(mob/heart)
 	heart = heart
+
+/datum/controller/subsystem/gamedirector/proc/RegisterMob(mob/living/simple_animal/hostile/M)
+	controlled_mobs.Add(M)
 
 /datum/controller/subsystem/gamedirector/proc/AnnounceVictory()
 	var/text = "The X-Corp Heart has been destroyed! Victory achieved."
@@ -166,3 +172,8 @@ SUBSYSTEM_DEF(gamedirector)
 
 /datum/controller/subsystem/gamedirector/proc/CombatantSlain(mob/living/combatant)
 	SIGNAL_HANDLER
+
+/datum/controller/subsystem/gamedirector/proc/MinionSlain(mob/living/M)
+	SIGNAL_HANDLER
+
+	qdel(M)

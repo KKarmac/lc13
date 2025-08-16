@@ -107,6 +107,9 @@
 	current_existing_mobs += 1
 	spawned_mob.faction = faction.Copy()
 	RegisterSignal(spawned_mob, COMSIG_LIVING_DEATH, PROC_REF(MinionSlain))
+	if(delete_on_death)
+		RegisterSignal(spawned_mob, COMSIG_LIVING_DEATH, TYPE_PROC_REF(/datum/controller/subsystem/gamedirector, MinionSlain))
+	SSgamedirector.RegisterMob(spawned_mob)
 	return spawned_mob
 
 /datum/component/monwave_spawner/proc/MinionSlain(mob/living/M)
@@ -115,9 +118,6 @@
 	last_wave -= M
 	current_wave -= M
 	current_existing_mobs -= 1
-
-	if(delete_on_death)
-		qdel(M)
 
 //Leader Modularization if you want to make only certain mobs leaders.
 /datum/component/monwave_spawner/proc/LeaderQualifications(mob/living/simple_animal/hostile/recruit)
