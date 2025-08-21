@@ -16,18 +16,18 @@
 	cut_overlays()
 	add_overlay(icon('icons/obj/conveyor_filters.dmi', "filter_[filter_output_dir]"))
 	add_overlay(icon('icons/obj/conveyor_filters.dmi', "unfiltered_[unfiltered_output_dir]"))
-	// if(filter_typepath) // todo:get this back in bc it was neat
-	// 	var/image/I = image(icon(filter_icon_path, filter_icon_state))
-	// 	I.transform *= 0.5
-	// 	add_overlay(I)
+	if(selected_filter)
+		var/image/I = image(icon(selected_filter.get_icon_path(), selected_filter.get_icon_state()))
+		I.transform *= 0.5
+		add_overlay(I)
 
 
 /obj/machinery/conveyor/filter/proc/update_desc()
 	desc = "A filter that checks for specific objects and redirects them in another direction.\nMatches get sent [dir2text(filter_output_dir)], everything else goes [dir2text(unfiltered_output_dir)].\nA screwdriver changes the output direction of filtered items, while a wrench changes the output direction of everything else."
 	if(!selected_filter)
-		desc += "\nIt currently has no set filter! The first object to move onto it will be filtered."
+		desc += "\nIt currently has no set filter!"
 	else
-		desc += "\nIt is set to filter out [selected_filter.name]. The filter can be cleared with wirecutters."
+		desc += "\nIt is set to filter out [selected_filter.name]."
 
 /obj/machinery/conveyor/filter/proc/get_it_twisted(angle)
 	switch(angle)
@@ -105,31 +105,31 @@
 	dat += {"<div style="float:left; width:20%">
 			<b>Materials</b><br>"}
 	for(var/filter in subtypesof(/datum/filter_setting/material))
-		var/datum/filter_setting/fs = new filter()
+		var/datum/filter_setting/fs = filter
 		dat += "<A href='byond://?src=[REF(src)];set_filter=[fs.type]'>[fs.name]</A> <br>"
 	dat += {"</div>
 			<div style="float:left; width:20%">
 			<b>Low Tier Factories</b><br>"}
 	for(var/filter in subtypesof(/datum/filter_setting/low))
-		var/datum/filter_setting/fs = new filter()
+		var/datum/filter_setting/fs = filter
 		dat += "<A href='byond://?src=[REF(src)];set_filter=[fs.type]'>[fs.name]</A> <br>"
 	dat += {"</div>
 			<div style="float:left; width:20%">
 			<b>Medium Tier Factories</b><br>"}
 	for(var/filter in subtypesof(/datum/filter_setting/medium))
-		var/datum/filter_setting/fs = new filter()
+		var/datum/filter_setting/fs = filter
 		dat += "<A href='byond://?src=[REF(src)];set_filter=[fs.type]'>[fs.name]</A> <br>"
 	dat += {"</div>
 			<div style="float:left; width:20%">
 			<b>High Tier Factories</b><br>"}
 	for(var/filter in subtypesof(/datum/filter_setting/high))
-		var/datum/filter_setting/fs = new filter()
+		var/datum/filter_setting/fs = filter
 		dat += "<A href='byond://?src=[REF(src)];set_filter=[fs.type]'>[fs.name]</A> <br>"
 	dat += {"</div>
 			<div style="float:left; width:20%">
 			<b>Misc</b><br>"}
 	for(var/filter in subtypesof(/datum/filter_setting/misc))
-		var/datum/filter_setting/fs = new filter()
+		var/datum/filter_setting/fs = filter
 		dat += "<A href='byond://?src=[REF(src)];set_filter=[fs.type]'>[fs.name]</A> <br>"
 	dat += "</div>"
 	var/datum/browser/popup = new(user, "conveyor_filter_settings", "Filter Settings", 1200, 700)
@@ -147,6 +147,8 @@
 		var/newfilter = href_list["set_filter"]
 		if(newfilter)
 			selected_filter = new newfilter()
+	update_desc()
+	update_icon_state()
 	add_fingerprint(usr)
 	updateUsrDialog()
 

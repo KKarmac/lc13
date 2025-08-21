@@ -2,9 +2,16 @@
 /datum/filter_setting/
 	var/name = "default setting"
 	var/list/filter_typepath = list() // lets us set multi item filters if needs be, ie all grenades
-	// todo: icons for tgui
 	var/list/category = null
+	// might be neat to shift these to a factory setting datum
 
+/datum/filter_setting/proc/get_icon_path()
+	var/obj/o = pick(filter_typepath)
+	return o.icon
+
+/datum/filter_setting/proc/get_icon_state()
+	var/obj/o = pick(filter_typepath)
+	return o.icon_state
 
 /*
 ################### Materials
@@ -383,4 +390,5 @@
 	name = "People"
 	filter_typepath = list(/mob/living/carbon/human)
 
-GLOBAL_LIST_INIT(conveyor_filter_settings, subtypesof(/datum/filter_setting))
+/datum/filter_setting/misc/person/get_icon_state()
+	return "human_basic"
