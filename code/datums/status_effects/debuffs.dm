@@ -1337,7 +1337,7 @@
 /atom/movable/screen/alert/status_effect/lc_mental_decay
 	name = "Metal Decay"
 	desc = "Your mind is decaying!!"
-	icon = 'ModularTegustation/Teguicons/status_sprites.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/status_sprites.dmi'
 	icon_state = "lacerate"
 
 /datum/status_effect/stacking/lc_mental_decay/can_have_status()
