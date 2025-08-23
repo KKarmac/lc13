@@ -124,7 +124,7 @@
 			if(locate(/obj/effect/turf_fire) in T)
 				for(var/obj/effect/turf_fire/floor_fire in T)
 					qdel(floor_fire)
-			new obj/effect/turf_fire(T)
+			new /obj/effect/turf_fire(T)
 	if("pulse" in ideas_stolen)
 		if((pulse_cooldown < world.time) && !(status_flags & GODMODE))
 			WhitePulse()
