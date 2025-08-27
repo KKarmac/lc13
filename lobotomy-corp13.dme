@@ -2192,6 +2192,7 @@
 #include "code\modules\events\sephirah_helpful_roll.dm"
 #include "code\modules\events\sephirah_yellow_roll.dm"
 #include "code\modules\events\wisdom_cow.dm"
+#include "code\modules\events\abno_events\docile.dm"
 #include "code\modules\events\holiday\halloween.dm"
 #include "code\modules\events\holiday\vday.dm"
 #include "code\modules\events\holiday\xmas.dm"
