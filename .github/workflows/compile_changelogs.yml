@@ -12,7 +12,7 @@ jobs:
     if: github.repository == 'Lobotomy-Corporation-13/lc13' # Do not run on forks
     steps:
       - name: "Setup python"
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: "Install deps"
@@ -21,7 +21,7 @@ jobs:
           python -m pip install pyyaml
           sudo apt-get install  dos2unix
       - name: "Checkout"
-        uses: actions/checkout@v1
+        uses: actions/checkout@v5
         with:
           fetch-depth: 25
       - name: "Compile"
@@ -35,8 +35,19 @@ jobs:
           git config user.name "Cupax3Bot"
           git config user.email "85813370+Cupax3Bot@users.noreply.github.com"
           git pull origin master
+          git add html/changelogs
           git commit -m "Automatic changelog compile [ci skip]" -a || true
+      - name: Generate App Token
+        id: app-token-generation
+        uses: actions/create-github-app-token@v2
+        if: env.APP_PRIVATE_KEY != '' && env.APP_ID != ''
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+        env:
+          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+          APP_ID: ${{ secrets.APP_ID }}
       - name: "Push"
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.BOT_TOKEN }}
+          github_token: ${{ steps.app-token-generation.outputs.token || secrets.BOT_TOKEN }}
