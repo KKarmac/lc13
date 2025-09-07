@@ -65,7 +65,7 @@
 /datum/filter_setting/low/conveyor_belt
 	name = "Conveyor Belt"
 	filter_typepath = list(
-		/obj/item/stack/conveyor, 
+		/obj/item/stack/conveyor,
 		/obj/item/stack/conveyor/thirty
 		)
 
@@ -76,7 +76,7 @@
 /datum/filter_setting/low/sandbag
 	name = "Sandbags"
 	filter_typepath = list(
-		/obj/item/stack/sheet/mineral/sandbags/ten, 
+		/obj/item/stack/sheet/mineral/sandbags/ten,
 		/obj/item/stack/sheet/mineral/sandbags
 		)
 
@@ -316,22 +316,22 @@
 
 /datum/filter_setting/high/
 	category = "High tier"
-	
+
 
 /datum/filter_setting/high/thermal
 	name = "Thermals"
 	filter_typepath = list(/obj/item/clothing/glasses/thermal)
-	
+
 
 /datum/filter_setting/high/night
 	name = "NVG factory"
 	filter_typepath = list(/obj/item/clothing/glasses/night)
-	
+
 
 /datum/filter_setting/high/slowingtrapmk1
 	name = "Stun Trapper"
 	filter_typepath = list(/obj/item/powered_gadget/slowingtrapmk1)
-	
+
 
 /datum/filter_setting/high/all_high_rifles
 	name = "All High Tier Rifles"
@@ -344,7 +344,7 @@
 		/obj/item/gun/energy/e_gun/rabbit/minigun/tricolor,
 		/obj/item/minigunpack
 	)
-	
+
 
 /datum/filter_setting/high/shotgun_white
 	name = "R-Corporation R-2330 'Fatty'"
@@ -369,7 +369,7 @@
 /datum/filter_setting/high/minigun_tricolor
 	name = "R-Corporation R-3500 Minigun"
 	filter_typepath = list(/obj/item/gun/energy/e_gun/rabbit/minigun/tricolor)
-	
+
 /datum/filter_setting/high/minigunpack
 	name = "X-18 Heavy Minigun"
 	filter_typepath = list(/obj/item/minigunpack)
