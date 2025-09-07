@@ -7,7 +7,7 @@
 /mob/living/simple_animal/hostile/clan/tinkerer
 	name = "Tinkerer"
 	desc = "A mechanical engineer with multiple manipulator arms... It appears to have 'Resurgence Clan' etched on their back..."
-	icon = 'ModularTegustation/Teguicons/resurgence_64x96.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_64x96.dmi'
 	icon_state = "tinker"
 	icon_living = "tinker"
 	icon_dead = "tinker_d"
@@ -515,7 +515,7 @@
 /obj/structure/clan_factory
 	name = "Resurgence Clan Factory"
 	desc = "A compact automated production facility."
-	icon = 'ModularTegustation/Teguicons/64x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/64x48.dmi'
 	icon_state = "green_dusk_1"
 	density = TRUE
 	anchored = TRUE
@@ -880,7 +880,7 @@
 /obj/effect/proc_holder/ability/tinkerer
 	name = "Tinkerer Ability"
 	desc = "You shouldn't see this"
-	action_icon = 'ModularTegustation/Teguicons/resurgence_actions.dmi'
+	action_icon = 'ModularLobotomy/_Lobotomyicons/resurgence_actions.dmi'
 	action_icon_state = "summoner2"
 	cooldown_time = 2 SECONDS
 	var/mob/living/simple_animal/hostile/clan/tinkerer/linked_tinkerer
@@ -983,7 +983,7 @@
 /obj/effect/proc_holder/spell/aimed/tinkerer_select_unit
 	name = "Select/Deselect Unit"
 	desc = "Click a unit to select/deselect it, or click two points to box select units."
-	action_icon = 'ModularTegustation/Teguicons/resurgence_actions.dmi'
+	action_icon = 'ModularLobotomy/_Lobotomyicons/resurgence_actions.dmi'
 	action_icon_state = "select_units"
 	base_icon_state = "select_units"
 	active_icon_state = "select_units_on"
@@ -1047,7 +1047,7 @@
 /obj/effect/proc_holder/spell/aimed/tinkerer_move_order
 	name = "Movement Order"
 	desc = "Order selected units to move to a location. Costs 2 charge."
-	action_icon = 'ModularTegustation/Teguicons/resurgence_actions.dmi'
+	action_icon = 'ModularLobotomy/_Lobotomyicons/resurgence_actions.dmi'
 	action_icon_state = "move_order"
 	base_icon_state = "move_order"
 	active_icon_state = "move_order_on"
@@ -1094,7 +1094,7 @@
 /obj/effect/proc_holder/spell/aimed/tinkerer_attack_order
 	name = "Attack Order"
 	desc = "Order selected units to attack a target. Costs 3 charge."
-	action_icon = 'ModularTegustation/Teguicons/resurgence_actions.dmi'
+	action_icon = 'ModularLobotomy/_Lobotomyicons/resurgence_actions.dmi'
 	action_icon_state = "attack_order"
 	base_icon_state = "attack_order"
 	active_icon_state = "attack_order_on"
@@ -1186,7 +1186,7 @@
 /obj/effect/proc_holder/spell/aimed/tinkerer_build_barricade
 	name = "Build Barricade Line"
 	desc = "Click two points to build a barricade line. Costs 3 charge per barricade."
-	action_icon = 'ModularTegustation/Teguicons/resurgence_actions.dmi'
+	action_icon = 'ModularLobotomy/_Lobotomyicons/resurgence_actions.dmi'
 	action_icon_state = "build_barricade"
 	base_icon_state = "build_barricade"
 	active_icon_state = "build_barricade"
@@ -1305,7 +1305,7 @@
 /mob/living/simple_animal/hostile/clan/engineer
 	name = "Clan Engineer"
 	desc = "A construction-specialized machine with building tools... It appears to have 'Resurgence Clan' etched on their back..."
-	icon = 'ModularTegustation/Teguicons/resurgence_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_32x48.dmi'
 	icon_state = "clan_citzen_1"
 	icon_living = "clan_citzen_1"
 	icon_dead = "clan_citzen_dead"

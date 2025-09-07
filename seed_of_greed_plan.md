@@ -9,7 +9,7 @@ The "Seed of Greed" is a deployable structure that automatically constructs a de
 /obj/structure/seed_of_greed
 	name = "Seed of Greed"
 	desc = "A pulsating mass of flesh and metal that rapidly constructs an outpost."
-	icon = 'ModularTegustation/Teguicons/resurgence_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_48x48.dmi'
 	icon_state = "seed_greed"
 	density = TRUE
 	anchored = TRUE

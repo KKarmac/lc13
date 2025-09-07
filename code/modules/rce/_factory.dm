@@ -4,7 +4,7 @@
 /obj/structure/rcorp_factory
 	name = "low level factory"
 	desc = "A machine used to craft items."
-	icon = 'ModularTegustation/Teguicons/factory.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/factory.dmi'
 	icon_state = "rcorp_factory"
 	icon_state = "lowfactory"
 	anchored = TRUE

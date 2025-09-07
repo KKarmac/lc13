@@ -2,7 +2,7 @@
 /obj/structure/limitedresourcepoint
 	name = "limited green resource point"
 	desc = "A machine that when used, spits out green resources."
-	icon = 'ModularTegustation/Teguicons/factory.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/factory.dmi'
 	icon_state = "resourcemini_green"
 	anchored = TRUE
 	density = FALSE

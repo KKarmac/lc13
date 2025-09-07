@@ -667,7 +667,7 @@
 /atom/movable/screen/alert/status_effect/harpooner_chained
 	name = "Harpooned"
 	desc = "You've been caught by a clan harpooner! You can't run away!"
-	icon = 'ModularTegustation/Teguicons/status_sprites.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/status_sprites.dmi'
 	icon_state = "locked"
 
 /datum/status_effect/harpooner_chained/on_apply()

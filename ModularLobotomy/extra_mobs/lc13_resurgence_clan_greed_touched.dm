@@ -13,7 +13,7 @@
 /mob/living/simple_animal/hostile/clan/scout/greed
 	name = "greed touched scout"
 	desc = "Once a swift reconnaissance unit, now its legs have been replaced with grotesque flesh appendages that pulse with each movement. Veins of corruption spread across its sensors."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -32,7 +32,7 @@
 /mob/living/simple_animal/hostile/clan/defender/greed
 	name = "greed touched defender"
 	desc = "Its protective plating has been consumed by flesh growths. Bone-like protrusions form a grotesque shield, while its joints leak a viscous fluid."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_48x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.7, RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.2, BLACK_DAMAGE = 0.7, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -53,7 +53,7 @@
 /mob/living/simple_animal/hostile/clan/drone/greed
 	name = "greed touched drone"
 	desc = "The healing systems have been corrupted, now pulsing with unholy energy. Flesh tendrils extend from its frame, writhing as it seeks to 'heal' others with its corruption."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.9, RED_DAMAGE = 1.0, WHITE_DAMAGE = 1.0, BLACK_DAMAGE = 0.9, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -72,7 +72,7 @@
 /mob/living/simple_animal/hostile/clan/demolisher/greed
 	name = "greed touched demolisher"
 	desc = "A siege unit consumed by greed. Flesh has fused with its demolition equipment, creating organic battering rams. Each strike leaves behind traces of corruption."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_48x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.7, RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -95,7 +95,7 @@
 /mob/living/simple_animal/hostile/clan/assassin/greed
 	name = "greed touched assassin"
 	desc = "Stealth systems corrupted by flesh make it even more terrifying. Tendrils of meat allow it to move in impossible ways, while its blade drips with viscous corruption."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.2, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -125,7 +125,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/sniper/greed
 	name = "greed touched sniper"
 	desc = "Its precision optics have been replaced by a grotesque eye of flesh. The weapon barrel is wrapped in pulsating meat that guides each shot with unnatural accuracy."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -144,7 +144,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/gunner/greed
 	name = "greed touched gunner"
 	desc = "Multiple flesh growths have sprouted additional weapon barrels. Each fires independently, creating a horrifying barrage of corrupted projectiles."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -166,7 +166,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/rapid/greed
 	name = "greed touched rapid drone"
 	desc = "Flesh tendrils have merged with its weapon systems, creating a writhing mass of organic barrels that spray corrupted energy in all directions."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -212,7 +212,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/warper/greed
 	name = "greed touched warper"
 	desc = "Space-warping technology has been corrupted by flesh. Its teleportation circles now drip with viscous fluids, and those transported report feeling... changed."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -323,7 +323,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/harpooner/greed
 	name = "greed touched harpooner"
 	desc = "Its harpoon launcher has become a grotesque orifice. The chains are now organic tendrils that burrow into victims, dragging them to their doom."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_32x48.dmi'
 	faction = list("greed_clan", "hostile")
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	silk_results = list(/obj/item/stack/sheet/silk/azure_advanced = 1)
@@ -401,7 +401,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/corrupter/greed
 	name = "greed touched corrupter"
 	desc = "A horrifying fusion of corrupted flesh and dark technology. Reality itself seems to reject its presence."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_48x48.dmi'
 	icon_state = "demolisher_bomb"
 	icon_living = "demolisher_bomb"
 	faction = list("greed_clan", "hostile")
@@ -460,7 +460,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/corrupter
 	name = "resurgence corrupter"
 	desc = "A twisted amalgamation of corrupted technology and malevolent intent. It seems to phase in and out of reality."
-	icon = 'ModularTegustation/Teguicons/resurgence_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_48x48.dmi'
 	icon_state = "demolisher_bomb"
 	pixel_x = -8
 	base_pixel_x = -8
@@ -724,7 +724,7 @@
 /obj/structure/corrupter_meat
 	name = "corrupted flesh"
 	desc = "Pulsating corrupted meat that seems to hunger for life."
-	icon = 'ModularTegustation/Teguicons/32x32.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/32x32.dmi'
 	icon_state = "meatvine"
 	anchored = TRUE
 	density = FALSE

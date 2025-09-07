@@ -9,7 +9,7 @@
 /mob/living/simple_animal/hostile/clan/demolisher
 	name = "Demolisher"
 	desc = "A humanoid looking machine with two drills... It appears to have 'Resurgence Clan' etched on their back..."
-	icon = 'ModularTegustation/Teguicons/resurgence_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_48x48.dmi'
 	icon_state = "demolisher"
 	icon_living = "demolisher"
 	icon_dead = "demolisher_dead"
@@ -255,7 +255,7 @@
 // Deals exponential damage based on distance (up to 4000 damage at point blank)
 /obj/structure/demolisher_bomb
 	name = "Resurgence Clan Bomb"
-	icon = 'ModularTegustation/Teguicons/resurgence_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_48x48.dmi'
 	desc = "There is a sign that says, 'If you can read this, You are in range.'"
 	icon_state = "demolisher_bomb"
 	max_integrity = 500
@@ -339,7 +339,7 @@
 /mob/living/simple_animal/hostile/clan/assassin
 	name = "Assassin"
 	desc = "A sleek humanoid machine with blade-like appendages... It appears to have 'Resurgence Clan' etched on their back..."
-	icon = 'ModularTegustation/Teguicons/resurgence_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_32x48.dmi'
 	icon_state = "clan_assassin"
 	icon_living = "clan_assassin"
 	icon_dead = "clan_assassin_dead"

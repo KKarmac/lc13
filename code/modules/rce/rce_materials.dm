@@ -1,7 +1,7 @@
 /obj/item/factoryitem
 	name = "factory material"
 	desc = "A machine used to sell items to the greater city"
-	icon = 'ModularTegustation/Teguicons/factory.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/factory.dmi'
 	icon_state = "extract_pack"
 
 /obj/item/factoryitem/upgrade

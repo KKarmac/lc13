@@ -3,7 +3,7 @@
 \------------ -*/
 /obj/item/structureconstruction
 	name = "structure deployer"
-	icon = 'ModularTegustation/Teguicons/expedition_32x32.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/expedition_32x32.dmi'
 	icon_state = "constructor_default"
 	var/step_level = 1
 	var/structure_type

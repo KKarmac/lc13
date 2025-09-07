@@ -3,7 +3,7 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 /obj/structure/resourcepoint
 	name = "green resource point"
 	desc = "A machine that when hit with a wrench, spits out green resources."
-	icon = 'ModularTegustation/Teguicons/factory.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/factory.dmi'
 	icon_state = "resource_green"
 	anchored = TRUE
 	density = FALSE

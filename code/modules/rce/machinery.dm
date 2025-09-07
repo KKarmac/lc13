@@ -7,7 +7,7 @@
 #define FACTORY_INPUT_CONVEYOR 2
 /obj/machinery/factory_machine
 	name = "factory prototype"
-	icon = 'ModularTegustation/Teguicons/expedition_32x32.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/expedition_32x32.dmi'
 	density = TRUE
 	anchored = TRUE
 	use_power = NO_POWER_USE
@@ -153,7 +153,7 @@
 	name = "material silo"
 	desc = "A container used to hold above average amounts of material \
 		in a controlled enviorment."
-	icon = 'ModularTegustation/Teguicons/lc13_structures_32x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/lc13_structures_32x48.dmi'
 	icon_state = "silo"
 	storage_max = 80
 	storage_type = null

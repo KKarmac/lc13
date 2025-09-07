@@ -6,7 +6,7 @@
 /proc/show_bossblurb(client/C)
 	show_letterbox(C, 600)
 	show_blurb(C, 300, "WARNING - WARNING - WARNING - WARNING - WARNING - WARNING - WARNING", 5, 5, "#960000", "#ffffff", screen_location = "LEFT+0,BOTTOM+3", marquee = TRUE)
-	var/overlay = show_sprite(C, 300, 'ModularTegustation/Teguicons/rce96x96.dmi', "heart", screen_location = "LEFT+7,BOTTOM+6")
+	var/overlay = show_sprite(C, 300, 'ModularLobotomy/_Lobotomyicons/rce96x96.dmi', "heart", screen_location = "LEFT+7,BOTTOM+6")
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_blurb), C, overlay, 5), 300)
 
 /proc/showoffcoolstuff(client/C)

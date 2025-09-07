@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/megafauna/xcorp_heart
 	name = "Heart of Greed"
 	desc = "The nexus of unchecked desire."
-	icon = 'ModularTegustation/Teguicons/rce96x96.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/rce96x96.dmi'
 	icon_state = "heart"
 	//stop_automated_movement = 1
 	stop_automated_movement_when_pulled = 1

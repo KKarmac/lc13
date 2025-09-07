@@ -55,7 +55,7 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret
 	name = "X-Corp Turret"
 	desc = "An automated defense turret bearing X-Corp markings. It appears to be fused into the ground."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_48x48.dmi'
 	faction = list("greed_clan", "hostile")
 	icon_state = "greed_turret_v2"
 	icon_living = "greed_turret_v2"
@@ -480,7 +480,7 @@
 /mob/living/simple_animal/hostile/clan/shield_generator
 	name = "X-Corp Shield Generator"
 	desc = "A defensive structure that projects protective energy shields onto nearby units."
-	icon = 'ModularTegustation/Teguicons/resurgence_greed_48x48.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_greed_48x48.dmi'
 	icon_state = "greed_bullet_shield"
 	icon_living = "greed_bullet_shield"
 	icon_dead = "greed_bullet_shield"
