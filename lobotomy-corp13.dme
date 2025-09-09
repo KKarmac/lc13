@@ -140,6 +140,7 @@
 #include "code\__DEFINES\storage.dm"
 #include "code\__DEFINES\subsystems.dm"
 #include "code\__DEFINES\TeguDefines.dm"
+#include "code\__DEFINES\text.dm"
 #include "code\__DEFINES\tgs.config.dm"
 #include "code\__DEFINES\tgs.dm"
 #include "code\__DEFINES\tgui.dm"
@@ -1960,6 +1961,7 @@
 #include "code\modules\awaymissions\mission_code\undergroundoutpost45.dm"
 #include "code\modules\awaymissions\mission_code\wildwest.dm"
 #include "code\modules\badges\badges.dm"
+#include "code\modules\baloon_alert\baloon_alert.dm"
 #include "code\modules\buildmode\bm_mode.dm"
 #include "code\modules\buildmode\buildmode.dm"
 #include "code\modules\buildmode\buttons.dm"
@@ -4516,3 +4518,4 @@
 #include "ModularLobotomy\workshop\templates\fishing\fishingweapons.dm"
 #include "ModularLobotomy\zTegu_overwrite\tegu_overwrite_vars.dm"
 // END_INCLUDE
+
