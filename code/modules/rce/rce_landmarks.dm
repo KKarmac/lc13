@@ -48,6 +48,39 @@
 /obj/effect/landmark/rce_target/mid_level
 	landmark_type = RCE_TARGET_TYPE_MID_LEVEL
 
+/obj/effect/landmark/clan_raid_spot
+	name = "Clan Raid Spot"
+	var/id = ""	//ID to match with resourcewell
+
+/obj/effect/landmark/clan_raid_spot/Initialize()
+	. = ..()
+	SSresourcewell_raids.RegisterRaidSpot(src)
+
+// Specific clan raid spots for each resource well type
+/obj/effect/landmark/clan_raid_spot/green
+	name = "Clan Raid Spot (Green)"
+	id = "green"
+
+/obj/effect/landmark/clan_raid_spot/red
+	name = "Clan Raid Spot (Red)"
+	id = "red"
+
+/obj/effect/landmark/clan_raid_spot/blue
+	name = "Clan Raid Spot (Blue)"
+	id = "blue"
+
+/obj/effect/landmark/clan_raid_spot/purple
+	name = "Clan Raid Spot (Purple)"
+	id = "purple"
+
+/obj/effect/landmark/clan_raid_spot/orange
+	name = "Clan Raid Spot (Orange)"
+	id = "orange"
+
+/obj/effect/landmark/clan_raid_spot/silver
+	name = "Clan Raid Spot (Silver)"
+	id = "silver"
+
 /obj/effect/landmark/rce_target/high_level
 	landmark_type = RCE_TARGET_TYPE_HIGH_LEVEL
 

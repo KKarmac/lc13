@@ -55,6 +55,11 @@
 	},
 /turf/open/floor/pod,
 /area/rce/rcorp_base)
+"aW" = (
+/obj/structure/flora/rock/pile/icy,
+/obj/effect/landmark/clan_raid_spot/purple,
+/turf/open/floor/plating/asteroid/snow,
+/area/rce/xcorp/rce_3_0)
 "bd" = (
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_2_3)
@@ -89,6 +94,10 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/rce/xcorp/rce_3_0)
+"bw" = (
+/obj/effect/landmark/clan_raid_spot/silver,
+/turf/open/floor/plating/asteroid,
+/area/rce/xcorp/rce_3_1)
 "bz" = (
 /turf/closed/indestructible/fakeglass,
 /area/rce/xcorp/rce_2_2)
@@ -291,6 +300,10 @@
 "fX" = (
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_0_1)
+"fZ" = (
+/obj/effect/landmark/clan_raid_spot/purple,
+/turf/open/floor/plating/asteroid,
+/area/rce/xcorp/rce_3_0)
 "ge" = (
 /obj/structure/table/abductor,
 /obj/item/powered_gadget/handheld_taser,
@@ -422,6 +435,10 @@
 "if" = (
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_3_3)
+"ii" = (
+/obj/effect/landmark/clan_raid_spot/green,
+/turf/open/floor/grass,
+/area/rce/xcorp/rce_0_3)
 "im" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/delivery,
@@ -702,6 +719,10 @@
 /obj/effect/turf_decal/caution/white,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"mh" = (
+/obj/effect/landmark/clan_raid_spot/red,
+/turf/open/floor/plating/beach/sand,
+/area/rce/xcorp/rce_0_0)
 "mk" = (
 /turf/open/floor/plating/ashplanet/ash,
 /area/rce/xcorp/rce_2_1)
@@ -1005,6 +1026,10 @@
 "re" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/rce/rcorp_base)
+"rf" = (
+/obj/effect/landmark/clan_raid_spot/silver,
+/turf/open/floor/plating/asteroid/snow,
+/area/rce/xcorp/rce_3_1)
 "rj" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate,
@@ -1127,6 +1152,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"tf" = (
+/obj/effect/landmark/clan_raid_spot/purple,
+/turf/open/floor/plating/asteroid/snow,
+/area/rce/xcorp/rce_3_0)
 "tt" = (
 /obj/item/storage/lockbox/medal/officer,
 /obj/structure/table/abductor,
@@ -1373,6 +1402,10 @@
 "xH" = (
 /turf/closed/wall/rust,
 /area/rce/xcorp/rce_1_1)
+"xK" = (
+/obj/effect/landmark/clan_raid_spot/green,
+/turf/open/floor/plating/asteroid,
+/area/rce/xcorp/rce_0_3)
 "xL" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
@@ -1782,6 +1815,7 @@
 /obj/structure/den/rce{
 	id = "northleft"
 	},
+/obj/effect/landmark/clan_raid_spot/blue,
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_2_3)
 "Eh" = (
@@ -2496,6 +2530,11 @@
 	},
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_0_0)
+"PQ" = (
+/obj/structure/flora/rock/jungle,
+/obj/effect/landmark/clan_raid_spot/green,
+/turf/open/floor/grass,
+/area/rce/xcorp/rce_0_3)
 "PT" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "lcdr";
@@ -2595,6 +2634,10 @@
 /obj/structure/table/optable,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"Rq" = (
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/indestructible/necropolis/air,
+/area/rce/xcorp/rce_2_3)
 "Rt" = (
 /turf/closed/indestructible/necropolis,
 /area/rce/xcorp/rce_2_0)
@@ -3097,6 +3140,10 @@
 	},
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_3_2)
+"ZL" = (
+/obj/effect/landmark/clan_raid_spot/orange,
+/turf/open/floor/plating/ironsand,
+/area/rce/xcorp/rce_3_3)
 "ZU" = (
 /turf/closed/indestructible/r_wall,
 /area/rce/xcorp/rce_3_2)
@@ -28777,9 +28824,9 @@ Fj
 Fj
 Fj
 Xm
-Xm
-Xm
-Xm
+mh
+mh
+mh
 eb
 eb
 eb
@@ -29034,9 +29081,9 @@ Xm
 Xm
 Xm
 Xm
-Xm
-Xm
-Xm
+mh
+mh
+mh
 Xm
 Xm
 Zf
@@ -29291,9 +29338,9 @@ Xm
 Xm
 Xm
 Xm
-Xm
-Xm
-Xm
+mh
+mh
+mh
 Xm
 Fj
 Fj
@@ -33301,13 +33348,13 @@ ds
 ds
 ds
 ds
-Ys
-Ys
-Ys
-Ys
-Ys
-Ys
-oA
+ii
+ii
+ii
+ii
+ii
+ii
+PQ
 ds
 ds
 ds
@@ -33558,13 +33605,13 @@ ds
 ds
 ds
 ds
-Ys
-Ys
-KF
-Ys
-Ys
-Ys
-Ys
+ii
+ii
+xK
+ii
+ii
+ii
+ii
 ds
 ds
 ds
@@ -47427,8 +47474,8 @@ fd
 fd
 Ej
 Gh
-Gh
-Gh
+Rq
+Rq
 Gh
 gP
 gP
@@ -47684,8 +47731,8 @@ fd
 Ej
 Ej
 Gh
-Gh
-Gh
+Rq
+Rq
 Gh
 Gh
 gP
@@ -47942,7 +47989,7 @@ Ej
 Gh
 Gh
 Ed
-Gh
+Rq
 Gh
 gP
 gP
@@ -48198,8 +48245,8 @@ fd
 Ej
 Gh
 Gh
-Gh
-Gh
+Rq
+Rq
 Gh
 gP
 Gh
@@ -48455,8 +48502,8 @@ fd
 Ej
 Gh
 Gh
-Gh
-Gh
+Rq
+Rq
 Ej
 Ej
 fd
@@ -50869,11 +50916,11 @@ HH
 FR
 FR
 FR
-fp
-fp
-fp
-fp
-fp
+fZ
+fZ
+fZ
+fZ
+fZ
 HH
 HH
 NX
@@ -51126,11 +51173,11 @@ FR
 FR
 FR
 FR
-fp
-Dn
-bf
-fp
-fp
+fZ
+aW
+tf
+fZ
+fZ
 HH
 HH
 NX
@@ -52909,8 +52956,8 @@ kC
 kC
 kC
 cS
-cS
-cS
+bw
+bw
 cS
 cS
 fp
@@ -53166,8 +53213,8 @@ kC
 cS
 cS
 cS
-cS
-cS
+bw
+bw
 cS
 cS
 fp
@@ -53423,8 +53470,8 @@ cS
 cS
 cS
 cS
-cS
-cS
+bw
+bw
 cS
 cS
 fp
@@ -53612,7 +53659,7 @@ bI
 bI
 bI
 bI
-iJ
+ZL
 os
 os
 iJ
@@ -53680,8 +53727,8 @@ cS
 cS
 cS
 cS
-cS
-cS
+bw
+bw
 cS
 kC
 HH
@@ -53856,8 +53903,8 @@ iJ
 iJ
 os
 os
-iJ
-iJ
+ZL
+ZL
 os
 os
 os
@@ -53869,7 +53916,7 @@ iJ
 iJ
 bI
 bI
-iJ
+ZL
 os
 os
 iJ
@@ -54114,7 +54161,7 @@ iJ
 os
 os
 iJ
-iJ
+ZL
 os
 os
 os
@@ -54125,8 +54172,8 @@ iJ
 iJ
 iJ
 os
-iJ
-iJ
+ZL
+ZL
 os
 os
 iJ
@@ -54371,7 +54418,7 @@ iJ
 os
 os
 zI
-iJ
+ZL
 os
 os
 os
@@ -54627,8 +54674,8 @@ os
 os
 os
 os
-iJ
-iJ
+ZL
+ZL
 os
 os
 os
@@ -54966,8 +55013,8 @@ kC
 kC
 cS
 cS
-cS
-cS
+bw
+bw
 JM
 bf
 bf
@@ -55223,8 +55270,8 @@ cS
 cS
 cS
 cS
-cS
-cS
+bw
+bw
 JM
 bf
 bf
@@ -55480,8 +55527,8 @@ cS
 cS
 cS
 cS
-cS
-cS
+bw
+bw
 JM
 bf
 bf
@@ -55737,8 +55784,8 @@ cS
 cS
 cS
 cS
-cS
-JM
+bw
+rf
 JM
 bf
 bf
@@ -55994,8 +56041,8 @@ JM
 cS
 JM
 JM
-cS
-cS
+bw
+bw
 cS
 bf
 HH
@@ -56251,8 +56298,8 @@ cS
 cS
 JM
 cS
-cS
-cS
+bw
+bw
 kC
 HH
 HH

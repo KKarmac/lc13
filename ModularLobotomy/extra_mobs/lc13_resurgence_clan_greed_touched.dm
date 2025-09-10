@@ -405,8 +405,8 @@
 	icon_state = "demolisher_bomb"
 	icon_living = "demolisher_bomb"
 	faction = list("greed_clan", "hostile")
-	maxHealth = 2400 // More health
-	health = 2400
+	maxHealth = 4000 // More health
+	health = 4000
 	damage_coeff = list(BRUTE = 0.8, RED_DAMAGE = 0.9, WHITE_DAMAGE = 1.1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1.5)
 	melee_damage_lower = 30
 	melee_damage_upper = 40

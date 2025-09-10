@@ -16,7 +16,7 @@
 	density = FALSE
 	anchored = TRUE
 	layer = TABLE_LAYER
-	max_integrity = 400
+	max_integrity = 200
 	integrity_failure = 0.33
 	pass_flags_self = LETPASSTHROW
 	smoothing_flags = SMOOTH_BITMASK
@@ -174,15 +174,15 @@
 
 // Level 1 turret projectile
 /obj/projectile/clan_bullet/turret/level1
-	damage = 20 // 10 DPS with 2 second cooldown
+	damage = 10 // 5 DPS with 2 second cooldown
 
 // Level 2 turret projectile
 /obj/projectile/clan_bullet/turret/level2
-	damage = 40 // 20 DPS with 2 second cooldown
+	damage = 20 // 10 DPS with 2 second cooldown
 
 // Level 3 turret projectile
 /obj/projectile/clan_bullet/turret/level3
-	damage = 80 // 40 DPS with 2 second cooldown
+	damage = 40 // 20 DPS with 2 second cooldown
 
 //////////////
 // XCORP TURRET LEVEL VARIANTS

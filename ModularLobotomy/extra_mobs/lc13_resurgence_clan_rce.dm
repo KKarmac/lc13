@@ -356,7 +356,7 @@
 	vision_range = 12
 	aggro_vision_range = 12
 	move_to_delay = 2.5
-	charge = 0
+	charge = 8
 	max_charge = 10
 	clan_charge_cooldown = 3 SECONDS
 	teleport_away = TRUE

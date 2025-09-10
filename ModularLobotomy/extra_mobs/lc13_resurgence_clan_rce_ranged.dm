@@ -197,7 +197,7 @@
 	special_attack_cooldown = world.time + special_attack_cooldown_time
 
 	visible_message(span_danger("[src] overclocks its weapons!"))
-	playsound(src, 'sound/machines/buzz-two.ogg', 75, TRUE)
+	playsound(src, 'sound/weapons/marauder.ogg', 75, TRUE)
 
 	// Temporarily increase volley size and decrease cooldown
 	rapid = 5 // Fire 5 shots instead of 3
@@ -314,7 +314,7 @@
 
 	// Check if there are any ally mobs in range to teleport
 	var/found_allies = FALSE
-	for(var/mob/living/L in range(1, src))
+	for(var/mob/living/L in range(2, src))
 		if(L == src)
 			continue
 		if(faction_check_mob(L))
@@ -360,7 +360,7 @@
 
 	// Create area markers in 5x5 around us
 	var/turf/center = get_turf(src)
-	for(var/turf/T in range(2, center))
+	for(var/turf/T in range(4, center))
 		var/obj/effect/temp_visual/warper_area/W = new(T)
 		area_markers += W
 
@@ -377,7 +377,7 @@
 
 	// Get all mobs in 5x5 area
 	var/list/teleport_targets = list()
-	for(var/mob/living/L in range(2, center))
+	for(var/mob/living/L in range(4, center))
 		if(L == src) // Don't teleport self
 			continue
 		teleport_targets += L
@@ -396,13 +396,6 @@
 	CancelTeleport()
 
 /mob/living/simple_animal/hostile/clan/ranged/warper/proc/TeleportMob(mob/living/L, turf/destination)
-	// Check if the mob can move - test Move() to current location
-	var/turf/current_turf = get_turf(L)
-	if(current_turf && !L.Move(current_turf, get_dir(L, current_turf)))
-		// Can't teleport immobile mobs (like anchored buildings)
-		visible_message(span_notice("The teleportation fails on [L] - they cannot be moved!"))
-		return
-
 	// Fade out effect
 	new /obj/effect/temp_visual/dir_setting/cult/phase/out(get_turf(L), L)
 	animate(L, alpha = 0, time = 5, easing = EASE_OUT)

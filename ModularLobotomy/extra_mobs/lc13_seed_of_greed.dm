@@ -32,6 +32,7 @@
 	var/turret_type = null // Will use specific clan units instead
 	var/anchor_type = null // Will use specific clan units instead
 	var/special_type = null // Variant-specific
+	var/shield_generator_type = null // Shield generator to spawn
 
 /obj/structure/seed_of_greed/Initialize()
 	. = ..()
@@ -573,6 +574,105 @@
 	barricade_positions_outer = list()
 	// Call SetSpecialPositions to populate turret and anchor positions
 	SetSpecialPositions()
+
+//////////////
+// SHIELD GENERATOR SEEDS - Spawns shield generators
+//////////////
+
+/obj/structure/seed_of_greed/shield
+	name = "Seed of Greed (Shield)"
+	desc = "Constructs a fortified position with shield generator support."
+
+// Shield Level 1 - Basic shield generator
+/obj/structure/seed_of_greed/shield/level1
+	name = "Seed of Greed (Shield I)"
+	special_type = /mob/living/simple_animal/hostile/clan/shield_generator/level1
+	turret_type = /mob/living/simple_animal/hostile/clan/ranged/turret/level1
+	anchor_type = /mob/living/simple_animal/hostile/clan/chain_anchor/gunner
+
+/obj/structure/seed_of_greed/shield/level1/SetSpecialPositions()
+	// 1 shield generator in center
+	special_positions = list(
+		get_turf(src)
+	)
+
+	// 2 turrets for protection
+	turret_positions = list(
+		SafeGetTurf(2, 0),
+		SafeGetTurf(-2, 0)
+	)
+
+	// 2 gunner anchors
+	anchor_positions = list(
+		SafeGetTurf(0, 2),
+		SafeGetTurf(0, -2)
+	)
+
+	turret_positions -= null
+	anchor_positions -= null
+	special_positions -= null
+
+// Shield Level 2 - Enhanced shield generator
+/obj/structure/seed_of_greed/shield/level2
+	name = "Seed of Greed (Shield II)"
+	special_type = /mob/living/simple_animal/hostile/clan/shield_generator/level2
+	turret_type = /mob/living/simple_animal/hostile/clan/ranged/turret/level2
+	anchor_type = /mob/living/simple_animal/hostile/clan/chain_anchor/rapid
+
+/obj/structure/seed_of_greed/shield/level2/SetSpecialPositions()
+	// 1 shield generator in center
+	special_positions = list(
+		get_turf(src)
+	)
+
+	// 3 turrets for protection
+	turret_positions = list(
+		SafeGetTurf(2, 0),
+		SafeGetTurf(-2, 0),
+		SafeGetTurf(0, 2)
+	)
+
+	// 3 rapid anchors
+	anchor_positions = list(
+		SafeGetTurf(1, 1),
+		SafeGetTurf(-1, 1),
+		SafeGetTurf(0, -2)
+	)
+
+	turret_positions -= null
+	anchor_positions -= null
+	special_positions -= null
+
+// Shield Level 3 - Maximum shield coverage
+/obj/structure/seed_of_greed/shield/level3
+	name = "Seed of Greed (Shield III)"
+	special_type = /mob/living/simple_animal/hostile/clan/shield_generator/level3
+	turret_type = /mob/living/simple_animal/hostile/clan/ranged/turret/artillery/level2
+	anchor_type = /mob/living/simple_animal/hostile/clan/chain_anchor/sniper
+
+/obj/structure/seed_of_greed/shield/level3/SetSpecialPositions()
+	// 1 shield generator in center
+	special_positions = list(
+		get_turf(src)
+	)
+
+	// 4 artillery turrets for maximum defense
+	turret_positions = list(
+		SafeGetTurf(2, 2),
+		SafeGetTurf(-2, 2),
+		SafeGetTurf(2, -2),
+		SafeGetTurf(-2, -2)
+	)
+
+	// 2 sniper anchors
+	anchor_positions = list(
+		SafeGetTurf(3, 0),
+		SafeGetTurf(-3, 0)
+	)
+
+	turret_positions -= null
+	anchor_positions -= null
+	special_positions -= null
 
 // Assault Level 3 - Maximum artillery
 /obj/structure/seed_of_greed/assault/level3

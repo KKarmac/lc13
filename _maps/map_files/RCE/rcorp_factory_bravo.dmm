@@ -856,6 +856,14 @@
 "sv" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/boss)
+"sA" = (
+/obj/effect/landmark/clan_raid_spot/orange,
+/turf/open/floor/plasteel/checker,
+/area/rce/xcorp)
+"sD" = (
+/obj/effect/landmark/clan_raid_spot/silver,
+/turf/open/floor/plasteel/checker,
+/area/rce/xcorp)
 "sE" = (
 /turf/closed/indestructible/rock,
 /area/lavaland)
@@ -1195,6 +1203,10 @@
 /obj/structure/resourcepoint/red,
 /turf/open/floor/wood,
 /area/rce/xcorp)
+"Bu" = (
+/obj/effect/landmark/clan_raid_spot/red,
+/turf/open/floor/wood,
+/area/rce/xcorp)
 "Bz" = (
 /obj/structure/rcorp_factory/taser,
 /obj/machinery/conveyor/auto{
@@ -1311,11 +1323,20 @@
 /obj/machinery/sleeper/syndie,
 /turf/open/floor/stone,
 /area/rce/rcorp_base)
+"Ee" = (
+/obj/effect/landmark/clan_raid_spot/green,
+/turf/open/floor/wood,
+/area/rce/xcorp)
 "Eq" = (
 /obj/structure/rcorp_factory/melee,
 /obj/machinery/conveyor/auto,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"Ew" = (
+/obj/structure/limitedresourcepoint,
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/indestructible/necropolis/air,
+/area/rce/xcorp)
 "ER" = (
 /obj/effect/landmark/heartfight_pylon,
 /turf/open/indestructible/boss/air,
@@ -1944,6 +1965,10 @@
 /obj/machinery/conveyor/auto,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"TO" = (
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/indestructible/necropolis/air,
+/area/rce/xcorp)
 "UA" = (
 /obj/machinery/door/airlock/survival_pod{
 	dir = 4
@@ -2013,6 +2038,10 @@
 	},
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/rce/rcorp_base)
+"VD" = (
+/obj/effect/landmark/clan_raid_spot/purple,
+/turf/open/floor/stone,
+/area/rce/xcorp)
 "VI" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/bossentrance)
@@ -2077,6 +2106,10 @@
 /obj/effect/gibspawner/human,
 /turf/open/floor/plating/dirt,
 /area/rce/rcorp_base)
+"Ya" = (
+/obj/effect/landmark/clan_raid_spot/purple,
+/turf/open/floor/plating/dirt/dark,
+/area/rce/xcorp)
 "Yf" = (
 /obj/structure/table/wood,
 /obj/item/storage/backpack/satchel,
@@ -14748,12 +14781,12 @@ Yr
 fm
 tm
 tm
-tm
-tm
-tm
-GS
-tm
-tm
+TO
+TO
+TO
+Ew
+TO
+TO
 tm
 fm
 fm
@@ -15006,12 +15039,12 @@ Yr
 fm
 tm
 tm
-tm
-tm
-tm
-tm
-tm
-tm
+TO
+TO
+TO
+TO
+TO
+TO
 tm
 tm
 fm
@@ -15574,10 +15607,10 @@ nt
 PA
 PA
 Ar
-tt
-tt
-tt
-tt
+Bu
+Bu
+Bu
+Bu
 tt
 NO
 KD
@@ -15737,8 +15770,8 @@ Go
 Go
 Go
 nA
-Go
-Go
+sD
+sD
 Go
 Go
 eN
@@ -15995,8 +16028,8 @@ Go
 Go
 Go
 eN
-Go
-Go
+sD
+sD
 Go
 Go
 nA
@@ -16253,8 +16286,8 @@ Go
 Go
 Go
 eN
-Go
-Go
+sD
+sD
 Go
 Go
 nA
@@ -16511,8 +16544,8 @@ Go
 Go
 Go
 eN
-Go
-Go
+sD
+sD
 Go
 Go
 nA
@@ -16769,8 +16802,8 @@ lL
 lL
 co
 co
-Go
-Go
+sD
+sD
 Go
 Go
 eN
@@ -17569,8 +17602,8 @@ KD
 KD
 Ts
 Ts
-KD
-KD
+VD
+VD
 nA
 Go
 Go
@@ -17827,8 +17860,8 @@ Ts
 Ts
 Ts
 Ts
-Ts
-Ts
+Ya
+Ya
 nA
 Go
 Go
@@ -18086,7 +18119,7 @@ KD
 Ts
 KD
 Ts
-KD
+VD
 nA
 Go
 Go
@@ -18344,7 +18377,7 @@ KD
 Ts
 KD
 Ts
-KD
+VD
 nA
 Go
 Go
@@ -18602,7 +18635,7 @@ KD
 KD
 Ts
 Ts
-KD
+VD
 nA
 Go
 Go
@@ -18860,7 +18893,7 @@ Ts
 Ts
 Ts
 KD
-KD
+VD
 nA
 Go
 Go
@@ -19118,7 +19151,7 @@ KD
 Ts
 Ts
 Ts
-KD
+VD
 nA
 Go
 Go
@@ -19375,8 +19408,8 @@ KD
 KD
 KD
 KD
-Ts
-Ts
+Ya
+Ya
 nA
 Go
 Go
@@ -19633,8 +19666,8 @@ co
 KD
 KD
 KD
-KD
-KD
+VD
+VD
 nA
 Go
 Go
@@ -22182,8 +22215,8 @@ Yr
 Yr
 Yr
 co
-Go
-Go
+sA
+sA
 Go
 Go
 nA
@@ -22440,8 +22473,8 @@ Yr
 Yr
 Yr
 co
-Go
-Go
+sA
+sA
 Go
 Go
 lL
@@ -22698,8 +22731,8 @@ Yr
 Yr
 Yr
 co
-Go
-Go
+sA
+sA
 Go
 Go
 lL
@@ -22956,11 +22989,11 @@ Yr
 Yr
 Yr
 co
+sA
+sA
 Go
 Go
-Go
-Go
-eN
+nA
 Go
 Go
 Go
@@ -23214,11 +23247,11 @@ Yr
 Yr
 Yr
 co
+sA
+sA
 Go
 Go
-Go
-Go
-eN
+nA
 Go
 Go
 Go
@@ -23567,9 +23600,9 @@ PA
 PA
 PA
 PA
-tt
-tt
-tt
+Ee
+Ee
+Ee
 tt
 tt
 tt
@@ -23825,9 +23858,9 @@ Yr
 Yr
 Yr
 PA
-tt
-tt
-tt
+Ee
+Ee
+Ee
 Ar
 Ar
 Ar
