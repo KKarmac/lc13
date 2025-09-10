@@ -159,8 +159,6 @@
 
 /mob/living/simple_animal/hostile/abnormality/mountain/death()
 	//Make sure we didn't get cheesed
-	if(health > 0)
-		return
 	if(StageChange(FALSE)) // We go down by one stage
 		return
 	animate(src, alpha = 0, time = 10 SECONDS)
