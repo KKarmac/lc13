@@ -184,9 +184,10 @@
 
 /obj/projectile/clan_bullet/greed_rapid
 	name = "flesh bolt"
-	icon_state = "declone"
+	icon_state = "toxin"
 	damage = 5
 	damage_type = RED_DAMAGE
+	color = "#7CFC00"
 
 // Bomber Spider variant - organic explosive core
 /mob/living/simple_animal/hostile/clan/bomber_spider/greed
@@ -202,11 +203,10 @@
 
 // Gibs on explosion
 /mob/living/simple_animal/hostile/clan/bomber_spider/greed/Detonate()
-	. = ..()
 	for(var/turf/T in range(2, src))
 		if(prob(50))
 			new /obj/effect/decal/cleanable/blood/gibs(T)
-
+	. = ..()
 
 // Warper variant - corrupted space-warping
 /mob/living/simple_animal/hostile/clan/ranged/warper/greed

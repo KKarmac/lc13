@@ -168,6 +168,7 @@
 	if(QDELETED(target))
 		target = target_turf
 	var/obj/projectile/projectile_to_fire = new projectile_type
+	projectile_to_fire.firer = user  // Set the firer so barricades can check adjacency
 	playsound(src, firesound, 75, TRUE)
 	projectile_to_fire.preparePixelProjectile(target, targets_from)
 	projectile_to_fire.fire()
