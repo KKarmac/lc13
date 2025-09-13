@@ -639,7 +639,7 @@
 	teleport_away = TRUE
 	var/primed = FALSE
 	var/explosion_damage = 500
-	var/explosion_range = 1
+	var/explosion_range = 2
 
 /mob/living/simple_animal/hostile/clan/bomber_spider/Life()
 	. = ..()
