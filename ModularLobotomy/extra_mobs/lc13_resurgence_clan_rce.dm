@@ -7,7 +7,7 @@
 // Builds up charge to perform explosive demolish attacks
 // Drops a bomb on death that explodes after countdown
 /mob/living/simple_animal/hostile/clan/demolisher
-	name = "Demolisher"
+	name = "demolisher unit"
 	desc = "A humanoid looking machine with two drills... It appears to have 'Resurgence Clan' etched on their back..."
 	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_48x48.dmi'
 	icon_state = "demolisher"
@@ -337,7 +337,7 @@
 // Performs devastating backstabs on isolated targets
 // Can hunt specific targets across the entire z-level
 /mob/living/simple_animal/hostile/clan/assassin
-	name = "Assassin"
+	name = "assassin unit"
 	desc = "A sleek humanoid machine with blade-like appendages... It appears to have 'Resurgence Clan' etched on their back..."
 	icon = 'ModularLobotomy/_Lobotomyicons/resurgence_32x48.dmi'
 	icon_state = "clan_assassin"
@@ -373,6 +373,7 @@
 	var/isolation_check_range = 3
 	var/z_level_hunt_mode = FALSE
 	var/mob/living/carbon/human/hunt_target = null
+	var/can_act = TRUE
 
 /mob/living/simple_animal/hostile/clan/assassin/Initialize()
 	. = ..()
@@ -412,6 +413,7 @@
 
 	stealth_mode = TRUE
 	alpha = stealth_alpha
+	density = FALSE
 	add_movespeed_modifier(/datum/movespeed_modifier/assassin_stealth)
 	visible_message(span_warning("[src] fades into the shadows!"))
 	playsound(src, 'sound/effects/curse5.ogg', 50, TRUE)
@@ -421,10 +423,34 @@
 		return
 
 	stealth_mode = FALSE
+	density = TRUE
 	alpha = 255
 	remove_movespeed_modifier(/datum/movespeed_modifier/assassin_stealth)
 	visible_message(span_danger("[src] emerges from the shadows!"))
 	playsound(src, 'sound/effects/curse2.ogg', 50, TRUE)
+
+/mob/living/simple_animal/hostile/clan/assassin/Move()
+	if(!can_act)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/clan/assassin/DestroyObjectsInDirection(direction)
+	var/turf/T = get_step(targets_from, direction)
+	if(QDELETED(T))
+		return
+	if(T.Adjacent(targets_from))
+		if(CanSmashTurfs(T))
+			T.attack_animal(src)
+			return
+	for(var/obj/O in T.contents)
+		if(!O.Adjacent(targets_from))
+			continue
+		if(istype(O, /obj/structure/table) || istype(O, /obj/structure/barricade))
+			ClimbOver(O)
+			return
+		if(IsSmashable(O))
+			O.attack_animal(src)
+			return
 
 /mob/living/simple_animal/hostile/clan/assassin/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -456,7 +482,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/clan/assassin/proc/ClimbOver(obj/structure/S)
-	if(!stealth_mode || !S || !isturf(S.loc))
+	if(!S || !isturf(S.loc))
 		return
 
 	var/turf/destination = get_step(S, get_dir(src, S))
@@ -470,11 +496,13 @@
 
 	// Announce the backstab
 	say("Behind you.")
+	can_act = FALSE
 	SLEEP_CHECK_DEATH(7)
 
 	// Exit stealth dramatically
 	ExitStealth()
 	SLEEP_CHECK_DEATH(3)
+	can_act = TRUE
 
 	// Perform the backstab if still in range
 	if(L in range(1, src))

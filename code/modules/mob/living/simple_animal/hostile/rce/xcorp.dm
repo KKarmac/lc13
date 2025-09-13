@@ -13,7 +13,7 @@
 	attack_verb_continuous = "scratches"
 	attack_verb_simple = "scratch"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	damage_coeff = list(RED_DAMAGE = 1, WHITE_DAMAGE = 0.3, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
+	damage_coeff = list(RED_DAMAGE = 1, WHITE_DAMAGE = 0.3, BLACK_DAMAGE = 1, PALE_DAMAGE = 1, FIRE = 1.5)
 	see_in_dark = 8
 	stat_attack = HARD_CRIT
 	del_on_death = TRUE
@@ -41,7 +41,7 @@
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/weapons/ego/sword1.ogg'
-	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 0.5, BLACK_DAMAGE = 1, PALE_DAMAGE = 0.8)
+	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 0.5, BLACK_DAMAGE = 1, PALE_DAMAGE = 0.8, FIRE = 1.5)
 	ranged = TRUE
 	var/charging = FALSE
 	var/dash_num = 25
@@ -162,7 +162,7 @@
 	ranged_cooldown_time = 7
 	check_friendly_fire = TRUE
 	projectiletype = /obj/projectile/xcorp_bone
-	damage_coeff = list(RED_DAMAGE = 0.9, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1.5, PALE_DAMAGE = 1)
+	damage_coeff = list(RED_DAMAGE = 0.9, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1.5, PALE_DAMAGE = 1, FIRE = 1.5)
 
 /obj/projectile/xcorp_bone
 	name = "sans undertale reference"
@@ -181,7 +181,7 @@
 	color = "#e65454"
 	maxHealth = 500
 	health = 500
-	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 0.7, BLACK_DAMAGE = 0.7, PALE_DAMAGE = 0.3)
+	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 0.7, BLACK_DAMAGE = 0.7, PALE_DAMAGE = 0.3, FIRE = 1.5)
 	environment_smash = FALSE
 	is_flying_animal = TRUE
 	footstep_type = null
@@ -283,7 +283,7 @@
 	melee_damage_type = PALE_DAMAGE
 	melee_damage_lower = 1
 	melee_damage_upper = 3
-	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1, PALE_DAMAGE = 1.3)
+	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 0.8, BLACK_DAMAGE = 1, PALE_DAMAGE = 1.3, FIRE = 1.5)
 	death_message = "wails as its form turns into a pulpy mush."
 	death_sound = 'sound/voice/hiss6.ogg'
 	var/scream_damage = 20
@@ -328,7 +328,7 @@
 	melee_damage_type = RED_DAMAGE
 	melee_damage_upper = 15
 	melee_damage_lower = 25
-	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 1.5, BLACK_DAMAGE = 0.3, PALE_DAMAGE = 2)
+	damage_coeff = list(RED_DAMAGE = 1.5, WHITE_DAMAGE = 1.5, BLACK_DAMAGE = 0.3, PALE_DAMAGE = 2, FIRE = 1.5)
 
 /mob/living/simple_animal/hostile/xcorp/heart/Life()
 	. = ..()

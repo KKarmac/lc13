@@ -3567,6 +3567,7 @@
 #include "code\modules\rce\_resourcewell.dm"
 #include "code\modules\rce\_weaponspawner.dm"
 #include "code\modules\rce\construction.dm"
+#include "code\modules\rce\heavy_flamethrower.dm"
 #include "code\modules\rce\highfactories.dm"
 #include "code\modules\rce\lowfactories.dm"
 #include "code\modules\rce\machinery.dm"
