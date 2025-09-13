@@ -8,13 +8,13 @@ SUBSYSTEM_DEF(resourcewell_raids)
 	var/list/active_resourcewells = list()
 	var/list/raid_spots = list()
 	var/next_raid_time = 0
-	var/raid_cooldown_min = 5 MINUTES
-	var/raid_cooldown_max = 8 MINUTES
+	var/raid_cooldown_min = 2.5 MINUTES
+	var/raid_cooldown_max = 4 MINUTES
 
 	// Seed spawning variables
 	var/next_active_seed_time = 0
-	var/active_seed_cooldown_min = 16 MINUTES
-	var/active_seed_cooldown_max = 22 MINUTES
+	var/active_seed_cooldown_min = 15 MINUTES
+	var/active_seed_cooldown_max = 17 MINUTES
 	var/next_passive_seed_time = 0
 	var/passive_seed_cooldown = 20 MINUTES
 	var/list/wells_with_passive_seeds = list() // Track wells that already have passive seeds
@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 	SetupSeedTypes()
 	next_raid_time = world.time + rand(raid_cooldown_min, raid_cooldown_max)
 	// Delay active seeds by 25 minutes
-	next_active_seed_time = world.time + 25 MINUTES + rand(active_seed_cooldown_min, active_seed_cooldown_max)
+	next_active_seed_time = world.time + 25 MINUTES
 	next_passive_seed_time = world.time + passive_seed_cooldown
 	next_corrupter_time = world.time + rand(corrupter_cooldown_min, corrupter_cooldown_max)
 	return ..()
@@ -131,6 +131,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			pod.icon_state = "pod"
 			pod.door = "pod_door"
 			pod.decal = "cultist"
+			pod.resistance_flags = INDESTRUCTIBLE
 			new mob_type(pod)
 			new /obj/effect/pod_landingzone(spawn_turf, pod)
 			stoplag(2)
@@ -155,20 +156,21 @@ SUBSYSTEM_DEF(resourcewell_raids)
 		list(
 			"name" = "Scout Patrol",
 			"min_rarity" = 1,
-			"max_rarity" = 3,
+			"max_rarity" = 2,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/scout/greed = 3,
-				/mob/living/simple_animal/hostile/clan/drone/greed = 1
+				/mob/living/simple_animal/hostile/clan/scout/greed = 8,
+				/mob/living/simple_animal/hostile/clan/drone/greed = 2
 			)
 		),
 		// Drone support team
 		list(
 			"name" = "Support Squad",
 			"min_rarity" = 1,
-			"max_rarity" = 4,
+			"max_rarity" = 2,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 1,
-				/mob/living/simple_animal/hostile/clan/drone/greed = 2
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 4,
+				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 2,
+				/mob/living/simple_animal/hostile/clan/drone/greed = 1
 			)
 		),
 		// Rapid response
@@ -178,7 +180,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 5,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 3,
-				/mob/living/simple_animal/hostile/clan/scout/greed = 2
+				/mob/living/simple_animal/hostile/clan/scout/greed = 6
 			)
 		),
 		// Bomber spider swarm
@@ -187,16 +189,16 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"min_rarity" = 1,
 			"max_rarity" = 6,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 6
+				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 8
 			)
 		),
 		// Sniper with drone support
 		list(
 			"name" = "Sniper Team",
 			"min_rarity" = 1,
-			"max_rarity" = 6,
+			"max_rarity" = 2,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 1,
+				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 3,
 				/mob/living/simple_animal/hostile/clan/drone/greed = 2
 			)
 		),
@@ -207,7 +209,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 7,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 3,
-				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 1
+				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 5
 			)
 		),
 		// Defensive formation
@@ -217,7 +219,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 8,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/defender/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 2,
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 5,
 				/mob/living/simple_animal/hostile/clan/drone/greed = 1
 			)
 		),
@@ -228,7 +230,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 9,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/assassin/greed = 2,
-				/mob/living/simple_animal/hostile/clan/scout/greed = 3
+				/mob/living/simple_animal/hostile/clan/scout/greed = 7
 			)
 		),
 		// Mixed assault
@@ -238,8 +240,8 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 9,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/defender/greed = 1,
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 2,
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 4,
+				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 4,
 				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 2
 			)
 		),
@@ -249,31 +251,31 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"min_rarity" = 7,
 			"max_rarity" = 10,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 3,
-				/mob/living/simple_animal/hostile/clan/defender/greed = 1,
+				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 6,
+				/mob/living/simple_animal/hostile/clan/defender/greed = 3,
 				/mob/living/simple_animal/hostile/clan/drone/greed = 1
 			)
 		),
 		// Warper teleport assault
 		list(
 			"name" = "Warp Strike",
-			"min_rarity" = 7,
+			"min_rarity" = 5,
 			"max_rarity" = 11,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/ranged/warper/greed = 1,
 				/mob/living/simple_animal/hostile/clan/assassin/greed = 2,
-				/mob/living/simple_animal/hostile/clan/scout/greed = 2
+				/mob/living/simple_animal/hostile/clan/scout/greed = 8
 			)
 		),
 		// Harpooner ambush
 		list(
 			"name" = "Hook Squad",
-			"min_rarity" = 8,
+			"min_rarity" = 6,
 			"max_rarity" = 11,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/ranged/harpooner/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 2,
-				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 1
+				/mob/living/simple_animal/hostile/clan/ranged/harpooner/greed = 3,
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 6,
+				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 2
 			)
 		),
 		// Heavy assault with demolisher
@@ -285,7 +287,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 				/mob/living/simple_animal/hostile/clan/demolisher/greed = 1,
 				/mob/living/simple_animal/hostile/clan/defender/greed = 2,
 				/mob/living/simple_animal/hostile/clan/drone/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 1
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 6
 			)
 		),
 		// Elite strike force
@@ -295,8 +297,8 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"max_rarity" = 20,
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/assassin/greed = 3,
-				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/warper/greed = 1
+				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 4,
+				/mob/living/simple_animal/hostile/clan/ranged/warper/greed = 3
 			)
 		),
 		// Maximum spider chaos
@@ -305,7 +307,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"min_rarity" = 10,
 			"max_rarity" = 20,
 			"composition" = list(
-				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 10
+				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 14
 			)
 		),
 		// Combined arms
@@ -319,7 +321,8 @@ SUBSYSTEM_DEF(resourcewell_raids)
 				/mob/living/simple_animal/hostile/clan/assassin/greed = 1,
 				/mob/living/simple_animal/hostile/clan/ranged/sniper/greed = 1,
 				/mob/living/simple_animal/hostile/clan/defender/greed = 1,
-				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 1
+				/mob/living/simple_animal/hostile/clan/ranged/gunner/greed = 1,
+				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 6
 			)
 		),
 		// Ultimate assault
@@ -330,9 +333,10 @@ SUBSYSTEM_DEF(resourcewell_raids)
 			"composition" = list(
 				/mob/living/simple_animal/hostile/clan/demolisher/greed = 1,
 				/mob/living/simple_animal/hostile/clan/ranged/warper/greed = 2,
-				/mob/living/simple_animal/hostile/clan/ranged/harpooner/greed = 2,
+				/mob/living/simple_animal/hostile/clan/ranged/harpooner/greed = 4,
 				/mob/living/simple_animal/hostile/clan/assassin/greed = 2,
-				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 3
+				/mob/living/simple_animal/hostile/clan/bomber_spider/greed = 3,
+				/mob/living/simple_animal/hostile/clan/ranged/rapid/greed = 6
 			)
 		)
 	)
