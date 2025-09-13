@@ -113,6 +113,10 @@
 "bN" = (
 /turf/closed/mineral/ash_rock,
 /area/rce/xcorp/rce_0_1)
+"bR" = (
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/floor/plating/ironsand,
+/area/rce/xcorp/rce_2_3)
 "bZ" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -254,6 +258,11 @@
 /obj/structure/chair/comfy/black,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"eK" = (
+/obj/structure/flora/rock/pile,
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/floor/plating/ironsand,
+/area/rce/xcorp/rce_3_3)
 "eQ" = (
 /obj/machinery/conveyor/auto,
 /turf/open/floor/pod/light,
@@ -810,6 +819,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"np" = (
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/floor/plating/ironsand,
+/area/rce/xcorp/rce_3_3)
 "nq" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/telecomms/processor/preset_four,
@@ -1259,6 +1272,10 @@
 "vr" = (
 /turf/closed/mineral/ash_rock,
 /area/rce/xcorp/rce_2_0)
+"vs" = (
+/obj/effect/landmark/clan_raid_spot/blue,
+/turf/open/floor/plating/asteroid,
+/area/rce/xcorp/rce_2_3)
 "vv" = (
 /obj/machinery/conveyor/auto{
 	dir = 8
@@ -1815,7 +1832,6 @@
 /obj/structure/den/rce{
 	id = "northleft"
 	},
-/obj/effect/landmark/clan_raid_spot/blue,
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_2_3)
 "Eh" = (
@@ -1964,6 +1980,7 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Gg" = (
+/obj/effect/landmark/clan_raid_spot/blue,
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_3_3)
 "Gh" = (
@@ -2634,10 +2651,6 @@
 /obj/structure/table/optable,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
-"Rq" = (
-/obj/effect/landmark/clan_raid_spot/blue,
-/turf/open/indestructible/necropolis/air,
-/area/rce/xcorp/rce_2_3)
 "Rt" = (
 /turf/closed/indestructible/necropolis,
 /area/rce/xcorp/rce_2_0)
@@ -28823,10 +28836,10 @@ Fj
 Fj
 Fj
 Fj
+mh
+mh
 Xm
-mh
-mh
-mh
+Xm
 eb
 eb
 eb
@@ -29080,10 +29093,10 @@ Xm
 Xm
 Xm
 Xm
+mh
+mh
 Xm
-mh
-mh
-mh
+Xm
 Xm
 Xm
 Zf
@@ -29337,10 +29350,10 @@ Xm
 Xm
 Xm
 Xm
+mh
+mh
 Xm
-mh
-mh
-mh
+Xm
 Xm
 Fj
 Fj
@@ -29594,7 +29607,7 @@ Xm
 AJ
 Xm
 Xm
-Xm
+mh
 Fj
 Fj
 Fj
@@ -47474,8 +47487,8 @@ fd
 fd
 Ej
 Gh
-Rq
-Rq
+Gh
+Gh
 Gh
 gP
 gP
@@ -47731,8 +47744,8 @@ fd
 Ej
 Ej
 Gh
-Rq
-Rq
+Gh
+Gh
 Gh
 Gh
 gP
@@ -47989,7 +48002,7 @@ Ej
 Gh
 Gh
 Ed
-Rq
+Gh
 Gh
 gP
 gP
@@ -48245,8 +48258,8 @@ fd
 Ej
 Gh
 Gh
-Rq
-Rq
+Gh
+Gh
 Gh
 gP
 Gh
@@ -48502,8 +48515,8 @@ fd
 Ej
 Gh
 Gh
-Rq
-Rq
+Gh
+Gh
 Ej
 Ej
 fd
@@ -50056,12 +50069,12 @@ fd
 fd
 fd
 Dp
-bd
-Dp
-Dp
-Dp
-bd
-Dp
+vs
+bR
+bR
+bR
+vs
+bR
 fd
 fd
 fd
@@ -50313,12 +50326,12 @@ os
 os
 iJ
 iJ
-iJ
-iJ
-iJ
+np
+np
+np
 Gg
-iJ
-iJ
+np
+np
 iJ
 iJ
 iJ
@@ -50570,10 +50583,10 @@ os
 os
 os
 os
-iJ
-iJ
-zI
-iJ
+np
+np
+eK
+np
 os
 os
 os
