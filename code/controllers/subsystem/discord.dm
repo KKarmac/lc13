@@ -79,15 +79,17 @@ SUBSYSTEM_DEF(discord)
 /datum/controller/subsystem/discord/fire()
 	if(!enabled)
 		return // Dont do shit if its disabled
-	if(notify_members == notify_members_cache)
-		return // Dont re-write the file
 	// If we need to ping people for high pop
 	if(!high_pop_pinged)
 		if(CONFIG_GET(string/high_pop_ping_roleid) != null)
 			var/player_count = get_active_player_count(alive_check=TRUE, afk_check=TRUE)
 			if(player_count >= CONFIG_GET(number/high_pop_ping_threshold))
-				send2chat("<@[CONFIG_GET(string/high_pop_ping_roleid)]> - We have reached [player_count] players, come join!", CONFIG_GET(string/chat_announce_new_game))
+				send2chat("<@&[CONFIG_GET(string/high_pop_ping_roleid)]> - We have reached [player_count] players, come join!", CONFIG_GET(string/chat_announce_new_game))
+				message_admins("<@&[CONFIG_GET(string/high_pop_ping_roleid)]> - We have reached [player_count] players, come join!")
+				message_admins(CONFIG_GET(string/chat_announce_new_game))
 				high_pop_pinged = TRUE
+	if(notify_members == notify_members_cache)
+		return // Dont re-write the file
 	// If we are all clear
 	write_notify_file()
 
