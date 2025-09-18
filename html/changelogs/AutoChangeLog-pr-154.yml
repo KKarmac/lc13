@@ -1,0 +1,5 @@
+author: "LanceSmites328"
+delete-after: True
+changes:
+  - rscadd: "Balloon Text on Worktick (20%)"
+  - refactor: "several abnormalites WorkTick updated to match new WorkTick"
