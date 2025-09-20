@@ -191,8 +191,8 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret/level1
 	name = "X-Corp Turret, Level 1"
 	desc = "A basic automated defense turret bearing X-Corp markings."
-	maxHealth = 800
-	health = 800
+	maxHealth = 600
+	health = 600
 	icon_state = "greed_turret_v2"
 	icon_living = "greed_turret_v2"
 	projectiletype = /obj/projectile/clan_bullet/turret/level1
@@ -202,8 +202,8 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret/level2
 	name = "X-Corp Turret, Level 2"
 	desc = "An upgraded automated defense turret with enhanced firepower."
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 900
+	health = 900
 	icon_state = "greed_turret_v2_2"
 	icon_living = "greed_turret_v2_2"
 	projectiletype = /obj/projectile/clan_bullet/turret/level2
@@ -215,8 +215,8 @@
 	desc = "An advanced automated defense turret with maximum firepower."
 	icon_state = "greed_turret_v2_3"
 	icon_living = "greed_turret_v2_3"
-	maxHealth = 1800
-	health = 1800
+	maxHealth = 1200
+	health = 1200
 	projectiletype = /obj/projectile/clan_bullet/turret/level3
 	ranged_cooldown_time = 2 SECONDS // Fire every 2 seconds for 60 DPS
 
@@ -398,8 +398,8 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret/artillery/level1
 	name = "X-Corp Artillery Turret, Level 1"
 	desc = "A basic heavy artillery turret with explosive shells."
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 800
+	health = 800
 	icon_state = "greed_turret_v1"
 	icon_living = "greed_turret_v1"
 	aoe_damage = 50
@@ -409,8 +409,8 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret/artillery/level2
 	name = "X-Corp Artillery Turret, Level 2"
 	desc = "An upgraded heavy artillery turret with enhanced explosive power."
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1400
+	health = 1400
 	icon_state = "greed_turret_v1_2"
 	icon_living = "greed_turret_v1_2"
 	aoe_damage = 80 // 80 damage per shot, 6 second cooldown
@@ -420,8 +420,8 @@
 /mob/living/simple_animal/hostile/clan/ranged/turret/artillery/level3
 	name = "X-Corp Artillery Turret, Level 3"
 	desc = "An advanced heavy artillery turret with devastating firepower."
-	maxHealth = 3000
-	health = 3000
+	maxHealth = 1800
+	health = 1800
 	icon_state = "greed_turret_v1_3"
 	icon_living = "greed_turret_v1_3"
 	aoe_damage = 120 // 120 damage per shot, 6 second cooldown
@@ -637,8 +637,8 @@
 	icon_living = "hole"
 	icon_dead = "hole"
 	faction = list("greed_clan", "hostile")
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 800
+	health = 800
 	layer = BELOW_OPEN_DOOR_LAYER
 	melee_damage_lower = 0
 	melee_damage_upper = 0
@@ -810,8 +810,8 @@
 	name = "Greed-Touched Sniper Anchor"
 	desc = "Deploys and tethers corrupted long-range sniper units, their forms twisted by greed."
 	mob_type_to_spawn = /mob/living/simple_animal/hostile/clan/ranged/sniper/greed
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 600
+	health = 600
 
 // Gunner Anchor - spawns greed-touched gunner units (default)
 /mob/living/simple_animal/hostile/clan/chain_anchor/gunner
@@ -824,16 +824,16 @@
 	name = "Greed-Touched Rapid Anchor"
 	desc = "Deploys and tethers corrupted rapid-fire units, their barrels pulsing with flesh."
 	mob_type_to_spawn = /mob/living/simple_animal/hostile/clan/ranged/rapid/greed
-	maxHealth = 1100
-	health = 1100
+	maxHealth = 700
+	health = 700
 
 // Warper Anchor - spawns greed-touched warper units
 /mob/living/simple_animal/hostile/clan/chain_anchor/warper
 	name = "Greed-Touched Warper Anchor"
 	desc = "Deploys and tethers corrupted phase-shifting warpers, reality bending around their twisted forms."
 	mob_type_to_spawn = /mob/living/simple_animal/hostile/clan/ranged/warper/greed
-	maxHealth = 1300
-	health = 1300
+	maxHealth = 1000
+	health = 1000
 	max_chain_distance = 4 // Warpers need more mobility
 
 // Harpooner Anchor - spawns greed-touched harpooner units
@@ -841,6 +841,6 @@
 	name = "Greed-Touched Harpooner Anchor"
 	desc = "Deploys and tethers corrupted harpooner units, their chains dripping with viscous corruption."
 	mob_type_to_spawn = /mob/living/simple_animal/hostile/clan/ranged/harpooner/greed
-	maxHealth = 1400
-	health = 1400
+	maxHealth = 1000
+	health = 1000
 	max_chain_distance = 3
