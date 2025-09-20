@@ -8,8 +8,8 @@ SUBSYSTEM_DEF(resourcewell_raids)
 	var/list/active_resourcewells = list()
 	var/list/raid_spots = list()
 	var/next_raid_time = 0
-	var/raid_cooldown_min = 2.5 MINUTES
-	var/raid_cooldown_max = 4 MINUTES
+	var/raid_cooldown_min = 8 MINUTES
+	var/raid_cooldown_max = 10 MINUTES
 
 	// Seed spawning variables
 	var/next_active_seed_time = 0
@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(resourcewell_raids)
 	SetupSeedTypes()
 	next_raid_time = world.time + rand(raid_cooldown_min, raid_cooldown_max)
 	// Delay active seeds by 25 minutes
-	next_active_seed_time = world.time + 25 MINUTES
+	next_active_seed_time = world.time + 35 MINUTES
 	next_passive_seed_time = world.time + passive_seed_cooldown
 	next_corrupter_time = world.time + rand(corrupter_cooldown_min, corrupter_cooldown_max)
 	return ..()
