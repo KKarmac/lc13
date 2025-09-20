@@ -13,8 +13,8 @@ SUBSYSTEM_DEF(resourcewell_raids)
 
 	// Seed spawning variables
 	var/next_active_seed_time = 0
-	var/active_seed_cooldown_min = 15 MINUTES
-	var/active_seed_cooldown_max = 17 MINUTES
+	var/active_seed_cooldown_min = 20 MINUTES
+	var/active_seed_cooldown_max = 24 MINUTES
 	var/next_passive_seed_time = 0
 	var/passive_seed_cooldown = 20 MINUTES
 	var/list/wells_with_passive_seeds = list() // Track wells that already have passive seeds
