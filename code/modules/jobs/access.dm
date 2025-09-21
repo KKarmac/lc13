@@ -385,7 +385,7 @@
 		"R-Corp Rat", "R-Corp Rooster", "R-Corp Raccoon Spy", "R-Corp Raccoon Sniper", "R-Corp Roadrunner",
 
 		//6th Pack
-		"Operations Commander",	"Executive Officer", "Robin Squad Captain", "Robin Section Leader", "Raven Squad Captain", "Rook Squad Captain", "Production Officer",
+		"Operations Commander",	"Executive Officer", "Robin Squad Captain", "Robin Section Leader", "Raven Squad Captain", "Rook Squad Captain", "Production Officer", "R-Corp Medical Officer",
 		"R-Corp Acquisitions Specialist", "R-Corp Production Specialist", "R-Corp Raven MP", "R-Corp Messenger Raven",
 		"Robin Section Leader", "Robin Squad Sergeant", "Section A Robin", "Section B Robin", "Section C Robin", "R-Corp Rook",
 

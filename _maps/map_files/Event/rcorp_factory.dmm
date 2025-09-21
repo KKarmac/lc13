@@ -1,10 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ad" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/rce/xcorp/rce_3_2)
 "ao" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/water,
 /area/rce/xcorp/rce_2_0)
 "aA" = (
@@ -188,8 +192,15 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid,
 /area/rce/rcorp_base)
+"dz" = (
+/obj/structure/table/abductor,
+/obj/item/healthanalyzer,
+/turf/open/floor/pod,
+/area/rce/rcorp_base)
 "dE" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/ironsand,
 /area/rce/xcorp/rce_3_2)
 "dF" = (
@@ -239,7 +250,9 @@
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_4_1)
 "ep" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_0_1)
 "eB" = (
@@ -259,7 +272,9 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "eK" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /obj/effect/landmark/clan_raid_spot/blue,
 /turf/open/floor/plating/ironsand,
 /area/rce/xcorp/rce_3_3)
@@ -372,6 +387,17 @@
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"gG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "gI" = (
 /obj/machinery/conveyor/auto,
 /obj/effect/decal/cleanable/dirt,
@@ -415,7 +441,9 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "ho" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_3_1)
 "hC" = (
@@ -595,6 +623,13 @@
 /obj/machinery/telecomms/server/presets/science,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/rce/rcorp_base)
+"kz" = (
+/obj/structure/table/greyscale,
+/obj/item/storage/backpack/duffelbag/med/upgradedsurgery,
+/obj/item/storage/backpack/duffelbag/med/upgradedsurgery,
+/obj/machinery/cell_charger,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "kC" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_3_1)
@@ -611,7 +646,9 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/rce/xcorp/rce_2_0)
 "kS" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/rce/xcorp/rce_2_0)
 "kT" = (
@@ -949,6 +986,17 @@
 "oY" = (
 /turf/closed/indestructible/necropolis,
 /area/rce/xcorp/rce_4_1)
+"oZ" = (
+/obj/structure/rack,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "ph" = (
 /turf/closed/mineral/ash_rock,
 /area/rce/xcorp/rce_0_0)
@@ -972,6 +1020,12 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/sepia,
 /area/rce/xcorp/rce_1_2)
+"py" = (
+/obj/structure/table/abductor,
+/obj/item/screwdriver,
+/obj/item/toy/plush/rabbit,
+/turf/open/floor/pod,
+/area/rce/rcorp_base)
 "pB" = (
 /obj/effect/turf_decal/box/red,
 /obj/effect/turf_decal/delivery/red,
@@ -1138,7 +1192,9 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/rce/rcorp_base)
 "sx" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/water,
 /area/rce/xcorp/rce_1_0)
 "sz" = (
@@ -1401,7 +1457,7 @@
 "xl" = (
 /obj/machinery/door/airlock/survival_pod{
 	name = "Medical Room Entrance";
-	req_access_txt = "19"
+	req_access_txt = "19, 5"
 	},
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
@@ -1465,7 +1521,9 @@
 /turf/open/floor/pod,
 /area/rce/rcorp_base)
 "yg" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_0_3)
 "yh" = (
@@ -1475,6 +1533,11 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/telecomms/receiver/preset_left,
 /turf/open/floor/circuit/telecomms/mainframe,
+/area/rce/rcorp_base)
+"yr" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/landmark/rce_fob,
+/turf/open/floor/plating/asteroid,
 /area/rce/rcorp_base)
 "yx" = (
 /obj/machinery/conveyor/auto{
@@ -1546,7 +1609,9 @@
 /turf/open/floor/plating/dirt,
 /area/rce/xcorp/rce_1_2)
 "zI" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/ironsand,
 /area/rce/xcorp/rce_3_3)
 "zR" = (
@@ -1665,15 +1730,11 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "BO" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/beach/sand,
 /area/rce/xcorp/rce_2_0)
-"BT" = (
-/obj/structure/table/greyscale,
-/obj/item/storage/backpack/duffelbag/med/upgradedsurgery,
-/obj/item/storage/backpack/duffelbag/med/upgradedsurgery,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "BW" = (
 /obj/machinery/manned_turret/rcorp/rook,
 /turf/open/floor/pod/light,
@@ -2019,7 +2080,9 @@
 /turf/open/floor/wood,
 /area/rce/xcorp/rce_2_2)
 "GB" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/water,
 /area/rce/xcorp/rce_3_0)
 "GG" = (
@@ -2270,7 +2333,7 @@
 /obj/machinery/door/airlock/survival_pod{
 	dir = 4;
 	name = "Medical Room Exit";
-	req_access_txt = "19"
+	req_access_txt = "19, 5"
 	},
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
@@ -2347,7 +2410,9 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "MN" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_0_2)
 "MP" = (
@@ -2368,6 +2433,13 @@
 	dir = 4
 	},
 /turf/open/floor/pod/light,
+/area/rce/rcorp_base)
+"MX" = (
+/obj/machinery/door/airlock/survival_pod{
+	name = "medical officer bunk";
+	req_access_txt = "5"
+	},
+/turf/open/floor/pod,
 /area/rce/rcorp_base)
 "Nc" = (
 /obj/structure/rack,
@@ -2414,6 +2486,10 @@
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_3_0)
+"NP" = (
+/obj/structure/mannequin,
+/turf/open/floor/pod,
+/area/rce/rcorp_base)
 "NR" = (
 /turf/closed/mineral/ash_rock,
 /area/rce/xcorp/rce_2_1)
@@ -2755,6 +2831,12 @@
 /obj/machinery/sleeper/syndie,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"Tk" = (
+/obj/structure/table/abductor,
+/obj/item/screwdriver,
+/obj/item/toy/plush/myo,
+/turf/open/floor/pod,
+/area/rce/rcorp_base)
 "Tl" = (
 /obj/effect/light_emitter{
 	light_power = 4;
@@ -2809,7 +2891,9 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Uv" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/beach/sand,
 /area/rce/xcorp/rce_1_0)
 "Uy" = (
@@ -2972,7 +3056,9 @@
 /turf/open/floor/plating/asteroid/basalt,
 /area/rce/xcorp/rce_2_1)
 "Xi" = (
-/obj/structure/flora/rock/pile,
+/obj/structure/flora/rock/pile{
+	density = 0
+	},
 /turf/open/floor/plating/asteroid,
 /area/rce/rcorp_base)
 "Xm" = (
@@ -9283,7 +9369,7 @@ re
 re
 re
 re
-qH
+re
 qH
 qH
 qH
@@ -9539,8 +9625,8 @@ Te
 uD
 uD
 uD
+uD
 re
-qH
 qH
 qH
 qH
@@ -9796,8 +9882,8 @@ jT
 jT
 jT
 jT
+jT
 re
-qH
 qH
 qH
 qH
@@ -10051,10 +10137,10 @@ ld
 xl
 jT
 jT
+jT
 XB
 TM
 re
-qH
 qH
 qH
 qH
@@ -10306,12 +10392,12 @@ ld
 ld
 ld
 re
-jT
+Hi
 ud
+jT
 ud
 xb
 re
-qH
 qH
 qH
 qH
@@ -10563,12 +10649,12 @@ ld
 ld
 ld
 MA
+Hi
 jT
 jT
 ud
 Ro
 re
-qH
 qH
 qH
 qH
@@ -10822,10 +10908,10 @@ ld
 MA
 rS
 jT
-BT
+jT
+kz
 iF
 re
-qH
 qH
 qH
 qH
@@ -11077,12 +11163,12 @@ ld
 ld
 ld
 MA
+oZ
 jT
 jT
 jT
 Ro
 re
-qH
 qH
 qH
 qH
@@ -11334,12 +11420,12 @@ ld
 ld
 ld
 MA
-ud
+gG
+jT
 jT
 jT
 cj
 re
-qH
 qH
 qH
 qH
@@ -11594,9 +11680,9 @@ re
 MA
 Lm
 MA
+MA
 re
 re
-qH
 qH
 qH
 qH
@@ -11846,16 +11932,16 @@ re
 re
 ld
 ld
-ld
 VM
 ld
 ld
 ld
 ld
+ld
 re
-qH
-qH
-qH
+re
+re
+re
 qH
 qH
 qH
@@ -12110,9 +12196,9 @@ ld
 ld
 ld
 re
-qH
-qH
-qH
+dz
+Tk
+re
 qH
 qH
 qH
@@ -12366,10 +12452,10 @@ ld
 ld
 ld
 ld
+MX
+Bn
+Bi
 re
-qH
-qH
-qH
 qH
 qH
 qH
@@ -12624,9 +12710,9 @@ ld
 ld
 ld
 re
-qH
-qH
-qH
+NP
+DM
+re
 qH
 qH
 qH
@@ -12881,9 +12967,9 @@ ld
 ld
 re
 re
-qH
-qH
-qH
+re
+re
+re
 qH
 qH
 qH
@@ -13137,9 +13223,9 @@ ld
 ld
 ld
 re
-Ou
-qH
-qH
+dz
+py
+re
 qH
 qH
 qH
@@ -13393,10 +13479,10 @@ Xi
 ld
 ld
 ld
+MX
+Bn
+Bi
 re
-Ou
-qH
-qH
 qH
 qH
 qH
@@ -13651,9 +13737,9 @@ ld
 nX
 ld
 re
-Ou
-qH
-qH
+NP
+DM
+re
 qH
 qH
 qH
@@ -13908,9 +13994,9 @@ ld
 ld
 ld
 re
-Ou
-qH
-qH
+re
+re
+re
 qH
 qH
 qH
@@ -24925,7 +25011,7 @@ re
 ld
 ld
 ld
-ld
+Es
 ld
 ld
 ld
@@ -25182,8 +25268,8 @@ ld
 ld
 ld
 ld
-ld
-ld
+Es
+Es
 ld
 ld
 ld
@@ -25439,18 +25525,18 @@ ld
 ld
 ld
 ld
-nX
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
+yr
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
 ld
 ld
 re
@@ -25697,17 +25783,17 @@ ld
 ld
 ld
 ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-ld
-nX
-ld
-ld
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+yr
+Es
+Es
 ld
 re
 re

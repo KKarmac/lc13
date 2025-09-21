@@ -87,6 +87,9 @@ GLOBAL_LIST_INIT(medical_positions, list(
 	"Paramedic",
 	"Medical Fixer Assistant",
 	"Prosthetics Surgeon",
+
+	// RCE
+	"R-Corp Medical Officer",
 	))
 
 

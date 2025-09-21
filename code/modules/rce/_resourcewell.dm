@@ -16,10 +16,10 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 
 /obj/structure/resourcepoint/Initialize()
 	. = ..()
-	SSresourcewell_raids.RegisterResourceWell(src)
+	SSgamedirector.RegisterResourceWell(src)
 
 /obj/structure/resourcepoint/Destroy()
-	SSresourcewell_raids.UnregisterResourceWell(src)
+	SSgamedirector.UnregisterResourceWell(src)
 	return ..()
 
 /obj/structure/resourcepoint/attackby(obj/item/I, mob/living/user, params)
@@ -32,7 +32,7 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 	if(!do_after(user, 7 SECONDS, src))
 		return
 	active = 1
-	SSresourcewell_raids.UpdateActiveStatus(src)
+	SSgamedirector.UpdateActiveStatus(src)
 	to_chat(user, "<span class='notice'>You activate the resource point.</span>")
 	addtimer(CALLBACK(src, PROC_REF(spit_item)), production_time/active)
 
@@ -53,7 +53,7 @@ GLOBAL_VAR_INIT(rcorp_factorymax, 70)
 
 	if(halt_active)
 		active = 0
-		SSresourcewell_raids.UpdateActiveStatus(src)
+		SSgamedirector.UpdateActiveStatus(src)
 		show_global_blurb(5 SECONDS, "A resource point has stopped production", text_align = "center", screen_location = "LEFT+0,TOP-2")
 		return
 

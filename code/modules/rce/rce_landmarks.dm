@@ -54,7 +54,7 @@
 
 /obj/effect/landmark/clan_raid_spot/Initialize()
 	. = ..()
-	SSresourcewell_raids.RegisterRaidSpot(src)
+	SSgamedirector.RegisterRaidSpot(src)
 
 // Specific clan raid spots for each resource well type
 /obj/effect/landmark/clan_raid_spot/green
@@ -80,6 +80,10 @@
 /obj/effect/landmark/clan_raid_spot/silver
 	name = "Clan Raid Spot (Silver)"
 	id = "silver"
+
+/obj/effect/landmark/clan_raid_spot/fob_entrance
+	name = "FoB Entrance Raid Spot"
+	id = "fob_entrance"
 
 /obj/effect/landmark/rce_target/high_level
 	landmark_type = RCE_TARGET_TYPE_HIGH_LEVEL

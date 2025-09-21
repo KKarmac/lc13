@@ -287,7 +287,7 @@
 /area/rce/xcorp)
 "fT" = (
 /obj/structure/emergency_shield/cult/barrier,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/boss)
 "gc" = (
 /obj/structure/player_blocker/invisible,
@@ -320,7 +320,7 @@
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp)
 "gE" = (
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bosslobby)
 "gF" = (
 /obj/structure/limitedresourcepoint/silver{
@@ -449,7 +449,7 @@
 /obj/structure/den/rce_defender{
 	id = "topright"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp)
 "jx" = (
 /obj/structure/chair/greyscale{
@@ -646,7 +646,7 @@
 /area/rce/rcorp_base)
 "nc" = (
 /obj/effect/landmark/rce_postfight_teleport,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "nt" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -822,7 +822,7 @@
 /area/rce/rcorp_base)
 "rI" = (
 /obj/structure/rce_portal,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "rL" = (
 /obj/item/storage/toolbox/mechanical,
@@ -943,11 +943,11 @@
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "va" = (
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "vi" = (
 /obj/structure/emergency_shield/cult/barrier,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "vC" = (
 /obj/structure/den/rce/announcer,
@@ -974,7 +974,7 @@
 	light_color = "#FF9911"
 	},
 /obj/structure/emergency_shield/cult/barrier,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "we" = (
 /obj/effect/light_emitter{
@@ -983,7 +983,7 @@
 	set_luminosity = 24;
 	light_color = "#FF0000"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/boss)
 "wj" = (
 /obj/structure/chair/comfy/black{
@@ -1004,11 +1004,11 @@
 	name = "You bested the Heart of Greed";
 	desc = "You bested the Heart of Greed."
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "wY" = (
 /obj/effect/landmark/rce_arena_teleport,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bosslobby)
 "xb" = (
 /obj/structure/rcorp_factory/flare,
@@ -1039,7 +1039,7 @@
 /turf/open/floor/pod/dark,
 /area/rce/rcorp_base)
 "xu" = (
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/boss)
 "xH" = (
 /obj/structure/table/greyscale,
@@ -1339,7 +1339,7 @@
 /area/rce/xcorp)
 "ER" = (
 /obj/effect/landmark/heartfight_pylon,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/boss)
 "ES" = (
 /obj/structure/rcorp_factory/First_aid_l1,
@@ -1403,13 +1403,10 @@
 	light_color = "#FF9911"
 	},
 /obj/structure/rce_heart,
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "Go" = (
 /turf/open/floor/plasteel/checker,
-/area/rce/xcorp)
-"Gv" = (
-/turf/open/indestructible/boss/air,
 /area/rce/xcorp)
 "Gw" = (
 /obj/structure/resourcepoint/blue,
@@ -1576,7 +1573,7 @@
 	set_luminosity = 24;
 	light_color = "#FF9911"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bossentrance)
 "JS" = (
 /obj/machinery/computer/crew{
@@ -1716,7 +1713,7 @@
 	set_luminosity = 24;
 	light_color = "#FF0000"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/boss)
 "Nn" = (
 /obj/structure/rcorp_factory/pistol2,
@@ -1906,7 +1903,7 @@
 /obj/structure/den/rce_defender{
 	id = "topleft"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp)
 "Sp" = (
 /obj/machinery/cryopod,
@@ -2236,7 +2233,7 @@
 	set_luminosity = 24;
 	light_color = "#FF0000"
 	},
-/turf/open/indestructible/boss/air,
+/turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/bosslobby)
 
 (1,1,1) = {"
@@ -16270,8 +16267,8 @@ tm
 tm
 tm
 tm
-Gv
-Gv
+tm
+tm
 tm
 tm
 tm
@@ -16527,13 +16524,13 @@ Bg
 Bg
 Bg
 tm
-Gv
 tm
 tm
 tm
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 tm
 tm
 fm
@@ -16776,16 +16773,6 @@ sE
 sE
 sE
 Bg
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
 tm
 tm
 tm
@@ -16793,9 +16780,19 @@ tm
 tm
 tm
 tm
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 co
 wF
 lL
@@ -17034,17 +17031,8 @@ sE
 sE
 sE
 Bg
-Gv
+tm
 ju
-Gv
-Gv
-Gv
-tm
-tm
-tm
-tm
-Gv
-Gv
 tm
 tm
 tm
@@ -17053,11 +17041,20 @@ tm
 tm
 tm
 tm
-Gv
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 KD
 co
 Go
@@ -17292,10 +17289,10 @@ KK
 KK
 VI
 KK
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 tm
 tm
 sH
@@ -17308,15 +17305,15 @@ tm
 tm
 tm
 eO
-Gv
+tm
 tm
 tm
 KD
 KD
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 co
 nA
 nA
@@ -17550,10 +17547,10 @@ vi
 KK
 KK
 KK
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 tm
 sH
 sH
@@ -17563,20 +17560,20 @@ sH
 sH
 tm
 tm
-Gv
 tm
 tm
-Gv
-Gv
 tm
 tm
-Gv
+tm
+tm
+tm
+tm
 KD
 KD
 KD
-Gv
-Gv
-Gv
+tm
+tm
+tm
 KD
 KD
 KD
@@ -17690,8 +17687,8 @@ tt
 tt
 PA
 mi
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -17808,13 +17805,13 @@ vi
 vi
 KK
 KK
-Gv
-Gv
-Gv
 tm
 tm
 tm
-Gv
+tm
+tm
+tm
+tm
 sH
 sH
 sH
@@ -17828,15 +17825,15 @@ tm
 tm
 KD
 KD
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 KD
 KD
-Gv
-Gv
-Gv
+tm
+tm
+tm
 KD
 KD
 KD
@@ -17948,8 +17945,8 @@ nt
 nt
 PA
 mi
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -18066,12 +18063,12 @@ va
 va
 va
 cQ
-Gv
-Gv
-Gv
 tm
 tm
-Gv
+tm
+tm
+tm
+tm
 tm
 tm
 tm
@@ -18081,22 +18078,22 @@ sH
 sH
 sH
 sH
-Gv
-Gv
 tm
-Gv
-Gv
+tm
+tm
+tm
+tm
 KD
 KD
-Gv
+tm
 sH
 sH
 sH
 KD
 KD
-Gv
-Gv
-Gv
+tm
+tm
+tm
 KD
 cS
 KD
@@ -18206,8 +18203,8 @@ KD
 Ts
 Ts
 WP
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -18324,17 +18321,17 @@ va
 va
 va
 va
-Gv
-Gv
-tm
-tm
-Gv
 tm
 tm
 tm
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 sH
 sH
 sH
@@ -18355,7 +18352,7 @@ sH
 KD
 KD
 KD
-Gv
+tm
 cS
 Ts
 Ts
@@ -18464,8 +18461,8 @@ KD
 KD
 KD
 WP
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -18582,17 +18579,17 @@ va
 va
 va
 va
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 tm
 vC
-Gv
-Gv
 tm
 tm
-Gv
+tm
+tm
+tm
 sH
 sH
 sH
@@ -18612,8 +18609,8 @@ sH
 sH
 sH
 sH
-Gv
-Gv
+tm
+tm
 cS
 KD
 KD
@@ -18722,8 +18719,8 @@ KD
 KD
 KD
 WP
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -18840,15 +18837,15 @@ va
 va
 va
 va
-Gv
-Gv
-Gv
-tm
-Gv
 tm
 tm
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 tm
 sH
 sH
@@ -18864,7 +18861,7 @@ sH
 sH
 sH
 sH
-Gv
+tm
 KD
 KD
 sH
@@ -18980,8 +18977,8 @@ KD
 KD
 KD
 WP
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -19098,12 +19095,12 @@ va
 va
 va
 cQ
-Gv
-Gv
 tm
 tm
 tm
-Gv
+tm
+tm
+tm
 tm
 tm
 sH
@@ -19121,10 +19118,10 @@ sH
 sH
 sH
 sH
-Gv
+tm
 KD
-Gv
-Gv
+tm
+tm
 KD
 KD
 sH
@@ -19238,8 +19235,8 @@ Ts
 Ts
 KD
 WP
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -19356,11 +19353,11 @@ vi
 vi
 KK
 KK
-Gv
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
 tm
 sH
 sH
@@ -19372,19 +19369,19 @@ sH
 sH
 sH
 tm
-Gv
+tm
 KD
 tm
-Gv
+tm
 KD
 KD
-Gv
-Gv
+tm
+tm
 KD
 KD
 KD
-Gv
-Gv
+tm
+tm
 KD
 Ts
 Ts
@@ -19496,8 +19493,8 @@ KD
 KD
 KD
 mi
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -19614,28 +19611,28 @@ vi
 KK
 KK
 KK
-Gv
-Gv
-Gv
-Gv
-tm
-sH
-sH
-sH
-sH
-sH
-sH
-sH
 tm
 tm
 tm
-Gv
 tm
-Gv
+tm
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+tm
+tm
+tm
+tm
+tm
+tm
 tm
 KD
 KD
-Gv
+tm
 KD
 KD
 KD
@@ -19754,8 +19751,8 @@ PJ
 PJ
 PA
 mi
-Ci
-Ci
+Pr
+Pr
 Ci
 Ci
 Ci
@@ -19872,17 +19869,17 @@ KK
 KK
 VI
 KK
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
 tm
 sH
 sH
 sH
 sH
 sH
-Gv
+tm
 tm
 tm
 tm
@@ -19890,13 +19887,13 @@ tm
 SB
 tm
 tm
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 co
 nA
 nA
@@ -20130,15 +20127,14 @@ sE
 sE
 sE
 Bg
-Gv
+tm
 RH
 tm
 tm
-Gv
-Gv
+tm
+tm
 sH
 sH
-Gv
 tm
 tm
 tm
@@ -20147,13 +20143,14 @@ tm
 tm
 tm
 tm
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 KD
 co
 Go
@@ -20388,26 +20385,26 @@ sE
 sE
 sE
 Bg
-Gv
-tm
-tm
-tm
-tm
-Gv
-Gv
-Gv
-tm
-tm
-tm
-tm
-Gv
 tm
 tm
 tm
 tm
 tm
 tm
-Gv
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
 co
 wF
 lL
@@ -20654,8 +20651,8 @@ tm
 tm
 tm
 tm
-Gv
-Gv
+tm
+tm
 tm
 tm
 tm
@@ -20913,7 +20910,7 @@ tm
 tm
 tm
 tm
-Gv
+tm
 tm
 tm
 tm

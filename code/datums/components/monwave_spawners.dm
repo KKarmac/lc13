@@ -86,6 +86,9 @@
 //If the wave_composition is empty then it will send the wave out to their assault destination while the new wave is generated.
 //If the last wave is still alive the second wave will remain where they are.
 /datum/component/monwave_spawner/proc/GenerateWave()
+	// Don't spawn raiders if no resource wells are active
+	if(is_raider && (!SSgamedirector.active_resourcewells || !length(SSgamedirector.active_resourcewells)))
+		return FALSE
 	if(!length(wave_composition))
 		if(assault_target)
 			if(assault_pace == SEND_ONLY_DEFEATED && length(last_wave))

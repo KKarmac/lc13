@@ -48,6 +48,7 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
+	backpack_contents = list(/obj/item/combat_log_book = 1)
 
 
 /datum/job/raven_mp
@@ -74,7 +75,7 @@
 								TEMPERANCE_ATTRIBUTE = 60,
 								JUSTICE_ATTRIBUTE = 60
 								)
-	rank_title = "LT"
+	rank_title = "SGT"
 	job_important = "You take the role of base defense."
 	job_notice = "Assist around the base the best you can, defending from attacks. In your downtime, you may assist with medical work, or assist with production."
 
@@ -99,6 +100,7 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
+	backpack_contents = list(/obj/item/combat_log_book = 1)
 
 
 /datum/job/rcorp_captain/raven_factorycap
@@ -107,7 +109,7 @@
 	department_head = list("Commanders")
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the commanders"
+	supervisors = "the commander"
 	selection_color = "#a18438"
 	exp_requirements = 360
 	exp_type = EXP_TYPE_CREW
@@ -151,3 +153,4 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
+	backpack_contents = list(/obj/item/combat_log_book = 1)
