@@ -48,8 +48,6 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
-	backpack_contents = list(/obj/item/combat_log_book = 1)
-
 
 /datum/job/raven_mp
 	title = "R-Corp Raven MP"
@@ -100,8 +98,6 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
-	backpack_contents = list(/obj/item/combat_log_book = 1)
-
 
 /datum/job/rcorp_captain/raven_factorycap
 	title = "Raven Squad Captain"
@@ -153,4 +149,3 @@
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
-	backpack_contents = list(/obj/item/combat_log_book = 1)

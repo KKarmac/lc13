@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
-
+	backpack_contents = list(/obj/item/combat_log_book = 1)
 
 
 /datum/job/robin_leader
@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	box = null
 	back = /obj/item/storage/backpack/rcorp
 	ignore_pack = TRUE
-
+	backpack_contents = list(/obj/item/combat_log_book = 1)
 
 /datum/job/robin_sergeant
 	title = "Robin Squad Sergeant"
