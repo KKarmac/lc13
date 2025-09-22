@@ -15,6 +15,7 @@
 
 	var/obj/item/clothing/head/ego_hat/hat = null // Hat type, see clothing/head/_ego_head.dm
 	var/obj/item/clothing/neck/ego_neck/neck = null // Neckwear, see clothing/neck/_neck.dm
+	var/obj/item/clothing/mask/ego_mask/mask = null //Mask type, see clothing/mask/_masks.dm
 	var/list/attribute_requirements = list()
 	var/equip_bonus
 
@@ -28,6 +29,10 @@
 		var/obj/effect/proc_holder/ability/neck_ability/NA = new(null, neck)
 		var/datum/action/spell_action/ability/item/N = NA.action
 		N.SetItem(src)
+	if(mask)
+		var/obj/effect/proc_holder/ability/mask_ability/MA = new(null, mask)
+		var/datum/action/spell_action/ability/item/M = MA.action
+		M.SetItem(src)
 	if(SSmaptype.chosen_trait == FACILITY_TRAIT_CALLBACK)
 		w_class = WEIGHT_CLASS_NORMAL			//Callback to when we had stupid 10 Egos in bag
 
@@ -69,6 +74,11 @@
 		if(!istype(neckwear, neck))
 			return
 		neckwear.Destroy()
+	if(mask)
+		var/obj/item/clothing/mask/maskwear = user.get_item_by_slot(ITEM_SLOT_MASK)
+		if(!istype(maskwear, mask))
+			return
+		maskwear.Destroy()
 
 /obj/item/clothing/suit/armor/ego_gear/dropped(mob/user)
 	. = ..()
@@ -82,6 +92,11 @@
 		if(!istype(neckwear, neck))
 			return
 		neckwear.Destroy()
+	if(mask)
+		var/obj/item/clothing/mask/maskwear = user.get_item_by_slot(ITEM_SLOT_MASK)
+		if(!istype(maskwear, mask))
+			return
+		maskwear.Destroy()
 	if(user.has_movespeed_modifier(/datum/movespeed_modifier/too_many_armors))
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/too_many_armors)
 
