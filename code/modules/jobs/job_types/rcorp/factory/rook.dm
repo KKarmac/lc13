@@ -55,11 +55,14 @@
 	job_notice = ""
 	req_admin_notify = 1
 
+/datum/job/rcorp_captain/rook/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
+
 /datum/job/rook/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
-
-
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/rook
 	name = "R-Corp Rook"

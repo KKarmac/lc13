@@ -33,6 +33,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 /datum/job/rcorp_captain/robin/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/robin_captain
 	name = "Robin Squad Captain"
@@ -89,6 +90,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	.=..()
 	ADD_TRAIT(outfit_owner, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
 	to_chat(M, span_userdanger("You are the leader of [squad]."))
+	SSpersistence.ShowExpeditionNumber(H)
 
 	var/head = null
 	switch(squad)
@@ -156,6 +158,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	.=..()
 	ADD_TRAIT(outfit_owner, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
 	to_chat(M, span_userdanger("You are the squad leader of [squad]. Report to your section leader immediately!"))
+	SSpersistence.ShowExpeditionNumber(H)
 
 	var/head = null
 	switch(squad)
@@ -236,6 +239,9 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	rank_title = "RAF"
 	job_important = "You are an infantry unit. Report to your Section Commander (Green Berets)."
 
+/datum/job/robin/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/robin/a
 	name = "Section A Robin"
@@ -249,6 +255,10 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	display_order = 5.2
 	job_important = "You are an infantry unit. Report to your Section Commander (Red Berets)."
 
+/datum/job/robin/b/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
+
 /datum/outfit/job/robin/b
 	name = "Section B Robin"
 	jobtype = /datum/job/robin/b
@@ -260,6 +270,9 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	display_order = 5.3
 	job_important = "You are an infantry unit. Report to your Section Commander (Blue Berets)."
 
+/datum/job/robin/c/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/robin/c
 	name = "Section C Robin"

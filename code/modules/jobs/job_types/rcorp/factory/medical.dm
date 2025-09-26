@@ -30,6 +30,7 @@
 /datum/job/medical_officer/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/medical_officer
 	name = "R-Corp Medical Officer"

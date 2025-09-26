@@ -13,6 +13,10 @@
 	if(rank_title == "JCDR")
 		rank_title = "CDR"
 
+/datum/job/rcorp_captain/commander/operations/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
+
 /datum/outfit/job/commander/operations
 	name = "Operations Commander"
 	jobtype = /datum/job/rcorp_captain/commander/operations
@@ -55,6 +59,10 @@
 	job_notice = ""
 	maptype = "rcorp_factory"
 	req_admin_notify = 1
+
+/datum/job/rcorp_captain/commander/factory/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/commander/factory
 	name = "Executive Officer"

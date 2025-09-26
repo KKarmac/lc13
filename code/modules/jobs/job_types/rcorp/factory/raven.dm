@@ -30,6 +30,7 @@
 /datum/job/raven_messenger/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/raven_messenger
 	name = "R-Corp Messenger Raven"
@@ -80,6 +81,7 @@
 /datum/job/raven_mp/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/raven_mp
 	name = "R-Corp Raven MP"
@@ -131,6 +133,7 @@
 /datum/job/rcorp_captain/raven_factorycap/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/raven_factorycap
 	name = "Raven Team Captain"

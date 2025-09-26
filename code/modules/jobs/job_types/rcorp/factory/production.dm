@@ -28,6 +28,7 @@
 /datum/job/production/after_spawn(mob/living/carbon/human/H, mob/M)
 	. = ..()
 	ADD_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/job/rcorp_captain/production
 	title = "Production Officer"
@@ -58,6 +59,10 @@
 	job_notice = "Make sure that the Acquisitions Specialists are sending materials to the base; and make sure that the production specialists are making the factory correctly."
 	req_admin_notify = 1
 
+/datum/job/rcorp_captain/production/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
+
 /datum/job/production/acquisition
 	title = "R-Corp Acquisitions Specialist"
 	faction = "Station"
@@ -84,6 +89,10 @@
 	rank_title = "SPC"
 	job_important = "You take the role of an acquisition specialist."
 	job_notice = "Head out into the field alongside the robins, set up the oil wells, and set up conveyors to send the materials back home!"
+
+/datum/job/production/acquisition/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
+	SSpersistence.ShowExpeditionNumber(H)
 
 /datum/outfit/job/production
 	name = "R-Corp Production"

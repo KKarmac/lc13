@@ -83,13 +83,13 @@ SUBSYSTEM_DEF(gamedirector)
 /datum/controller/subsystem/gamedirector/fire(resumed = FALSE)
 	if(fightstage != PHASE_FIGHT && SSticker.current_state != GAME_STATE_FINISHED && gamestage < PHASE_NOT_RCE)
 		if(world.time > timestamp_end && gamestage < PHASE_ENDROUND)
-			to_chat(world, span_userdanger("R-Corp HQ has ordered immediate retreat!"))
 			gamestage = PHASE_ENDROUND
-			SSticker.force_ending = 1
+			// Let the shuttle handle the evacuation
 		else if(world.time > timestamp_finalwave && gamestage < PHASE_LASTWAVE_PASSED)
 			to_chat(world, span_userdanger("A huge wave of greed is approaching!"))
 			gamestage = PHASE_LASTWAVE_PASSED
 			StartLastWave()
+			CallEvacuation()
 		else if(world.time > timestamp_warning && gamestage < PHASE_WARNING_PASSED)
 			to_chat(world, span_userdanger("There are 20 minutes left to kill the heart!"))
 			gamestage = PHASE_WARNING_PASSED
@@ -599,3 +599,12 @@ SUBSYSTEM_DEF(gamedirector)
 /datum/controller/subsystem/gamedirector/proc/ActuallySpawnCorrupter(turf/spawn_turf, location_text)
 	new /mob/living/simple_animal/hostile/clan/ranged/corrupter/greed(spawn_turf)
 	show_global_blurb(5 SECONDS, "Greed-touched Corrupter has arrived near [location_text]! Extreme caution advised!", text_align = "center", screen_location = "LEFT+0,TOP-2", text_color = "#FF0000")
+
+/datum/controller/subsystem/gamedirector/proc/CallEvacuation()
+	// Ensure security level is not RED or DELTA for 20 minute evacuation
+	var/security_num = seclevel2num(get_security_level())
+	if(security_num >= SEC_LEVEL_RED)
+		set_security_level(SEC_LEVEL_BLUE)
+
+	// Call the evacuation shuttle
+	SSshuttle.requestEvac(null, "Critical threat detected: R-Corp evacuation protocols activated. Final defensive wave initiated.")
