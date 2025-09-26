@@ -15,6 +15,9 @@ SUBSYSTEM_DEF(gamedirector)
 	var/list/obj/effect/landmark/rce_arena_teleport = list()
 	var/list/obj/effect/landmark/rce_postfight_teleport = list()
 	var/list/obj/effect/landmark/heartfight_pylon = list()
+	var/list/obj/effect/landmark/lastwave_gateway = list()
+	var/list/obj/effect/landmark/fob_escape_shuttle = list()
+	var/list/obj/effect/greed_gateway/active_gateways = list()
 	var/list/mob/living/simple_animal/hostile/controlled_mobs = list()
 	var/list/targets_by_id = list()
 	var/datum/component/monwave_spawner/wave_announcer
@@ -84,7 +87,7 @@ SUBSYSTEM_DEF(gamedirector)
 			gamestage = PHASE_ENDROUND
 			SSticker.force_ending = 1
 		else if(world.time > timestamp_finalwave && gamestage < PHASE_LASTWAVE_PASSED)
-			to_chat(world, span_userdanger("A huge wave of zombies is approaching!"))
+			to_chat(world, span_userdanger("A huge wave of greed is approaching!"))
 			gamestage = PHASE_LASTWAVE_PASSED
 			StartLastWave()
 		else if(world.time > timestamp_warning && gamestage < PHASE_WARNING_PASSED)
@@ -96,7 +99,6 @@ SUBSYSTEM_DEF(gamedirector)
 		// Check for FoB entrance unlock at 30 minutes
 		if(!fob_entrances_unlocked && world.time >= fob_unlock_time)
 			fob_entrances_unlocked = TRUE
-			show_global_blurb(10 SECONDS, "Warning: FoB entrance defenses have been compromised!", text_align = "center", screen_location = "LEFT+0,TOP-2", text_color = "#FF8800")
 
 		// Handle raids based on whether last wave has started
 		if(last_wave_started)
@@ -157,15 +159,34 @@ SUBSYSTEM_DEF(gamedirector)
 	last_wave_started = TRUE
 	next_fob_raid_time = world.time + fob_raid_cooldown
 
-	var/datum/component/monwave_spawner/spawner
-	for(spawner in spawners)
-		spawner.is_raider = FALSE
-		spawner.generate_wave_cooldown_time = 5 SECONDS
-		spawner.assault_pace = 2
-		spawner.SwitchTarget(pick(rce_fob))
-		spawner.StartAssault(pick(rce_fob))
-	for(var/mob/living/simple_animal/hostile/M in controlled_mobs)
-		walk_to(M, pick(rce_fob), 5, 50, M.move_to_delay)
+	var/gateway_count = 0
+	// Process each gateway spawn landmark
+	for(var/obj/effect/landmark/lastwave_gateway/gateway_spawn in lastwave_gateway)
+		var/turf/T = get_turf(gateway_spawn)
+		if(!T)
+			continue
+
+		switch(gateway_spawn.gateway_type)
+			if(GATEWAY_TYPE_AIR)
+				T.ChangeTurf(/turf/open/indestructible/necropolis/air)
+			if(GATEWAY_TYPE_WALL)
+				T.ChangeTurf(/turf/closed/indestructible/necropolis)
+			if(GATEWAY_TYPE_GATEWAY)
+				var/obj/effect/greed_gateway/gateway = new(T)
+				// Pass the pre-calculated path to the gateway
+				if(length(gateway_spawn.assault_path))
+					gateway.assault_path = gateway_spawn.assault_path.Copy()
+				active_gateways += gateway
+				gateway_count++
+
+	if(gateway_count > 0)
+		show_global_blurb(10 SECONDS, "CRITICAL: [gateway_count] Greed Gateway\s [gateway_count > 1 ? "have" : "has"] opened! Infinite X-Corp reinforcements incoming!", text_align = "center", screen_location = "LEFT+0,TOP-2", text_color = "#FF0000")
+
+	// Direct existing controlled mobs to escape shuttle
+	if(length(fob_escape_shuttle))
+		var/obj/effect/landmark/fob_escape_shuttle/target_shuttle = pick(fob_escape_shuttle)
+		for(var/mob/living/simple_animal/hostile/M in controlled_mobs)
+			walk_to(M, target_shuttle, 5, 50, M.move_to_delay)
 
 /datum/controller/subsystem/gamedirector/proc/RegisterTarget(obj/effect/landmark/rce_target/target, type, id = NONE)
 	rce_targets.Add(target)
@@ -226,6 +247,12 @@ SUBSYSTEM_DEF(gamedirector)
 
 /datum/controller/subsystem/gamedirector/proc/RegisterHeartfightPylon(obj/effect/landmark/pylon)
 	heartfight_pylon += pylon
+
+/datum/controller/subsystem/gamedirector/proc/RegisterGatewaySpawn(obj/effect/landmark/lastwave_gateway/gateway)
+	lastwave_gateway += gateway
+
+/datum/controller/subsystem/gamedirector/proc/RegisterEscapeShuttle(obj/effect/landmark/fob_escape_shuttle/shuttle)
+	fob_escape_shuttle += shuttle
 
 /datum/controller/subsystem/gamedirector/proc/BeginPrefightPhase()
 	fightstage = PHASE_PREFIGHT
@@ -334,10 +361,10 @@ SUBSYSTEM_DEF(gamedirector)
 		for(var/i in 1 to spawn_count)
 			var/turf/spawn_turf
 			if(length(available_spots))
-				var/obj/effect/landmark/clan_raid_spot/spot = pick(available_spots)
+				var/obj/effect/landmark/spot = pick(available_spots)
 				spawn_turf = get_turf(spot)
 			else
-				var/obj/effect/landmark/clan_raid_spot/spot = spawn_spots[spot_index]
+				var/obj/effect/landmark/spot = spawn_spots[spot_index]
 				spawn_turf = get_turf(spot)
 				spot_index++
 				if(spot_index > length(spawn_spots))
@@ -359,9 +386,11 @@ SUBSYSTEM_DEF(gamedirector)
 		show_global_blurb(5 SECONDS, "The '[raid_name]' has breached the FoB entrance!", text_align = "center", screen_location = "LEFT+0,TOP-2", text_color = "#FF0000")
 
 /datum/controller/subsystem/gamedirector/proc/TriggerFoBRaid()
-	var/list/spawn_spots = raid_spots["fob_entrance"]
-	if(!spawn_spots || !length(spawn_spots))
+	// Check if fob_entrance spots exist in raid_spots
+	if(!raid_spots["fob_entrance"] || !length(raid_spots["fob_entrance"]))
 		return
+
+	var/list/spawn_spots = raid_spots["fob_entrance"]
 
 	// Use powerful raid composition for FoB raids after last wave
 	var/list/raid_data = GetPowerfulRaidData()

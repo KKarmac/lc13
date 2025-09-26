@@ -87,7 +87,7 @@
 //If the last wave is still alive the second wave will remain where they are.
 /datum/component/monwave_spawner/proc/GenerateWave()
 	// Don't spawn raiders if no resource wells are active
-	if(is_raider && (!SSgamedirector.active_resourcewells || !length(SSgamedirector.active_resourcewells)))
+	if(!SSgamedirector.active_resourcewells || !length(SSgamedirector.active_resourcewells))
 		return FALSE
 	if(!length(wave_composition))
 		if(assault_target)

@@ -5,6 +5,11 @@
 	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/rce/xcorp/rce_3_2)
+"ag" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/landmark/lastwave_gateway/air,
+/turf/open/floor/plating/asteroid,
+/area/rce/rcorp_base)
 "ao" = (
 /obj/structure/flora/rock/pile{
 	density = 0
@@ -1225,6 +1230,10 @@
 /obj/effect/landmark/clan_raid_spot/purple,
 /turf/open/floor/plating/asteroid/snow,
 /area/rce/xcorp/rce_3_0)
+"th" = (
+/obj/effect/landmark/lastwave_gateway/gateway,
+/turf/open/floor/plating/asteroid,
+/area/rce/rcorp_base)
 "tt" = (
 /obj/item/storage/lockbox/medal/officer,
 /obj/structure/table/abductor,
@@ -1468,6 +1477,10 @@
 /obj/structure/railing,
 /turf/open/floor/wood,
 /area/rce/xcorp/rce_2_3)
+"xw" = (
+/obj/effect/landmark/lastwave_gateway/air,
+/turf/open/floor/plating/asteroid,
+/area/rce/rcorp_base)
 "xy" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt,
@@ -2517,6 +2530,10 @@
 	},
 /turf/open/water,
 /area/rce/xcorp/rce_2_0)
+"Oj" = (
+/obj/effect/landmark/lastwave_gateway/wall,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/rce/rcorp_base)
 "Ol" = (
 /obj/structure/punching_bag,
 /turf/open/floor/pod/light,
@@ -2644,6 +2661,11 @@
 /obj/item/ego_weapon/city/zweihander/knife/lcdr,
 /turf/open/floor/pod,
 /area/rce/rcorp_base)
+"PW" = (
+/obj/effect/landmark/rce_fob,
+/obj/effect/landmark/lastwave_gateway/air,
+/turf/open/floor/plating/asteroid,
+/area/rce/rcorp_base)
 "Qn" = (
 /obj/machinery/conveyor/auto{
 	dir = 4
@@ -2668,6 +2690,14 @@
 	req_access_txt = "7"
 	},
 /turf/open/floor/pod,
+/area/rce/rcorp_base)
+"QB" = (
+/obj/effect/landmark/fob_escape_shuttle,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
+"QD" = (
+/obj/effect/landmark/lastwave_gateway/air,
+/turf/closed/wall/mineral/titanium/survival/pod,
 /area/rce/rcorp_base)
 "QE" = (
 /turf/closed/indestructible/rock,
@@ -8339,7 +8369,7 @@ Px
 Px
 Px
 ud
-jT
+QB
 re
 qH
 qH
@@ -25012,13 +25042,13 @@ ld
 ld
 ld
 Es
+xw
 ld
 ld
 ld
 ld
 ld
-ld
-ld
+xw
 ld
 ld
 ld
@@ -25269,13 +25299,13 @@ ld
 ld
 ld
 Es
-Es
-ld
-ld
-ld
-ld
-ld
-nX
+PW
+xw
+xw
+xw
+xw
+xw
+ag
 ld
 ld
 ld
@@ -25527,11 +25557,11 @@ ld
 ld
 yr
 Es
-Es
-Es
-Es
-Es
-Es
+PW
+PW
+PW
+PW
+PW
 Es
 Es
 Es
@@ -25784,11 +25814,11 @@ ld
 ld
 ld
 Es
-Es
-Es
-Es
-Es
-Es
+PW
+PW
+th
+PW
+PW
 Es
 Es
 yr
@@ -26041,11 +26071,11 @@ ld
 ld
 ld
 re
-re
-re
-re
-re
-re
+Oj
+QD
+QD
+QD
+Oj
 ld
 ld
 ld
@@ -26298,11 +26328,11 @@ aN
 aN
 aN
 re
-re
-re
-re
-re
-re
+Oj
+Oj
+Oj
+Oj
+Oj
 aN
 aN
 aN

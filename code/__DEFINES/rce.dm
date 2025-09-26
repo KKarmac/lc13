@@ -17,3 +17,8 @@
 #define PHASE_LASTWAVE_PASSED 3
 #define PHASE_ENDROUND 4
 #define PHASE_NOT_RCE 65565
+
+// Gateway Types for Last Wave
+#define GATEWAY_TYPE_AIR 1
+#define GATEWAY_TYPE_WALL 2
+#define GATEWAY_TYPE_GATEWAY 3
