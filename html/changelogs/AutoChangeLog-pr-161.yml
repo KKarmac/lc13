@@ -1,0 +1,4 @@
+author: "Cupax3"
+delete-after: True
+changes:
+  - rscadd: "You can now use !tgs highpopqueue on Discord to queue for a ping and count toward the high pop threshold!"
