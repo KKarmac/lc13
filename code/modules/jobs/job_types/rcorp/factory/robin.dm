@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	.=..()
 	ADD_TRAIT(outfit_owner, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
 	to_chat(M, span_userdanger("You are the leader of [squad]."))
-	SSpersistence.ShowExpeditionNumber(H)
+	SSpersistence.ShowExpeditionNumber(outfit_owner)
 
 	var/head = null
 	switch(squad)
@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(robin_sergeants, list("Section A", "Section B", "Section C"))
 	.=..()
 	ADD_TRAIT(outfit_owner, TRAIT_COMBATFEAR_IMMUNE, JOB_TRAIT)
 	to_chat(M, span_userdanger("You are the squad leader of [squad]. Report to your section leader immediately!"))
-	SSpersistence.ShowExpeditionNumber(H)
+	SSpersistence.ShowExpeditionNumber(outfit_owner)
 
 	var/head = null
 	switch(squad)
