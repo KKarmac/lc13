@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Box, Button, Section, Stack, TextArea, LabeledList } from '../components';
 import { Window } from '../layouts';
 
-const getDamageTypeColor = (type) => {
+const getDamageTypeColor = type => {
   switch (type) {
     case 'RED_DAMAGE':
     case 'red':
@@ -21,7 +21,7 @@ const getDamageTypeColor = (type) => {
   }
 };
 
-const getHealthDescription = (maxHealth) => {
+const getHealthDescription = maxHealth => {
   if (maxHealth <= 300) return 'Fragile';
   if (maxHealth <= 500) return 'Moderate';
   if (maxHealth <= 700) return 'Sturdy';
@@ -32,7 +32,7 @@ const getHealthDescription = (maxHealth) => {
   return 'Legendary Toughness';
 };
 
-const getHealthColor = (maxHealth) => {
+const getHealthColor = maxHealth => {
   if (maxHealth <= 300) return 'good';
   if (maxHealth <= 500) return 'average';
   if (maxHealth <= 700) return 'yellow';
@@ -43,13 +43,13 @@ const getHealthColor = (maxHealth) => {
   return 'pink';
 };
 
-const getDamageDescription = (damage) => {
+const getDamageDescription = damage => {
   // Handle range values (e.g., "5-10")
   let maxDamage = damage;
   if (typeof damage === 'string' && damage.includes('-')) {
-    maxDamage = parseInt(damage.split('-')[1]);
+    maxDamage = parseInt(damage.split('-')[1], 10);
   } else if (typeof damage === 'string') {
-    maxDamage = parseInt(damage);
+    maxDamage = parseInt(damage, 10);
   }
 
   if (isNaN(maxDamage) || maxDamage === '?') return 'Unknown';
@@ -69,10 +69,10 @@ const getMeleeSpeedDescription = (rapidMelee, attackCooldown) => {
     if (rapidMelee >= 2) return 'Fast';
   }
   if (attackCooldown > 0) {
-    if (attackCooldown <= 10) return 'Very Fast';  // 1s or less
-    if (attackCooldown <= 20) return 'Fast';       // 2s or less
-    if (attackCooldown <= 30) return 'Moderate';   // 3s or less
-    if (attackCooldown <= 50) return 'Slow';       // 5s or less
+    if (attackCooldown <= 10) return 'Very Fast'; // 1s or less
+    if (attackCooldown <= 20) return 'Fast'; // 2s or less
+    if (attackCooldown <= 30) return 'Moderate'; // 3s or less
+    if (attackCooldown <= 50) return 'Slow'; // 5s or less
     return 'Very Slow';
   }
   return 'Normal';
@@ -98,7 +98,7 @@ const getRangedSpeedDescription = (cooldown, rapid) => {
   return desc;
 };
 
-const getResistanceLabel = (value) => {
+const getResistanceLabel = value => {
   if (value === '?') return '?';
   const numValue = parseFloat(value);
   if (numValue < 0.5) return 'Resistant';
@@ -108,7 +108,7 @@ const getResistanceLabel = (value) => {
   return 'Fatal';
 };
 
-const getResistanceColor = (value) => {
+const getResistanceColor = value => {
   if (value === '?') return 'label';
   const numValue = parseFloat(value);
   if (numValue < 0.5) return 'good';
@@ -132,7 +132,8 @@ export const CombatLogBook = (props, context) => {
         <Window.Content>
           <Section title="Combat Log Book">
             <Box italic color="label">
-              No creatures scanned. Use this book on hostile entities to scan them.
+              No creatures scanned. Use this book on hostile entities
+              to scan them.
             </Box>
           </Section>
         </Window.Content>
@@ -144,7 +145,9 @@ export const CombatLogBook = (props, context) => {
     <Window width={600} height={650}>
       <Window.Content scrollable>
         <Section
-          title={`${current_creature.name} - Page ${current_page}/${total_pages}`}
+          title={
+            `${current_creature.name} - Page ${current_page}/${total_pages}`
+          }
           buttons={
             <>
               <Button
@@ -196,7 +199,10 @@ export const CombatLogBook = (props, context) => {
                       {getHealthDescription(current_creature.max_health)}
                     </Box>
                     <Box inline color="label" ml={1}>
-                      ({Math.round((current_creature.health / current_creature.max_health) * 100)}% when scanned)
+                      ({Math.round(
+                        (current_creature.health
+                        / current_creature.max_health) * 100
+                      )}% when scanned)
                     </Box>
                   </LabeledList.Item>
                   <LabeledList.Item label="Movement Speed">
@@ -213,7 +219,8 @@ export const CombatLogBook = (props, context) => {
                   <LabeledList.Item label="Melee Damage">
                     {getDamageDescription(
                       current_creature.melee_damage_lower !== '?'
-                        ? `${current_creature.melee_damage_lower}-${current_creature.melee_damage_upper}`
+                        ? `${current_creature.melee_damage_lower}-${
+                          current_creature.melee_damage_upper}`
                         : '?'
                     )}
                     {current_creature.melee_damage_type !== '?'
@@ -221,15 +228,21 @@ export const CombatLogBook = (props, context) => {
                         <Box
                           inline
                           ml={1}
-                          color={getDamageTypeColor(current_creature.melee_damage_type)}>
+                          color={getDamageTypeColor(
+                            current_creature.melee_damage_type
+                          )}>
                           [{current_creature.melee_damage_type}]
                         </Box>
                       )}
                   </LabeledList.Item>
                   <LabeledList.Item label="Melee Speed">
-                    {getMeleeSpeedDescription(current_creature.rapid_melee, current_creature.attack_cooldown)}
+                    {getMeleeSpeedDescription(
+                      current_creature.rapid_melee,
+                      current_creature.attack_cooldown
+                    )}
                   </LabeledList.Item>
-                  {!!current_creature.is_ranged && current_creature.ranged_damage && (
+                  {current_creature.is_ranged
+                    && current_creature.ranged_damage && (
                     <>
                       <LabeledList.Item label="Ranged Damage">
                         {getDamageDescription(current_creature.ranged_damage)}
@@ -237,18 +250,23 @@ export const CombatLogBook = (props, context) => {
                           <Box
                             inline
                             ml={1}
-                            color={getDamageTypeColor(current_creature.ranged_damage_type)}>
+                            color={getDamageTypeColor(
+                              current_creature.ranged_damage_type
+                            )}>
                             [{current_creature.ranged_damage_type}]
                           </Box>
                         )}
                       </LabeledList.Item>
                       <LabeledList.Item label="Fire Rate">
-                        {getRangedSpeedDescription(current_creature.ranged_cooldown_time, current_creature.rapid)}
+                        {getRangedSpeedDescription(
+                          current_creature.ranged_cooldown_time,
+                          current_creature.rapid
+                        )}
                       </LabeledList.Item>
                     </>
                   )}
                   <LabeledList.Item label="Combat Type">
-                    {!!current_creature.is_ranged ? 'Ranged' : 'Melee Only'}
+                    {current_creature.is_ranged ? 'Ranged' : 'Melee Only'}
                   </LabeledList.Item>
                 </LabeledList>
               </Section>
@@ -258,28 +276,36 @@ export const CombatLogBook = (props, context) => {
               <Section title="Damage Resistances">
                 <LabeledList>
                   <LabeledList.Item label="Red">
-                    <Box color={getResistanceColor(current_creature.resistances.red)}>
+                    <Box color={getResistanceColor(
+                      current_creature.resistances.red
+                    )}>
                       {getResistanceLabel(current_creature.resistances.red)}
                       {current_creature.resistances.red !== '?'
                         && ` (×${current_creature.resistances.red})`}
                     </Box>
                   </LabeledList.Item>
                   <LabeledList.Item label="White">
-                    <Box color={getResistanceColor(current_creature.resistances.white)}>
+                    <Box color={getResistanceColor(
+                      current_creature.resistances.white
+                    )}>
                       {getResistanceLabel(current_creature.resistances.white)}
                       {current_creature.resistances.white !== '?'
                         && ` (×${current_creature.resistances.white})`}
                     </Box>
                   </LabeledList.Item>
                   <LabeledList.Item label="Black">
-                    <Box color={getResistanceColor(current_creature.resistances.black)}>
+                    <Box color={getResistanceColor(
+                      current_creature.resistances.black
+                    )}>
                       {getResistanceLabel(current_creature.resistances.black)}
                       {current_creature.resistances.black !== '?'
                         && ` (×${current_creature.resistances.black})`}
                     </Box>
                   </LabeledList.Item>
                   <LabeledList.Item label="Pale">
-                    <Box color={getResistanceColor(current_creature.resistances.pale)}>
+                    <Box color={getResistanceColor(
+                      current_creature.resistances.pale
+                    )}>
                       {getResistanceLabel(current_creature.resistances.pale)}
                       {current_creature.resistances.pale !== '?'
                         && ` (×${current_creature.resistances.pale})`}
@@ -294,7 +320,8 @@ export const CombatLogBook = (props, context) => {
                 <TextArea
                   height="100px"
                   value={current_creature.notes}
-                  onInput={(e, value) => act('update_notes', { notes: value })}
+                  onInput={(e, value) => act('update_notes',
+                    { notes: value })}
                 />
               </Section>
             </Stack.Item>

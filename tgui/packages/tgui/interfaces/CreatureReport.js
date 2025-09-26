@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Box, Section, Stack, LabeledList } from '../components';
 import { Window } from '../layouts';
 
-const getDamageTypeColor = (type) => {
+const getDamageTypeColor = type => {
   switch (type) {
     case 'RED_DAMAGE':
     case 'red':
@@ -21,7 +21,7 @@ const getDamageTypeColor = (type) => {
   }
 };
 
-const getHealthDescription = (maxHealth) => {
+const getHealthDescription = maxHealth => {
   if (maxHealth <= 300) return 'Fragile';
   if (maxHealth <= 500) return 'Moderate';
   if (maxHealth <= 700) return 'Sturdy';
@@ -32,7 +32,7 @@ const getHealthDescription = (maxHealth) => {
   return 'Legendary Toughness';
 };
 
-const getHealthColor = (maxHealth) => {
+const getHealthColor = maxHealth => {
   if (maxHealth <= 300) return 'good';
   if (maxHealth <= 500) return 'average';
   if (maxHealth <= 700) return 'yellow';
@@ -43,13 +43,13 @@ const getHealthColor = (maxHealth) => {
   return 'pink';
 };
 
-const getDamageDescription = (damage) => {
+const getDamageDescription = damage => {
   // Handle range values (e.g., "5-10")
   let maxDamage = damage;
   if (typeof damage === 'string' && damage.includes('-')) {
-    maxDamage = parseInt(damage.split('-')[1]);
+    maxDamage = parseInt(damage.split('-')[1], 10);
   } else if (typeof damage === 'string') {
-    maxDamage = parseInt(damage);
+    maxDamage = parseInt(damage, 10);
   }
 
   if (isNaN(maxDamage) || maxDamage === '?') return 'Unknown';
@@ -69,10 +69,10 @@ const getMeleeSpeedDescription = (rapidMelee, attackCooldown) => {
     if (rapidMelee >= 2) return 'Fast';
   }
   if (attackCooldown > 0) {
-    if (attackCooldown <= 10) return 'Very Fast';  // 1s or less
-    if (attackCooldown <= 20) return 'Fast';       // 2s or less
-    if (attackCooldown <= 30) return 'Moderate';   // 3s or less
-    if (attackCooldown <= 50) return 'Slow';       // 5s or less
+    if (attackCooldown <= 10) return 'Very Fast'; // 1s or less
+    if (attackCooldown <= 20) return 'Fast'; // 2s or less
+    if (attackCooldown <= 30) return 'Moderate'; // 3s or less
+    if (attackCooldown <= 50) return 'Slow'; // 5s or less
     return 'Very Slow';
   }
   return 'Normal';
@@ -98,7 +98,7 @@ const getRangedSpeedDescription = (cooldown, rapid) => {
   return desc;
 };
 
-const getResistanceLabel = (value) => {
+const getResistanceLabel = value => {
   if (value === '?') return '?';
   const numValue = parseFloat(value);
   if (numValue < 0.5) return 'Resistant';
@@ -108,7 +108,7 @@ const getResistanceLabel = (value) => {
   return 'Fatal';
 };
 
-const getResistanceColor = (value) => {
+const getResistanceColor = value => {
   if (value === '?') return 'label';
   const numValue = parseFloat(value);
   if (numValue < 0.5) return 'good';
@@ -166,7 +166,9 @@ export const CreatureReport = (props, context) => {
                       {getHealthDescription(creature.max_health)}
                     </Box>
                     <Box inline color="label" ml={1}>
-                      ({Math.round((creature.health / creature.max_health) * 100)}% when scanned)
+                      ({Math.round(
+                        (creature.health / creature.max_health) * 100
+                      )}% when scanned)
                     </Box>
                   </LabeledList.Item>
                   <LabeledList.Item label="Movement Speed">
@@ -183,7 +185,8 @@ export const CreatureReport = (props, context) => {
                   <LabeledList.Item label="Melee Damage">
                     {getDamageDescription(
                       creature.melee_damage_lower !== '?'
-                        ? `${creature.melee_damage_lower}-${creature.melee_damage_upper}`
+                        ? `${creature.melee_damage_lower}-${
+                          creature.melee_damage_upper}`
                         : '?'
                     )}
                     {creature.melee_damage_type !== '?'
@@ -191,13 +194,18 @@ export const CreatureReport = (props, context) => {
                         <Box
                           inline
                           ml={1}
-                          color={getDamageTypeColor(creature.melee_damage_type)}>
+                          color={getDamageTypeColor(
+                            creature.melee_damage_type
+                          )}>
                           [{creature.melee_damage_type}]
                         </Box>
                       )}
                   </LabeledList.Item>
                   <LabeledList.Item label="Melee Speed">
-                    {getMeleeSpeedDescription(creature.rapid_melee, creature.attack_cooldown)}
+                    {getMeleeSpeedDescription(
+                      creature.rapid_melee,
+                      creature.attack_cooldown
+                    )}
                   </LabeledList.Item>
                   {!!creature.is_ranged && creature.ranged_damage && (
                     <>
@@ -207,18 +215,23 @@ export const CreatureReport = (props, context) => {
                           <Box
                             inline
                             ml={1}
-                            color={getDamageTypeColor(creature.ranged_damage_type)}>
+                            color={getDamageTypeColor(
+                              creature.ranged_damage_type
+                            )}>
                             [{creature.ranged_damage_type}]
                           </Box>
                         )}
                       </LabeledList.Item>
                       <LabeledList.Item label="Fire Rate">
-                        {getRangedSpeedDescription(creature.ranged_cooldown_time, creature.rapid)}
+                        {getRangedSpeedDescription(
+                          creature.ranged_cooldown_time,
+                          creature.rapid
+                        )}
                       </LabeledList.Item>
                     </>
                   )}
                   <LabeledList.Item label="Combat Type">
-                    {!!creature.is_ranged ? 'Ranged' : 'Melee Only'}
+                    {creature.is_ranged ? 'Ranged' : 'Melee Only'}
                   </LabeledList.Item>
                 </LabeledList>
               </Section>
