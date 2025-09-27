@@ -36,15 +36,13 @@
 	name = "R-Corp Medical Officer"
 	jobtype = /datum/job/medical_officer
 
-	belt = /obj/item/pda/medical
+	belt = null
 	uniform = /obj/item/clothing/under/suit/lobotomy/plain
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/tegu/med
-	suit =  /obj/item/clothing/suit/toggle/labcoat
+	suit =  /obj/item/clothing/suit/armor/ego_gear/limbus_labs/doctor
 	l_hand = /obj/item/storage/firstaid/medical
 
 	implants = list(/obj/item/organ/cyberimp/eyes/hud/security)
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	box = /obj/item/storage/box/survival/medical
+	back = /obj/item/storage/backpack/rcorp
+	ignore_pack = TRUE
