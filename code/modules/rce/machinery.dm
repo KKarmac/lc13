@@ -558,7 +558,7 @@
 
 /obj/machinery/factory_machine/fed_effect/regen/PowerEffect()
 	. = ..()
-	for(var/mob/living/carbon/patient in oview(get_turf(src), 1))
+	for(var/mob/living/carbon/patient in oview(get_turf(src), 3))
 		//Find a patient
 		if(patient)
 			//If patient is in hard crit do not attempt to sew them together.
@@ -568,7 +568,6 @@
 			if(patient.getBruteLoss())
 				patient.adjustBruteLoss(-3)
 				new /obj/effect/temp_visual/heal(get_turf(patient), "#FF4444")
-				break
 
 /*---------\
 |Floodlight|
@@ -583,7 +582,7 @@
 	skin = "floodlight"
 	storage_max = 180
 	fuel_value = 20
-	light_range = 8
+	light_range = 15
 	light_power = 3
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	dropped_item = /obj/item/structureconstruction/floodlight
