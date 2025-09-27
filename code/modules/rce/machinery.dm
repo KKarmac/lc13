@@ -13,7 +13,7 @@
 	use_power = NO_POWER_USE
 	processing_flags = START_PROCESSING_MANUALLY
 	//Very fragile machinery
-	max_integrity = 50
+	max_integrity = 150
 	//Max amount of resources stored in this object
 	var/storage_max = 70
 	//Resources converted into number. Value of resources.

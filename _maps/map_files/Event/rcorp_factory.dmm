@@ -10,31 +10,12 @@
 /obj/effect/landmark/lastwave_gateway/air,
 /turf/open/floor/plating/asteroid,
 /area/rce/rcorp_base)
-"ah" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/structureconstruction/silo,
-/obj/item/structureconstruction/silo,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "ao" = (
 /obj/structure/flora/rock/pile{
 	density = 0
 	},
 /turf/open/water,
 /area/rce/xcorp/rce_2_0)
-"au" = (
-/obj/structure/rack,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "aA" = (
 /turf/closed/indestructible/necropolis,
 /area/rce/xcorp/rce_3_3)
@@ -183,6 +164,13 @@
 	},
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"ca" = (
+/obj/structure/rack,
+/obj/item/storage/knife_pouch,
+/obj/item/ego_weapon/city/rabbit/throwing,
+/obj/item/ego_weapon/city/rabbit/throwing,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "cd" = (
 /obj/machinery/telecomms/broadcaster/preset_left,
 /obj/effect/turf_decal/bot,
@@ -203,13 +191,6 @@
 /obj/machinery/computer/operating{
 	dir = 8
 	},
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
-"cr" = (
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/pcorp_pocket/rcorp,
-/obj/item/storage/pcorp_pocket/rcorp,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "cv" = (
@@ -240,21 +221,12 @@
 /obj/item/powered_gadget/handheld_taser,
 /obj/item/restraints/handcuffs,
 /obj/item/ego_weapon/city/rabbit/white,
-/obj/item/structureconstruction/artillery,
-/obj/item/structureconstruction/floodlight,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "df" = (
 /obj/structure/flora/rock,
 /turf/open/water,
 /area/rce/xcorp/rce_2_0)
-"dm" = (
-/obj/structure/rack,
-/obj/item/structureconstruction/regen,
-/obj/item/structureconstruction/regen,
-/obj/item/structureconstruction/regen,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "ds" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_0_3)
@@ -319,18 +291,19 @@
 "eg" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_4_1)
+"eh" = (
+/obj/structure/rack,
+/obj/item/structureconstruction/regen,
+/obj/item/structureconstruction/regen,
+/obj/item/structureconstruction/regen,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "ep" = (
 /obj/structure/flora/rock/pile{
 	density = 0
 	},
 /turf/open/floor/plating/asteroid,
 /area/rce/xcorp/rce_0_1)
-"ex" = (
-/obj/structure/rack,
-/obj/item/storage/pcorp_weapon/rcorp,
-/obj/item/crowbar,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "eB" = (
 /obj/machinery/conveyor/auto{
 	dir = 8
@@ -418,10 +391,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
+"gh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/factory_machine/recycler,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "gk" = (
 /obj/structure/rack,
-/obj/item/storage/rcorp_grenade,
-/obj/item/storage/rcorp_grenade,
+/obj/effect/turf_decal/delivery,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/structureconstruction/silo,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "gq" = (
@@ -558,9 +538,8 @@
 /area/rce/xcorp/rce_0_3)
 "im" = (
 /obj/structure/rack,
-/obj/item/storage/knife_pouch,
-/obj/item/ego_weapon/city/rabbit/throwing,
-/obj/item/ego_weapon/city/rabbit/throwing,
+/obj/effect/turf_decal/delivery,
+/obj/item/structureconstruction/tunnel,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "in" = (
@@ -600,25 +579,10 @@
 "iP" = (
 /turf/open/floor/plating/dirt,
 /area/rce/xcorp/rce_1_1)
-"iV" = (
-/obj/structure/rack,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "jb" = (
 /obj/structure/holosign/barrier,
 /turf/open/floor/plating/dirt,
 /area/rce/xcorp/rce_1_1)
-"ji" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/item/structureconstruction/cross,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "jk" = (
 /obj/structure/den/rce/mid{
 	id = "midtopleft"
@@ -645,12 +609,6 @@
 "jt" = (
 /turf/closed/indestructible/necropolis,
 /area/rce/xcorp/rce_3_1)
-"jv" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/item/structureconstruction/tunnel,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "jy" = (
 /turf/closed/indestructible/r_wall,
 /area/rce/xcorp/rce_2_1)
@@ -853,6 +811,13 @@
 "lN" = (
 /turf/closed/wall/rust,
 /area/rce/xcorp/rce_2_1)
+"lO" = (
+/obj/structure/rack,
+/obj/item/structureconstruction/artillery,
+/obj/item/structureconstruction/artillery,
+/obj/item/structureconstruction/artillery,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "lQ" = (
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/pod/light,
@@ -945,8 +910,6 @@
 /obj/item/powered_gadget/handheld_taser,
 /obj/item/restraints/handcuffs,
 /obj/item/ego_weapon/city/rabbit/white,
-/obj/item/structureconstruction/artillery,
-/obj/item/structureconstruction/floodlight,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "nn" = (
@@ -1100,11 +1063,6 @@
 /obj/structure/closet/body_bag,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
-"pc" = (
-/obj/structure/rack,
-/obj/item/wrench,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "ph" = (
 /turf/closed/mineral/ash_rock,
 /area/rce/xcorp/rce_0_0)
@@ -1159,6 +1117,12 @@
 /obj/item/food/canned/pcorp_burger,
 /obj/item/food/canned/pcorp,
 /obj/item/food/canned/pcorp,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
+"pP" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/item/structureconstruction/cross,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "pX" = (
@@ -1362,13 +1326,6 @@
 /obj/item/storage/pcorp_pocket/rcorp,
 /turf/open/floor/pod,
 /area/rce/rcorp_base)
-"ty" = (
-/obj/structure/rack,
-/obj/item/structureconstruction/artillery,
-/obj/item/structureconstruction/artillery,
-/obj/item/structureconstruction/artillery,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "tz" = (
 /turf/open/floor/plating/ironsand,
 /area/rce/xcorp/rce_3_2)
@@ -1399,11 +1356,6 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/telecomms/server/presets/engineering,
 /turf/open/floor/circuit/telecomms/mainframe,
-/area/rce/rcorp_base)
-"tZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/structureconstruction/floodlight,
-/turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "ub" = (
 /turf/closed/indestructible/riveted/boss,
@@ -1883,6 +1835,12 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/rce/xcorp/rce_2_0)
+"BP" = (
+/obj/structure/rack,
+/obj/item/storage/pcorp_weapon/rcorp,
+/obj/item/crowbar,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "BW" = (
 /obj/machinery/manned_turret/rcorp/rook,
 /turf/open/floor/pod/light,
@@ -2063,12 +2021,6 @@
 /obj/effect/spawner/mobspawner/green_dawn,
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_4_2)
-"EA" = (
-/obj/structure/rack,
-/obj/item/crowbar,
-/obj/item/wrench,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "EG" = (
 /turf/open/floor/plating/asteroid/basalt,
 /area/rce/xcorp/rce_1_2)
@@ -2105,6 +2057,13 @@
 "Fj" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_0_0)
+"Fr" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/First_aid_l1,
+/obj/item/storage/First_aid_l1,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "Fs" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/ashplanet/ash,
@@ -2294,13 +2253,6 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/grass,
 /area/rce/xcorp/rce_2_3)
-"Hz" = (
-/obj/structure/rack,
-/obj/item/crowbar,
-/obj/item/storage/pcorp_weapon/rcorp,
-/obj/item/wrench,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
 "HH" = (
 /turf/closed/indestructible/rock,
 /area/rce/xcorp/rce_3_0)
@@ -2376,9 +2328,11 @@
 /area/rce/xcorp/rce_2_1)
 "IQ" = (
 /obj/structure/rack,
-/obj/item/structureconstruction/floodlight,
-/obj/item/structureconstruction/floodlight,
-/obj/item/structureconstruction/floodlight,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Jd" = (
@@ -2510,6 +2464,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/rce/xcorp/rce_4_1)
+"LD" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/structureconstruction/silo,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "LE" = (
 /turf/open/floor/plating/dirt,
 /area/rce/xcorp/rce_2_1)
@@ -2555,6 +2516,12 @@
 /obj/machinery/telecomms/server/presets/common,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/rce/rcorp_base)
+"Mt" = (
+/obj/structure/rack,
+/obj/item/storage/rcorp_grenade,
+/obj/item/storage/rcorp_grenade,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "MA" = (
 /obj/structure/window/shuttle/survival_pod,
 /turf/open/floor/pod,
@@ -2569,6 +2536,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/structureconstruction/silo,
 /obj/item/structureconstruction/silo,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
@@ -2606,12 +2574,8 @@
 /area/rce/rcorp_base)
 "Nc" = (
 /obj/structure/rack,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
-/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/storage/material_pouch,
+/obj/item/storage/material_pouch,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Ng" = (
@@ -2996,6 +2960,11 @@
 	},
 /turf/open/indestructible/necropolis/air,
 /area/rce/xcorp/rce_2_0)
+"SQ" = (
+/obj/structure/rack,
+/obj/item/wrench,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "SS" = (
 /obj/structure/flora/rock,
 /turf/open/water,
@@ -3013,6 +2982,16 @@
 /obj/structure/resourcepoint/orange,
 /turf/open/floor/plating/ironsand,
 /area/rce/xcorp/rce_3_3)
+"Td" = (
+/obj/structure/table/wood,
+/obj/item/structureconstruction/artillery,
+/obj/item/structureconstruction/artillery,
+/obj/item/structureconstruction/artillery,
+/obj/item/structureconstruction/floodlight,
+/obj/item/structureconstruction/floodlight,
+/obj/item/structureconstruction/floodlight,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "Te" = (
 /obj/machinery/sleeper/syndie,
 /turf/open/floor/pod/light,
@@ -3117,14 +3096,22 @@
 /obj/structure/table/abductor,
 /obj/item/clothing/under/suit/lobotomy/rabbit,
 /obj/item/ego_weapon/city/rabbit_blade,
-/obj/item/clothing/head/beret/tegu/captain{
-	armor = list()
-	},
 /obj/item/gun/energy/e_gun/rabbitdash/small,
 /obj/item/clothing/suit/armor/ego_gear/rabbit/grunts{
 	name = "\improper robin captain suit"
 	},
 /turf/open/floor/pod,
+/area/rce/rcorp_base)
+"UV" = (
+/obj/structure/rack,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Va" = (
 /obj/structure/destructible/cult/pylon,
@@ -3170,15 +3157,9 @@
 /area/rce/rcorp_base)
 "VG" = (
 /obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/structureconstruction/silo,
-/turf/open/floor/pod/light,
-/area/rce/rcorp_base)
-"VJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/factory_machine/recycler,
+/obj/item/crowbar,
+/obj/item/storage/pcorp_weapon/rcorp,
+/obj/item/wrench,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "VL" = (
@@ -3272,14 +3253,21 @@
 /area/rce/rcorp_base)
 "XL" = (
 /obj/structure/rack,
-/obj/item/storage/material_pouch,
-/obj/item/storage/material_pouch,
+/obj/item/crowbar,
+/obj/item/wrench,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "XN" = (
 /obj/structure/sign/warning/hottemp,
 /turf/closed/indestructible/r_wall,
 /area/rce/xcorp/rce_1_1)
+"XR" = (
+/obj/structure/rack,
+/obj/item/structureconstruction/floodlight,
+/obj/item/structureconstruction/floodlight,
+/obj/item/structureconstruction/floodlight,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
 "XS" = (
 /obj/structure/flora/rock,
 /turf/open/water,
@@ -3291,8 +3279,8 @@
 "XW" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/First_aid_l1,
-/obj/item/storage/First_aid_l1,
+/obj/item/storage/pcorp_pocket/rcorp,
+/obj/item/storage/pcorp_pocket/rcorp,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Ya" = (
@@ -3397,6 +3385,16 @@
 /area/rce/rcorp_base)
 "Zi" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/light,
+/area/rce/rcorp_base)
+"Zk" = (
+/obj/structure/rack,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
+/obj/item/gun/energy/e_gun/rabbitdash,
 /turf/open/floor/pod/light,
 /area/rce/rcorp_base)
 "Zn" = (
@@ -7216,7 +7214,7 @@ Ou
 Ou
 Ou
 re
-zf
+Td
 jT
 XV
 jT
@@ -14932,7 +14930,7 @@ Zi
 jT
 ud
 ud
-VJ
+gh
 ud
 jT
 jT
@@ -15699,17 +15697,17 @@ jT
 Cp
 jT
 jB
-ji
+pP
 jB
 Qt
-ji
+pP
+LD
 MK
-ah
 jT
 jB
-VG
+gk
 Wr
-VG
+gk
 Wr
 Wr
 ud
@@ -17240,13 +17238,13 @@ wz
 wz
 wz
 gY
-jv
+im
 jB
-jv
-ji
+im
+pP
 jB
 jB
-jv
+im
 jT
 jB
 Qt
@@ -18021,9 +18019,9 @@ Dg
 re
 lt
 jT
-Nc
+Zk
 jT
-gk
+Mt
 jT
 re
 ld
@@ -18278,9 +18276,9 @@ Dg
 MA
 lt
 ud
-au
+UV
 ud
-im
+ca
 jT
 re
 ld
@@ -18537,7 +18535,7 @@ Yk
 ud
 Ph
 Kl
-cr
+XW
 jT
 re
 ld
@@ -18792,9 +18790,9 @@ Dg
 MA
 lt
 jT
-iV
+IQ
 ud
-XW
+Fr
 jT
 re
 ld
@@ -19049,9 +19047,9 @@ wn
 hD
 lt
 jT
-Nc
+Zk
 ud
-XL
+Nc
 ud
 re
 ld
@@ -21373,7 +21371,7 @@ ld
 ld
 ld
 MA
-pc
+SQ
 jT
 jT
 jT
@@ -21630,7 +21628,7 @@ ld
 ld
 ld
 MA
-EA
+XL
 jT
 ud
 ud
@@ -21887,11 +21885,11 @@ ld
 ld
 ld
 MA
-Hz
+VG
 ud
-ty
-IQ
-dm
+lO
+XR
+eh
 ud
 hY
 re
@@ -22144,7 +22142,7 @@ ld
 ld
 ld
 MA
-EA
+XL
 jT
 Pq
 Hh
@@ -22401,9 +22399,9 @@ ld
 ld
 ld
 MA
-ex
+BP
 ud
-tZ
+ud
 VL
 ud
 jT
