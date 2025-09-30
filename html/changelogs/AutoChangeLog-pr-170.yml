@@ -1,0 +1,4 @@
+author: "KingSuperBOB"
+delete-after: True
+changes:
+  - bugfix: "Gave carnival the humanoid biotype"
