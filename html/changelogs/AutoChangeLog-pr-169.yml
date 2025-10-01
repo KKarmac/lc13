@@ -1,4 +1,0 @@
-author: "Aseidos"
-delete-after: True
-changes:
-  - rscadd: "Adds special dreams to Oracle that modify abnormality weights for the round."
