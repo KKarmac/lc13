@@ -300,7 +300,7 @@
 	var/obj/item/W = get_active_held_item()
 
 	if(istype(W))
-		if(equip_to_slot_if_possible(W, slot,0,0,0))
+		if(equip_to_slot_if_possible(W, slot, FALSE, FALSE, FALSE))
 			return TRUE
 
 	if(!W)
@@ -331,7 +331,7 @@
 		if(qdel_on_fail)
 			qdel(W)
 		else if(!disable_warning)
-			to_chat(src, "<span class='warning'>You are unable to equip that!</span>")
+			to_chat(src, span_warning("You are unable to equip that!"))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob) //This proc should not ever fail.
 	return TRUE

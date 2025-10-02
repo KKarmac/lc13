@@ -858,7 +858,7 @@
 			for(var/obj/item/slotitem in human_target.get_all_slots())
 				if(istype(slotitem, /obj/item/clothing/suit/armor/ego_gear))
 					var/obj/item/clothing/suit/armor/ego_gear/equippable_gear = new slotitem.type(get_turf(copycat))
-					equippable_gear.equip_slowdown = 0
+					equippable_gear.equip_delay_self = 0
 					equippable_gear.attribute_requirements = list()
 					copycat.equip_to_appropriate_slot(equippable_gear, TRUE)
 				else

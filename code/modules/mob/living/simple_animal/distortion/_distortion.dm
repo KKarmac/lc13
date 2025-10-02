@@ -183,9 +183,9 @@
 			if(suit_slot_item)
 				qdel(suit_slot_item)
 			var/obj/item/clothing/suit/armor/ego_gear/equippable_gear = new gear(get_turf(src))
-			equippable_gear.equip_slowdown = 0
+			equippable_gear.equip_delay_self = 0
 			egoist.equip_to_slot(equippable_gear,ITEM_SLOT_OCLOTHING, TRUE)
-			equippable_gear.equip_slowdown = 3
+			equippable_gear.equip_delay_self = initial(equippable_gear.equip_delay_self)
 		else
 			egoist.put_in_hands(new gear(egoist))
 	PostUnmanifest(egoist)
