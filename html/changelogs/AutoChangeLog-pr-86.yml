@@ -1,7 +1,0 @@
-author: "LanceSmites328"
-delete-after: True
-changes:
-  - balance: "Reduced City Armor equip time on City Maps from 7 Seconds to 3 Seconds."
-  - refactor: "equip code in general"
-  - refactor: "Adjustable Ego Gear -> Adjustable Clothing Component"
-  - bugfix: "UI not trying to skip the timer when seeing if you can equip items"
