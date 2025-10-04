@@ -1,0 +1,7 @@
+author: "EnderMage99"
+delete-after: True
+changes:
+  - code_imp: "Cleans up code regarding Door to Nowhere"
+  - rscadd: "Added new admin smites/functions the door"
+  - bugfix: "fixed the hole to escape the dimension"
+  - balance: "added scaling to the door"
