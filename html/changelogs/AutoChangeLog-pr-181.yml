@@ -1,7 +1,0 @@
-author: "Destrok171"
-delete-after: True
-changes:
-  - bugfix: "Contempt, Awe E.G.O. weapon no longer sends you to the shadow dimension when the empowered throw kills a mob that qdels on death."
-  - bugfix: "Contempt. Awe E.G.O. weapon no longer grants Gaze by hitting contained Abnos or corpses."
-  - balance: "Contempt, Awe E.G.O. weapon Gaze reset cost raised from 10 -> 15 health."
-  - balance: "Contempt, Awe E.G.O. weapon Gaze gain cooldown lowered from 8s -> 3.5s."
