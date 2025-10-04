@@ -1,0 +1,4 @@
+author: "Destrok171"
+delete-after: True
+changes:
+  - bugfix: "Buildmode Proc-call no longer whitescreens when clicking without a set proc"
