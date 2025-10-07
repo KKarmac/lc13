@@ -80,7 +80,6 @@
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/beefy
 	name = "gene corp shocktrooper"
-	icon = 'ModularTegustation/Teguicons/32x32.dmi'
 	icon_state = "gcorp_beetle"
 	icon_living = "gcorp_beetle"
 	icon_dead = "dead_beetle"

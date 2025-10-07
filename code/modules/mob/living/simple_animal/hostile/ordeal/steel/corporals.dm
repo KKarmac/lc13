@@ -192,7 +192,6 @@
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/stalker
 	name = "gene corp stalker"
 	desc = "A insect augmented employee of the fallen Gene corp. This one is augmented to shimmer in the light."
-	icon = 'ModularTegustation/Teguicons/32x32.dmi'
 	icon_state = "gcorp_stalker"
 	icon_living = "gcorp_stalker"
 	icon_dead = "dead_stalker"
