@@ -26,6 +26,8 @@
 	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.2, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
 	butcher_results = list(/obj/item/food/meat/slab/buggy = 2)
 	silk_results = list(/obj/item/stack/sheet/silk/steel_simple = 1)
+	//What AI are we using?
+	var/morale = "Normal"
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/Initialize()
 	. = ..()
@@ -39,11 +41,30 @@
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/Life()
 	. = ..()
+
+	//If you got no morale
+	if(morale == "Retreat" || morale == "No Morale")
+		ranged = 1
+		retreat_distance = 5
+		minimum_distance = 5
+		a_intent_change(INTENT_HELP)
+
+	else
+		ranged = 0
+		retreat_distance = 1
+		minimum_distance = 1
+		a_intent_change(INTENT_HARM)
+
 	//Passive regen when below 50% health.
 	if(health <= maxHealth*0.5 && stat != DEAD)
+		if(morale != "Zealous")
+			morale = "Retreat"
 		adjustBruteLoss(-2)
 		if(!target)
 			adjustBruteLoss(-6)
+
+	else
+		morale = "Normal"
 
 	//Soldiers when off duty will let eachother move around.
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/Aggro()

@@ -43,8 +43,7 @@
 		Y.say("FOR G CORP!!!")
 
 		//increase damage
-		Y.melee_damage_lower = 18
-		Y.melee_damage_upper = 22
+		Y.morale = "Zealous"
 		//And heal 50%
 		Y.adjustBruteLoss(-maxHealth*0.5)
 
