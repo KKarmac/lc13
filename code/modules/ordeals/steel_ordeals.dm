@@ -45,7 +45,8 @@
 	level = 3
 	reward_percent = 0.2
 	color = "#71797E"
-	boss_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dusk, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying)
+	boss_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dusk, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon,
+		 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying)
 	grunt_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dawn)
 	boss_amount = 3
 	grunt_amount = 4
@@ -65,7 +66,9 @@
 	level = 4
 	reward_percent = 0.25
 	color = "#71797E"
-	boss_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dusk, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/stalker)
+	boss_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dusk, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon,
+		 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/stalker,
+		 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_midnight)
 	grunt_type = list(/mob/living/simple_animal/hostile/ordeal/steel_dawn/beefy)
 	boss_amount = 3
 	grunt_amount = 3	//One less because you get the stalker

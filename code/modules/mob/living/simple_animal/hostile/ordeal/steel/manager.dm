@@ -48,7 +48,8 @@
 		/mob/living/simple_animal/hostile/ordeal/steel_dawn/beefy = 6,
 		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon = 2,
 		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/flying = 2,
-		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/stalker = 2
+		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/stalker = 2,
+		/mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_midnight = 1,
 		)
 	AddComponent(/datum/component/ai_leadership, units_to_add, 8, TRUE, TRUE)
 
@@ -101,27 +102,42 @@
 //used for attacks and commands. could possibly make this a modular spell or ability.
 /mob/living/simple_animal/hostile/ordeal/steel_dusk/proc/Command(manager_order)
 	playsound(loc, 'sound/effects/ordeals/steel/gcorp_chitter.ogg', 60, TRUE)
+	if(!manager_order)
+		return
+	var/manager_say
+	var/manager_effect
 	switch(manager_order)
 		if(1)
 			if(prob(20))
-				say(pick("Lads we got a hostile!", "Shit, wake up troops hell just found us!", "I warn you, we dont die easy.", "Keep your cool and we can all get out of this alive!"))
-			for(var/mob/living/simple_animal/hostile/ordeal/G in oview(9, src))
-				if(istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn) && G.stat != DEAD && (!has_status_effect(/datum/status_effect/all_armor_buff) || !has_status_effect(/datum/status_effect/minor_damage_buff)))
+				manager_say = pick("Lads we got a hostile!", "Shit, wake up troops hell just found us!", "I warn you, we dont die easy.", "Keep your cool and we can all get out of this alive!")
+
+		if(2)
+			manager_say = "Hold fast!"
+			manager_effect = /datum/status_effect/all_armor_buff
+		if(3)
+			manager_say = "Onslaught!"
+			manager_effect = /datum/status_effect/minor_damage_buff
+	if(manager_say)
+		say(manager_say)
+
+	for(var/mob/living/simple_animal/hostile/ordeal/G in oview(9, src))
+		if(G.stat != DEAD && !has_status_effect((/datum/status_effect/all_armor_buff || /datum/status_effect/minor_damage_buff)))
+			if((istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon) || istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn)))
+				if(manager_effect)
+					G.apply_status_effect(manager_effect)
+				else
 					G.GiveTarget(target)
 					G.TemporarySpeedChange(-1, 1 SECONDS)
-			last_command = 1
-		if(2)
-			say("Hold fast!")
-			for(var/mob/living/simple_animal/hostile/ordeal/G in oview(9, src))
-				if((istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon) || istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn)) && G.stat != DEAD && !has_status_effect((/datum/status_effect/all_armor_buff || /datum/status_effect/minor_damage_buff)))
-					G.apply_status_effect(/datum/status_effect/all_armor_buff)
-			last_command = 2
-		if(3)
-			say("Onslaught!")
-			for(var/mob/living/simple_animal/hostile/ordeal/G in oview(9, src))
-				if((istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon) || istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn)) && G.stat != DEAD && !has_status_effect((/datum/status_effect/all_armor_buff || /datum/status_effect/minor_damage_buff)))
-					G.apply_status_effect(/datum/status_effect/minor_damage_buff)
-			last_command = 3
+
+			if((istype(G, /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_midnight)))
+				if(manager_effect)
+					G.buffed += 1
+				else
+					if(!G.target)
+						G.GiveTarget(target)
+					G.TemporarySpeedChange(-1, 1 SECONDS)
+
+	last_command = manager_order
 	command_cooldown = world.time + command_delay
 
 /mob/living/simple_animal/hostile/ordeal/steel_dusk/proc/ManagerScreech()
