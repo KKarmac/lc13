@@ -10,12 +10,13 @@
 	maxHealth = 1000	//Effectively have 750 HP
 	health = 1000		//Effectively have 750 HP
 	rapid_melee = 2
-	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 1, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 0.8)
+	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.5, BLACK_DAMAGE = 0.8, PALE_DAMAGE = 1)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	death_sound = 'sound/voice/mook_death.ogg'
 	butcher_results = list(/obj/item/food/meat/slab/buggy = 2)
 	silk_results = list(/obj/item/stack/sheet/silk/steel_simple = 2, /obj/item/stack/sheet/silk/steel_advanced = 1)
+	morale_active = FALSE
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_noon/AttackingTarget(atom/attacked_target)
 	adjustBruteLoss(-10)

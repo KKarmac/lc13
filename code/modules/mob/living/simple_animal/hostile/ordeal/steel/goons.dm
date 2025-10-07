@@ -23,11 +23,12 @@
 	a_intent = INTENT_HELP
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	//similar to a human
-	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.2, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
+	damage_coeff = list(RED_DAMAGE = 0.8, WHITE_DAMAGE = 1.5, BLACK_DAMAGE = 1, PALE_DAMAGE = 1)
 	butcher_results = list(/obj/item/food/meat/slab/buggy = 2)
 	silk_results = list(/obj/item/stack/sheet/silk/steel_simple = 1)
 	//What AI are we using?
 	var/morale = "Normal"
+	var/morale_active = TRUE
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/Initialize()
 	. = ..()
@@ -41,19 +42,19 @@
 
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/Life()
 	. = ..()
+	if(morale_active)
+		//If you got no morale
+		if(morale == "Retreat" || morale == "No Morale")
+			ranged = 1
+			retreat_distance = 5
+			minimum_distance = 5
+			a_intent_change(INTENT_HELP)
 
-	//If you got no morale
-	if(morale == "Retreat" || morale == "No Morale")
-		ranged = 1
-		retreat_distance = 5
-		minimum_distance = 5
-		a_intent_change(INTENT_HELP)
-
-	else
-		ranged = 0
-		retreat_distance = 1
-		minimum_distance = 1
-		a_intent_change(INTENT_HARM)
+		else
+			ranged = 0
+			retreat_distance = 0
+			minimum_distance = 1
+			a_intent_change(INTENT_HARM)
 
 	//Passive regen when below 50% health.
 	if(health <= maxHealth*0.5 && stat != DEAD)
