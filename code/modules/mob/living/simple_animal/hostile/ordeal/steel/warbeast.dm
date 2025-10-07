@@ -3,7 +3,7 @@
 /mob/living/simple_animal/hostile/ordeal/steel_dawn/steel_midnight
 	name = "gene corp warbeast"
 	desc = "A towering insectoid terror, the only evidence of its human nature being the torn shreds of an employees uniform draped over its shoulders."
-	icon = 'ModularTegustation/Teguicons/gcorp_warbeast.dmi'
+	icon = 'ModularLobotomy/_Lobotomyicons/gcorp_warbeast.dmi'
 	icon_state = "gcorp"
 	icon_living = "gcorp"
 	icon_dead = "gcorp_corpse"
