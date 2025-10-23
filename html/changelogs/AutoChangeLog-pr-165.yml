@@ -1,0 +1,10 @@
+author: "Destrok171"
+delete-after: True
+changes:
+  - rscadd: "New Flesh is Willing ranged E.G.O. weapon (ALEPH), its 3 projectiles, Inexorable and Entrenched status effects and alerts"
+  - imageadd: "Flesh is Willing ranged E.G.O. weapon obj and inhands"
+  - imageadd: "Overlay for Inexorable, Alerts for Inexorable and Entrenched"
+  - soundadd: "Flesh is Willing ranged E.G.O. weapon firing noise (stage 1)"
+  - rscdel: "Old Flesh is Willing melee E.G.O. weapon (ALEPH)"
+  - imagedel: "Old Flesh is Willing melee E.G.O. weapon obj and inhands"
+  - refactor: "Ranged E.G.O. weapons now can have custom reload start and success sounds"
