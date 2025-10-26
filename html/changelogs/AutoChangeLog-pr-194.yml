@@ -1,0 +1,13 @@
+author: "EnderMage99"
+delete-after: True
+changes:
+  - rscadd: "Added The Middle syndicate faction with Little/Younger/Big Brother hierarchy"
+  - rscadd: "Added chain weapons with counter-attack and vengeance mark mechanics"
+  - rscadd: "Added Great Leap ability for Big Brothers (flying leap attack)"
+  - rscadd: "Added Middle jukebox that loops their theme song endlessly"
+  - rscadd: "Added delivery system for earning money through U-Corp package delivery"
+  - rscadd: "Added vengeance mark stacking system that amplifies damage"
+  - rscadd: "Added Middle base with hidden alleyway location"
+  - rscadd: "Added gear selection beacons for male/female variants"
+  - rscadd: "Added Books of Vengeance that mark attackers automatically"
+  - rscadd: "Added Middle sunglasses and cape accessories"
